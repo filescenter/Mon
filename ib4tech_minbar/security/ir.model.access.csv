@@ -26,3 +26,5 @@ access_minbar_content_user,minbar.content.user,model_ib4tech_minbar_content,base
 access_minbar_content_editor,minbar.content.editor,model_ib4tech_minbar_content,group_minbar_editor,1,1,1,1
 access_minbar_content_manager,minbar.content.manager,model_ib4tech_minbar_content,group_minbar_manager,1,1,1,1
 access_minbar_majlis_repeat_editor,minbar.majlis.repeat.editor,model_ib4tech_minbar_majlis_repeat,group_minbar_editor,1,1,1,1
+access_minbar_ad_user,minbar.ad.user,model_ib4tech_minbar_ad,base.group_user,1,0,0,0
+access_minbar_ad_editor,minbar.ad.editor,model_ib4tech_minbar_ad,group_minbar_editor,1,1,1,1

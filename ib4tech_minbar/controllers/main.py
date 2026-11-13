@@ -270,7 +270,19 @@ class MinbarApp(http.Controller):
             entities |= Entity.search(
                 published_entity_domain() + [("id", "not in", entities.ids)],
                 order=newest, limit=6 - len(entities))
+        ads = [
+            {
+                "id": ad.id,
+                "title": ad.name,
+                "image": "/app/image/ad/%d/poster?u=%d" % (ad.id, int(ad.write_date.timestamp())),
+                "url": ad._target_url(),
+                "seconds": ad.countdown,
+                "frequency": ad.frequency,
+            }
+            for ad in env["ib4tech.minbar.ad"].sudo()._get_running(city)
+        ]
         return render_app("%s.app_home" % MODULE, {
+            "ads": json.dumps(ads, ensure_ascii=False) if ads else "",
             "majalis": [majlis_card(m, tz, now) for m in majalis],
             "majalis_city": majalis_city,
             "featured": featured[:4],
@@ -482,6 +494,22 @@ class MinbarApp(http.Controller):
         options = {"width": 192, "height": 192, "crop": True} if size == "thumb" else {}
         stream = env["ir.binary"]._get_image_stream_from(majlis, "poster", **options)
         return stream.get_response(max_age=http.STATIC_CACHE_LONG if kw.get("u") else 3600)
+
+    @http.route("/app/image/ad/<int:ad_id>/poster", type="http", auth="public", readonly=True)
+    def ad_poster(self, ad_id, **kw):
+        ad = request.env["ib4tech.minbar.ad"].sudo().browse(ad_id).exists()
+        if not ad or not ad._is_running():
+            raise request.not_found()
+        stream = request.env["ir.binary"]._get_image_stream_from(ad, "image")
+        return stream.get_response(max_age=http.STATIC_CACHE_LONG if kw.get("u") else 3600)
+
+    @http.route("/app/ad/<int:ad_id>/hit", type="http", auth="public", methods=["POST"], csrf=False)
+    def ad_hit(self, ad_id, kind="view", **kw):
+        """Counts one view or one tap of an announcement; called by the app in the background."""
+        ad = request.env["ib4tech.minbar.ad"].sudo().browse(ad_id).exists()
+        if ad and ad._is_running():
+            ad._count_hit(kind)
+        return request.make_response("", status=204)
 
     # ------------------------------------------------------------------
     # Library

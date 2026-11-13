@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 19.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-13 08:34+0000\n"
-"PO-Revision-Date: 2026-11-13 08:34+0000\n"
+"POT-Creation-Date: 2026-11-13 12:03+0000\n"
+"PO-Revision-Date: 2026-11-13 12:03+0000\n"
 "Last-Translator: IB4Tech\n"
 "Language-Team: IB4Tech\n"
 "Language: ar\n"
@@ -61,6 +61,11 @@ msgstr ""
 #. module: ib4tech_minbar
 #: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_city_picker
 msgid "<option value=\"gps\">موقعي الحالي</option>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_home
+msgid "<span class=\"mb-ad__tag\">إعلان</span>"
 msgstr ""
 
 #. module: ib4tech_minbar
@@ -161,6 +166,11 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_entity_form
 msgid "<span class=\"o_stat_text\">Open in App</span>"
 msgstr "<span class=\"o_stat_text\">فتح في التطبيق</span>"
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_home
+msgid "<span data-ad-count=\"1\">3</span>"
+msgstr ""
 
 #. module: ib4tech_minbar
 #: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_majlis
@@ -482,6 +492,7 @@ msgid "Action Needed"
 msgstr "إجراء مطلوب"
 
 #. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_ad__active
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_city__active
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content__active
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content_category__active
@@ -490,6 +501,11 @@ msgstr "إجراء مطلوب"
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_service__active
 msgid "Active"
 msgstr "نشط"
+
+#. module: ib4tech_minbar
+#: model_terms:ir.actions.act_window,help:ib4tech_minbar.action_minbar_ad
+msgid "Add the first announcement"
+msgstr "أضف أول إعلان"
 
 #. module: ib4tech_minbar
 #: model_terms:ir.actions.act_window,help:ib4tech_minbar.action_minbar_content
@@ -520,6 +536,12 @@ msgid "Announcement picture of the majlis."
 msgstr "صورة إعلان المجلس."
 
 #. module: ib4tech_minbar
+#: model:ir.actions.act_window,name:ib4tech_minbar.action_minbar_ad
+#: model:ir.ui.menu,name:ib4tech_minbar.menu_minbar_ad
+msgid "Announcements"
+msgstr "الإعلانات"
+
+#. module: ib4tech_minbar
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_res_config_settings__minbar_app_name
 #: model_terms:ir.ui.view,arch_db:ib4tech_minbar.res_config_settings_view_form
 msgid "App Name"
@@ -537,6 +559,8 @@ msgid "Approve & Publish"
 msgstr "موافقة ونشر"
 
 #. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_ad_form
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_ad_search
 #: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_content_form
 #: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_content_search
 #: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_entity_form
@@ -660,6 +684,7 @@ msgid "Create Owner Account"
 msgstr "إنشاء حساب لصاحب الصفحة"
 
 #. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_ad__create_uid
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_city__create_uid
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content__create_uid
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content_category__create_uid
@@ -672,6 +697,7 @@ msgid "Created by"
 msgstr "أنشئ بواسطة"
 
 #. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_ad__create_date
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_city__create_date
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content__create_date
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content_category__create_date
@@ -752,6 +778,12 @@ msgid "Discard"
 msgstr "إلغاء"
 
 #. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_ad_form
+msgid "Display"
+msgstr "العرض"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_ad__display_name
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_city__display_name
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content__display_name
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content_category__display_name
@@ -794,6 +826,11 @@ msgstr "عيد"
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis__date_end
 msgid "Ends At"
 msgstr "ينتهي في"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields.selection,name:ib4tech_minbar.selection__ib4tech_minbar_ad__frequency__session
+msgid "Every time the app is opened"
+msgstr "كل مرة يُفتح التطبيق"
 
 #. module: ib4tech_minbar
 #: model:ir.model.fields.selection,name:ib4tech_minbar.selection__ib4tech_minbar_majlis__audience__all
@@ -923,6 +960,7 @@ msgid "Husseiniyas"
 msgstr "الحسينيات"
 
 #. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_ad__id
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_city__id
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content__id
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content_category__id
@@ -985,6 +1023,11 @@ msgid "Instagram"
 msgstr "إنستغرام"
 
 #. module: ib4tech_minbar
+#: model:ir.model.fields,help:ib4tech_minbar.field_ib4tech_minbar_ad__name
+msgid "Internal title, also read out by screen readers."
+msgstr "عنوان داخلي، ويقرؤه قارئ الشاشة أيضاً."
+
+#. module: ib4tech_minbar
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content__intro
 #: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_content_form
 msgid "Introduction"
@@ -995,6 +1038,15 @@ msgstr "المقدمة"
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis__message_is_follower
 msgid "Is Follower"
 msgstr "متابع"
+
+#. module: ib4tech_minbar
+#: model_terms:ir.actions.act_window,help:ib4tech_minbar.action_minbar_ad
+msgid ""
+"Its poster opens over the home page of the app, with a close button after a "
+"short countdown."
+msgstr ""
+"يظهر البوستر فوق الصفحة الرئيسية للتطبيق، ويظهر زر الإغلاق بعد عدّ تنازلي "
+"قصير."
 
 #. module: ib4tech_minbar
 #: model:ir.model.fields.selection,name:ib4tech_minbar.selection__ib4tech_minbar_occasion__hijri_month__6
@@ -1017,6 +1069,7 @@ msgid "Khatibs"
 msgstr "الخطباء"
 
 #. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_ad__write_uid
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_city__write_uid
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content__write_uid
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content_category__write_uid
@@ -1029,6 +1082,7 @@ msgid "Last Updated by"
 msgstr "آخر تحديث بواسطة"
 
 #. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_ad__write_date
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_city__write_date
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content__write_date
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content_category__write_date
@@ -1045,6 +1099,11 @@ msgstr "آخر تحديث في"
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__latitude
 msgid "Latitude"
 msgstr "خط العرض"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,help:ib4tech_minbar.field_ib4tech_minbar_ad__city_ids
+msgid "Leave empty to show the announcement everywhere."
+msgstr "اتركه فارغاً ليظهر الإعلان في كل المدن."
 
 #. module: ib4tech_minbar
 #: model:ir.ui.menu,name:ib4tech_minbar.menu_minbar_library
@@ -1179,6 +1238,11 @@ msgid "Messages"
 msgstr "الرسائل"
 
 #. module: ib4tech_minbar
+#: model:ir.model,name:ib4tech_minbar.model_ib4tech_minbar_ad
+msgid "Minbar Announcement"
+msgstr "إعلان"
+
+#. module: ib4tech_minbar
 #: model:ir.model,name:ib4tech_minbar.model_ib4tech_minbar_city
 msgid "Minbar City"
 msgstr "مدينة"
@@ -1239,6 +1303,7 @@ msgid "Munajat"
 msgstr "مناجاة"
 
 #. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_ad__name
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_city__name
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content_category__name
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__name
@@ -1310,6 +1375,16 @@ msgid "Occasion"
 msgstr "المناسبة"
 
 #. module: ib4tech_minbar
+#: model:ir.model.fields.selection,name:ib4tech_minbar.selection__ib4tech_minbar_ad__frequency__daily
+msgid "Once a day"
+msgstr "مرة في اليوم"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields.selection,name:ib4tech_minbar.selection__ib4tech_minbar_ad__frequency__once
+msgid "Once only"
+msgstr "مرة واحدة فقط"
+
+#. module: ib4tech_minbar
 #. odoo-python
 #: code:addons/ib4tech_minbar/models/minbar_entity.py:0
 msgid "Only Minbar managers can grant owner accounts."
@@ -1322,6 +1397,11 @@ msgid "Only draft or rejected pages can be sent for review."
 msgstr "يمكن إرسال الصفحات المسودة أو المرفوضة فقط للمراجعة."
 
 #. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_ad__city_ids
+msgid "Only in Cities"
+msgstr "في مدن محددة فقط"
+
+#. module: ib4tech_minbar
 #. odoo-python
 #: code:addons/ib4tech_minbar/models/minbar_majlis.py:0
 msgid "Only the administration can change the status of a majlis."
@@ -1332,6 +1412,21 @@ msgstr "الإدارة فقط تستطيع تغيير حالة المجلس."
 #: code:addons/ib4tech_minbar/models/minbar_entity.py:0
 msgid "Only the administration can change the status or the owner of a page."
 msgstr "الإدارة فقط تستطيع تغيير حالة الصفحة أو صاحبها."
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_ad__url
+msgid "Opens Link"
+msgstr "يفتح رابطاً"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_ad__majlis_id
+msgid "Opens Majlis"
+msgstr "يفتح مجلساً"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_ad__entity_id
+msgid "Opens Page"
+msgstr "يفتح صفحة"
 
 #. module: ib4tech_minbar
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis__entity_id
@@ -1409,7 +1504,9 @@ msgid "Portal account allowed to edit this page and publish its majalis."
 msgstr "حساب البوابة المسموح له بتعديل هذه الصفحة ونشر مجالسها."
 
 #. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_ad__image
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis__poster
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_ad_form
 msgid "Poster"
 msgstr "الإعلان (البوستر)"
 
@@ -1509,6 +1606,11 @@ msgid "Repeated Majalis"
 msgstr "المجالس المكررة"
 
 #. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_ad_form
+msgid "Results"
+msgstr "النتائج"
+
+#. module: ib4tech_minbar
 #: model:ir.ui.menu,name:ib4tech_minbar.menu_minbar_review
 msgid "Review"
 msgstr "المراجعة"
@@ -1535,6 +1637,11 @@ msgid "Schedule the first majlis"
 msgstr "أضف أول مجلس"
 
 #. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_ad__countdown
+msgid "Seconds Before Closing"
+msgstr "ثوانٍ قبل الإغلاق"
+
+#. module: ib4tech_minbar
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content__category_id
 #: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_content_search
 msgid "Section"
@@ -1551,6 +1658,7 @@ msgid "Send for Review"
 msgstr "إرسال للمراجعة"
 
 #. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_ad__sequence
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_city__sequence
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content__sequence
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content_category__sequence
@@ -1597,6 +1705,21 @@ msgid "Short line shown under the name."
 msgstr "سطر قصير يظهر تحت الاسم."
 
 #. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_ad__date_start
+msgid "Show From"
+msgstr "يُعرض من"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_ad__date_end
+msgid "Show Until"
+msgstr "يُعرض حتى"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_ad__frequency
+msgid "Shown"
+msgstr "يظهر"
+
+#. module: ib4tech_minbar
 #: model_terms:ir.ui.view,arch_db:ib4tech_minbar.res_config_settings_view_form
 msgid "Shown in the header and on the phone home screen."
 msgstr "يظهر في أعلى التطبيق وعلى الشاشة الرئيسية للهاتف."
@@ -1640,6 +1763,21 @@ msgid "Tagline"
 msgstr "الوصف القصير"
 
 #. module: ib4tech_minbar
+#: model:ir.model.fields,help:ib4tech_minbar.field_ib4tech_minbar_ad__entity_id
+msgid "Tapping the poster opens this directory page."
+msgstr "الضغط على البوستر يفتح هذه الصفحة من الدليل."
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,help:ib4tech_minbar.field_ib4tech_minbar_ad__majlis_id
+msgid "Tapping the poster opens this majlis."
+msgstr "الضغط على البوستر يفتح هذا المجلس."
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_ad__click_count
+msgid "Taps"
+msgstr "النقرات"
+
+#. module: ib4tech_minbar
 #: model:ir.model.fields.selection,name:ib4tech_minbar.selection__ib4tech_minbar_content_category__icon__taqib
 msgid "Taqibat"
 msgstr "تعقيبات"
@@ -1675,11 +1813,27 @@ msgid "The account %s is linked. An invitation email is sent to new owners."
 msgstr "تم ربط الحساب %s. تُرسل رسالة دعوة بالبريد لأصحاب الصفحات الجدد."
 
 #. module: ib4tech_minbar
+#: model:ir.model.constraint,message:ib4tech_minbar.constraint_ib4tech_minbar_ad_check_dates
+msgid "The announcement cannot end before it starts."
+msgstr "لا يمكن أن ينتهي الإعلان قبل أن يبدأ."
+
+#. module: ib4tech_minbar
 #: model:ir.model.fields,help:ib4tech_minbar.field_res_config_settings__minbar_mourning_theme
 #: model_terms:ir.ui.view,arch_db:ib4tech_minbar.res_config_settings_view_form
 msgid ""
 "The app turns black during Muharram, Safar and on martyrdom anniversaries."
 msgstr "تتّشح الواجهة بالسواد في محرم وصفر وذكريات الشهادة."
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,help:ib4tech_minbar.field_ib4tech_minbar_ad__countdown
+msgid "The close button appears after this many seconds."
+msgstr "يظهر زر الإغلاق بعد هذا العدد من الثواني."
+
+#. module: ib4tech_minbar
+#. odoo-python
+#: code:addons/ib4tech_minbar/models/minbar_ad.py:0
+msgid "The countdown must be between 0 and 15 seconds."
+msgstr "العدّ التنازلي يجب أن يكون بين 0 و15 ثانية."
 
 #. module: ib4tech_minbar
 #. odoo-python
@@ -1776,6 +1930,11 @@ msgid "Used for prayer times until the visitor picks a city."
 msgstr "تُستخدم لأوقات الصلاة إلى أن يختار الزائر مدينته."
 
 #. module: ib4tech_minbar
+#: model:ir.model.fields,help:ib4tech_minbar.field_ib4tech_minbar_ad__url
+msgid "Used when no majlis or page is chosen."
+msgstr "يُستخدم إذا لم يُختر مجلس أو صفحة."
+
+#. module: ib4tech_minbar
 #: model:ir.model.fields,help:ib4tech_minbar.field_ib4tech_minbar_majlis__location
 msgid "Venue or address if different from the organizer's address."
 msgstr "المكان أو العنوان إن اختلف عن عنوان الجهة المنظِّمة."
@@ -1785,6 +1944,11 @@ msgstr "المكان أو العنوان إن اختلف عن عنوان الج�
 #: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_entity_search
 msgid "Verified"
 msgstr "موثّق"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_ad__view_count
+msgid "Views"
+msgstr "المشاهدات"
 
 #. module: ib4tech_minbar
 #: model:ir.model.fields.selection,name:ib4tech_minbar.selection__ib4tech_minbar_entity__state__pending
@@ -1825,6 +1989,11 @@ msgstr "واتساب"
 #: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_majlis_form
 msgid "When & Where"
 msgstr "الزمان والمكان"
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_ad_form
+msgid "When a Visitor Taps It"
+msgstr "عند ضغط الزائر عليه"
 
 #. module: ib4tech_minbar
 #: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_majlis_form
@@ -1879,6 +2048,7 @@ msgid "e.g. Husseiniya of ..."
 msgstr "مثال: حسينية ..."
 
 #. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_ad_form
 #: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_majlis_form
 msgid "e.g. Majlis of the first night of Muharram"
 msgstr "مثال: مجلس الليلة الأولى من محرم"
@@ -1942,6 +2112,11 @@ msgid "إضافة مجلس"
 msgstr ""
 
 #. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_home
+msgid "إعلان"
+msgstr ""
+
+#. module: ib4tech_minbar
 #: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_majlis
 msgid "إعلان المجلس"
 msgstr ""
@@ -1949,6 +2124,11 @@ msgstr ""
 #. module: ib4tech_minbar
 #: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_home
 msgid "إغلاق"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_home
+msgid "إغلاق الإعلان"
 msgstr ""
 
 #. module: ib4tech_minbar

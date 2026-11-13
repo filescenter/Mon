@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_minbar_ad_list" model="ir.ui.view">
+        <field name="name">ib4tech.minbar.ad.list</field>
+        <field name="model">ib4tech.minbar.ad</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="date_start" optional="show"/>
+                <field name="date_end" optional="show"/>
+                <field name="city_ids" widget="many2many_tags" optional="show"/>
+                <field name="frequency" optional="hide"/>
+                <field name="view_count"/>
+                <field name="click_count"/>
+                <field name="active" widget="boolean_toggle"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_minbar_ad_search" model="ir.ui.view">
+        <field name="name">ib4tech.minbar.ad.search</field>
+        <field name="model">ib4tech.minbar.ad</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="city_ids"/>
+                <filter name="filter_archived" string="Archived" domain="[('active', '=', False)]"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="view_minbar_ad_form" model="ir.ui.view">
+        <field name="name">ib4tech.minbar.ad.form</field>
+        <field name="model">ib4tech.minbar.ad</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>
+                    <field name="active" invisible="1"/>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1><field name="name" placeholder="e.g. Majlis of the first night of Muharram"/></h1>
+                    </div>
+                    <group>
+                        <group string="Poster">
+                            <field name="image" widget="image" nolabel="1" colspan="2" options="{'size': [270, 340]}"/>
+                        </group>
+                        <group string="When a Visitor Taps It">
+                            <field name="majlis_id"/>
+                            <field name="entity_id" invisible="majlis_id"/>
+                            <field name="url" widget="url" invisible="majlis_id or entity_id"/>
+                        </group>
+                        <group string="Display">
+                            <field name="date_start"/>
+                            <field name="date_end"/>
+                            <field name="city_ids" widget="many2many_tags"/>
+                            <field name="frequency"/>
+                            <field name="countdown"/>
+                        </group>
+                        <group string="Results">
+                            <field name="view_count"/>
+                            <field name="click_count"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_minbar_ad" model="ir.actions.act_window">
+        <field name="name">Announcements</field>
+        <field name="res_model">ib4tech.minbar.ad</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Add the first announcement</p>
+            <p>Its poster opens over the home page of the app, with a close button after a short countdown.</p>
+        </field>
+    </record>
+</odoo>

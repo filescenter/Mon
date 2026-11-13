@@ -151,6 +151,47 @@ class TestMinbarApp(HttpCase, MinbarCommon):
         self.authenticate("minbar_owner", "owner-password-1")
         self.assertEqual(self.url_open(poster_url).status_code, 200)
 
+    def test_announcement(self):
+        Ad = self.env["ib4tech.minbar.ad"]
+        Ad.search([]).active = False  # sample announcements of the demo data
+        self.assertNotIn('id="mb-ad"', self.url_open("/app").text)
+        ad = Ad.create({"name": "Majlis Poster", "image": PIXEL, "majlis_id": self.majlis.id})
+        poster_url = "/app/image/ad/%d/poster" % ad.id
+        hit_url = self.base_url() + "/app/ad/%d/hit" % ad.id
+        home = self.url_open("/app").text
+        self.assertIn('id="mb-ad"', home)
+        self.assertIn(poster_url, home)
+        self.assertIn("/app/majlis/%d" % self.majlis.id, home)
+        self.assertEqual(self.url_open(poster_url).status_code, 200)
+        # Views and taps are counted by the app in the background.
+        self.assertEqual(self.opener.post(hit_url + "?kind=view").status_code, 204)
+        self.opener.post(hit_url + "?kind=view")
+        self.opener.post(hit_url + "?kind=click")
+        self.opener.post(hit_url + "?kind=other")
+        ad.invalidate_recordset()
+        self.assertEqual((ad.view_count, ad.click_count), (2, 1))
+        # Only in another city: hidden here, shown to a visitor of that city.
+        other_city = self.env["ib4tech.minbar.city"].create({"name": "Ad City"})
+        ad.city_ids = other_city
+        self.assertNotIn('id="mb-ad"', self.url_open("/app").text)
+        self.opener.cookies.set("minbar_city", str(other_city.id), domain=HOST, path="/app")
+        self.assertIn('id="mb-ad"', self.url_open("/app").text)
+        ad.city_ids = False
+        # Past its window: gone from the home page, the poster and the counters.
+        ad.date_end = self.start - timedelta(days=3)
+        self.assertNotIn('id="mb-ad"', self.url_open("/app").text)
+        self.assertEqual(self.url_open(poster_url).status_code, 404)
+        self.opener.post(hit_url + "?kind=view")
+        ad.invalidate_recordset()
+        self.assertEqual(ad.view_count, 2)
+        # A tap leads nowhere once the majlis is no longer public.
+        self.majlis.state = "cancelled"
+        self.assertEqual(ad._target_url(), "")
+        ad.url = "javascript:alert(1)"
+        self.assertEqual(ad._target_url(), "")
+        ad.url = "https://example.com/poster"
+        self.assertEqual(ad._target_url(), "https://example.com/poster")
+
     def test_reader_navigation(self):
         second = self.env["ib4tech.minbar.content"].create({
             "name": "Second Dua", "category_id": self.content.category_id.id, "sequence": 20})

@@ -4,4 +4,5 @@ from . import minbar_occasion
 from . import minbar_entity
 from . import minbar_majlis
 from . import minbar_content
+from . import minbar_ad
 from . import res_config_settings

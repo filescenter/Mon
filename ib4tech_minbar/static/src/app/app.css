@@ -730,6 +730,33 @@ select[multiple] option { padding: 8px; border-radius: 8px; }
 .mb-sheet__group { margin: 6px 0 0; font-size: .85rem; font-weight: 700; color: var(--ink-2); }
 .mb-sheet__list { display: flex; flex-wrap: wrap; gap: 8px; }
 
+/* ------------------------------ Announcement poster ------------------------------ */
+.mb-ad {
+    width: 100%; height: 100%; max-width: none; max-height: none;
+    margin: 0; padding: 20px; border: 0; background: transparent;
+}
+.mb-ad[open] { display: grid; place-items: center; }
+.mb-ad::backdrop { background: rgba(6, 10, 9, .82); }
+.mb-ad__box { display: flex; flex-direction: column; gap: 10px; max-width: min(92vw, 440px); }
+.mb-ad__bar { display: flex; align-items: center; justify-content: space-between; }
+.mb-ad__tag {
+    padding: 3px 12px; border-radius: 999px;
+    background: rgba(255, 255, 255, .16); color: #fdfaf2;
+    font-size: .8rem; font-weight: 500;
+}
+.mb-ad__close {
+    display: grid; place-items: center;
+    width: 44px; height: 44px; border-radius: 50%;
+    border: 2px solid #fdfaf2; background: #fdfaf2; color: #1c2421;
+    font-size: 1.6rem; font-weight: 700; line-height: 1; cursor: pointer;
+}
+.mb-ad__close:disabled {
+    background: rgba(255, 255, 255, .14); color: #fdfaf2; border-color: rgba(255, 255, 255, .55);
+    font-size: 1.1rem; font-variant-numeric: tabular-nums; cursor: default;
+}
+.mb-ad__link { display: block; border-radius: 22px; overflow: hidden; box-shadow: 0 24px 60px rgba(0, 0, 0, .5); }
+.mb-ad__link img { display: block; width: 100%; height: auto; max-height: calc(100dvh - 150px); object-fit: contain; background: #111; }
+
 /* ------------------------------ Days of mourning ------------------------------ */
 [data-mood="mourning"] .mb-hero {
     background:

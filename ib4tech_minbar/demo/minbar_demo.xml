@@ -126,5 +126,12 @@
             <field name="date_start" eval="(DateTime.today() + relativedelta(days=5)).strftime('%Y-%m-%d 16:00:00')"/>
             <field name="state">pending</field>
         </record>
+
+        <!-- Sample announcement: the poster opens over the home page of the app. -->
+        <record id="demo_ad_1" model="ib4tech.minbar.ad">
+            <field name="name">إعلان تجريبي: المجلس الأسبوعي</field>
+            <field name="image" type="base64" file="ib4tech_minbar/static/demo/poster.jpg"/>
+            <field name="majlis_id" ref="demo_majlis_1"/>
+        </record>
     </data>
 </odoo>

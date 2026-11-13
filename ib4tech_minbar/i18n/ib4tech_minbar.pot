@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 19.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-13 08:34+0000\n"
-"PO-Revision-Date: 2026-11-13 08:34+0000\n"
+"POT-Creation-Date: 2026-11-13 12:03+0000\n"
+"PO-Revision-Date: 2026-11-13 12:03+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -60,6 +60,11 @@ msgstr ""
 #. module: ib4tech_minbar
 #: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_city_picker
 msgid "<option value=\"gps\">موقعي الحالي</option>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_home
+msgid "<span class=\"mb-ad__tag\">إعلان</span>"
 msgstr ""
 
 #. module: ib4tech_minbar
@@ -159,6 +164,11 @@ msgstr ""
 #. module: ib4tech_minbar
 #: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_entity_form
 msgid "<span class=\"o_stat_text\">Open in App</span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_home
+msgid "<span data-ad-count=\"1\">3</span>"
 msgstr ""
 
 #. module: ib4tech_minbar
@@ -481,6 +491,7 @@ msgid "Action Needed"
 msgstr ""
 
 #. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_ad__active
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_city__active
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content__active
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content_category__active
@@ -488,6 +499,11 @@ msgstr ""
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_occasion__active
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_service__active
 msgid "Active"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.actions.act_window,help:ib4tech_minbar.action_minbar_ad
+msgid "Add the first announcement"
 msgstr ""
 
 #. module: ib4tech_minbar
@@ -519,6 +535,12 @@ msgid "Announcement picture of the majlis."
 msgstr ""
 
 #. module: ib4tech_minbar
+#: model:ir.actions.act_window,name:ib4tech_minbar.action_minbar_ad
+#: model:ir.ui.menu,name:ib4tech_minbar.menu_minbar_ad
+msgid "Announcements"
+msgstr ""
+
+#. module: ib4tech_minbar
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_res_config_settings__minbar_app_name
 #: model_terms:ir.ui.view,arch_db:ib4tech_minbar.res_config_settings_view_form
 msgid "App Name"
@@ -536,6 +558,8 @@ msgid "Approve & Publish"
 msgstr ""
 
 #. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_ad_form
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_ad_search
 #: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_content_form
 #: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_content_search
 #: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_entity_form
@@ -659,6 +683,7 @@ msgid "Create Owner Account"
 msgstr ""
 
 #. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_ad__create_uid
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_city__create_uid
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content__create_uid
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content_category__create_uid
@@ -671,6 +696,7 @@ msgid "Created by"
 msgstr ""
 
 #. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_ad__create_date
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_city__create_date
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content__create_date
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content_category__create_date
@@ -749,6 +775,12 @@ msgid "Discard"
 msgstr ""
 
 #. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_ad_form
+msgid "Display"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_ad__display_name
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_city__display_name
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content__display_name
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content_category__display_name
@@ -790,6 +822,11 @@ msgstr ""
 #. module: ib4tech_minbar
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis__date_end
 msgid "Ends At"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields.selection,name:ib4tech_minbar.selection__ib4tech_minbar_ad__frequency__session
+msgid "Every time the app is opened"
 msgstr ""
 
 #. module: ib4tech_minbar
@@ -920,6 +957,7 @@ msgid "Husseiniyas"
 msgstr ""
 
 #. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_ad__id
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_city__id
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content__id
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content_category__id
@@ -982,6 +1020,11 @@ msgid "Instagram"
 msgstr ""
 
 #. module: ib4tech_minbar
+#: model:ir.model.fields,help:ib4tech_minbar.field_ib4tech_minbar_ad__name
+msgid "Internal title, also read out by screen readers."
+msgstr ""
+
+#. module: ib4tech_minbar
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content__intro
 #: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_content_form
 msgid "Introduction"
@@ -991,6 +1034,13 @@ msgstr ""
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__message_is_follower
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis__message_is_follower
 msgid "Is Follower"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.actions.act_window,help:ib4tech_minbar.action_minbar_ad
+msgid ""
+"Its poster opens over the home page of the app, with a close button after a "
+"short countdown."
 msgstr ""
 
 #. module: ib4tech_minbar
@@ -1014,6 +1064,7 @@ msgid "Khatibs"
 msgstr ""
 
 #. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_ad__write_uid
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_city__write_uid
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content__write_uid
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content_category__write_uid
@@ -1026,6 +1077,7 @@ msgid "Last Updated by"
 msgstr ""
 
 #. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_ad__write_date
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_city__write_date
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content__write_date
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content_category__write_date
@@ -1041,6 +1093,11 @@ msgstr ""
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_city__latitude
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__latitude
 msgid "Latitude"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,help:ib4tech_minbar.field_ib4tech_minbar_ad__city_ids
+msgid "Leave empty to show the announcement everywhere."
 msgstr ""
 
 #. module: ib4tech_minbar
@@ -1174,6 +1231,11 @@ msgid "Messages"
 msgstr ""
 
 #. module: ib4tech_minbar
+#: model:ir.model,name:ib4tech_minbar.model_ib4tech_minbar_ad
+msgid "Minbar Announcement"
+msgstr ""
+
+#. module: ib4tech_minbar
 #: model:ir.model,name:ib4tech_minbar.model_ib4tech_minbar_city
 msgid "Minbar City"
 msgstr ""
@@ -1234,6 +1296,7 @@ msgid "Munajat"
 msgstr ""
 
 #. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_ad__name
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_city__name
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content_category__name
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__name
@@ -1305,6 +1368,16 @@ msgid "Occasion"
 msgstr ""
 
 #. module: ib4tech_minbar
+#: model:ir.model.fields.selection,name:ib4tech_minbar.selection__ib4tech_minbar_ad__frequency__daily
+msgid "Once a day"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields.selection,name:ib4tech_minbar.selection__ib4tech_minbar_ad__frequency__once
+msgid "Once only"
+msgstr ""
+
+#. module: ib4tech_minbar
 #. odoo-python
 #: code:addons/ib4tech_minbar/models/minbar_entity.py:0
 msgid "Only Minbar managers can grant owner accounts."
@@ -1317,6 +1390,11 @@ msgid "Only draft or rejected pages can be sent for review."
 msgstr ""
 
 #. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_ad__city_ids
+msgid "Only in Cities"
+msgstr ""
+
+#. module: ib4tech_minbar
 #. odoo-python
 #: code:addons/ib4tech_minbar/models/minbar_majlis.py:0
 msgid "Only the administration can change the status of a majlis."
@@ -1326,6 +1404,21 @@ msgstr ""
 #. odoo-python
 #: code:addons/ib4tech_minbar/models/minbar_entity.py:0
 msgid "Only the administration can change the status or the owner of a page."
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_ad__url
+msgid "Opens Link"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_ad__majlis_id
+msgid "Opens Majlis"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_ad__entity_id
+msgid "Opens Page"
 msgstr ""
 
 #. module: ib4tech_minbar
@@ -1404,7 +1497,9 @@ msgid "Portal account allowed to edit this page and publish its majalis."
 msgstr ""
 
 #. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_ad__image
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis__poster
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_ad_form
 msgid "Poster"
 msgstr ""
 
@@ -1504,6 +1599,11 @@ msgid "Repeated Majalis"
 msgstr ""
 
 #. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_ad_form
+msgid "Results"
+msgstr ""
+
+#. module: ib4tech_minbar
 #: model:ir.ui.menu,name:ib4tech_minbar.menu_minbar_review
 msgid "Review"
 msgstr ""
@@ -1530,6 +1630,11 @@ msgid "Schedule the first majlis"
 msgstr ""
 
 #. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_ad__countdown
+msgid "Seconds Before Closing"
+msgstr ""
+
+#. module: ib4tech_minbar
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content__category_id
 #: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_content_search
 msgid "Section"
@@ -1546,6 +1651,7 @@ msgid "Send for Review"
 msgstr ""
 
 #. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_ad__sequence
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_city__sequence
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content__sequence
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content_category__sequence
@@ -1592,6 +1698,21 @@ msgid "Short line shown under the name."
 msgstr ""
 
 #. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_ad__date_start
+msgid "Show From"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_ad__date_end
+msgid "Show Until"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_ad__frequency
+msgid "Shown"
+msgstr ""
+
+#. module: ib4tech_minbar
 #: model_terms:ir.ui.view,arch_db:ib4tech_minbar.res_config_settings_view_form
 msgid "Shown in the header and on the phone home screen."
 msgstr ""
@@ -1635,6 +1756,21 @@ msgid "Tagline"
 msgstr ""
 
 #. module: ib4tech_minbar
+#: model:ir.model.fields,help:ib4tech_minbar.field_ib4tech_minbar_ad__entity_id
+msgid "Tapping the poster opens this directory page."
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,help:ib4tech_minbar.field_ib4tech_minbar_ad__majlis_id
+msgid "Tapping the poster opens this majlis."
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_ad__click_count
+msgid "Taps"
+msgstr ""
+
+#. module: ib4tech_minbar
 #: model:ir.model.fields.selection,name:ib4tech_minbar.selection__ib4tech_minbar_content_category__icon__taqib
 msgid "Taqibat"
 msgstr ""
@@ -1670,10 +1806,26 @@ msgid "The account %s is linked. An invitation email is sent to new owners."
 msgstr ""
 
 #. module: ib4tech_minbar
+#: model:ir.model.constraint,message:ib4tech_minbar.constraint_ib4tech_minbar_ad_check_dates
+msgid "The announcement cannot end before it starts."
+msgstr ""
+
+#. module: ib4tech_minbar
 #: model:ir.model.fields,help:ib4tech_minbar.field_res_config_settings__minbar_mourning_theme
 #: model_terms:ir.ui.view,arch_db:ib4tech_minbar.res_config_settings_view_form
 msgid ""
 "The app turns black during Muharram, Safar and on martyrdom anniversaries."
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,help:ib4tech_minbar.field_ib4tech_minbar_ad__countdown
+msgid "The close button appears after this many seconds."
+msgstr ""
+
+#. module: ib4tech_minbar
+#. odoo-python
+#: code:addons/ib4tech_minbar/models/minbar_ad.py:0
+msgid "The countdown must be between 0 and 15 seconds."
 msgstr ""
 
 #. module: ib4tech_minbar
@@ -1771,6 +1923,11 @@ msgid "Used for prayer times until the visitor picks a city."
 msgstr ""
 
 #. module: ib4tech_minbar
+#: model:ir.model.fields,help:ib4tech_minbar.field_ib4tech_minbar_ad__url
+msgid "Used when no majlis or page is chosen."
+msgstr ""
+
+#. module: ib4tech_minbar
 #: model:ir.model.fields,help:ib4tech_minbar.field_ib4tech_minbar_majlis__location
 msgid "Venue or address if different from the organizer's address."
 msgstr ""
@@ -1779,6 +1936,11 @@ msgstr ""
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__is_verified
 #: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_entity_search
 msgid "Verified"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_ad__view_count
+msgid "Views"
 msgstr ""
 
 #. module: ib4tech_minbar
@@ -1819,6 +1981,11 @@ msgstr ""
 #. module: ib4tech_minbar
 #: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_majlis_form
 msgid "When & Where"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_ad_form
+msgid "When a Visitor Taps It"
 msgstr ""
 
 #. module: ib4tech_minbar
@@ -1874,6 +2041,7 @@ msgid "e.g. Husseiniya of ..."
 msgstr ""
 
 #. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_ad_form
 #: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_majlis_form
 msgid "e.g. Majlis of the first night of Muharram"
 msgstr ""
@@ -1937,6 +2105,11 @@ msgid "إضافة مجلس"
 msgstr ""
 
 #. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_home
+msgid "إعلان"
+msgstr ""
+
+#. module: ib4tech_minbar
 #: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_majlis
 msgid "إعلان المجلس"
 msgstr ""
@@ -1944,6 +2117,11 @@ msgstr ""
 #. module: ib4tech_minbar
 #: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_home
 msgid "إغلاق"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_home
+msgid "إغلاق الإعلان"
 msgstr ""
 
 #. module: ib4tech_minbar

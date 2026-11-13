@@ -897,6 +897,111 @@
         });
     }
 
+    // Announcement poster over the home page: a countdown first, then the close button.
+    function initAd() {
+        var dialog = $("#mb-ad");
+        if (!dialog || typeof dialog.showModal !== "function") {
+            return;
+        }
+        var ads = [];
+        try {
+            ads = JSON.parse(dialog.dataset.ads || "[]");
+        } catch (error) {
+            ads = [];
+        }
+        var today = new Date().toDateString();
+        function sessionSeen(id) {
+            try {
+                return sessionStorage.getItem("minbar.ad." + id) === "1";
+            } catch (error) {
+                return false;
+            }
+        }
+        var ad = ads.filter(function (item) {
+            if (sessionSeen(item.id)) {
+                return false;
+            }
+            var seen = store.get("ad." + item.id, null);
+            if (item.frequency === "once") {
+                return !seen;
+            }
+            if (item.frequency === "daily") {
+                return seen !== today;
+            }
+            return true;
+        })[0];
+        if (!ad) {
+            return;
+        }
+        var image = $("[data-ad-image]", dialog);
+        var link = $("[data-ad-link]", dialog);
+        var close = $("[data-ad-close]", dialog);
+        var count = $("[data-ad-count]", dialog);
+        var left = Math.max(parseInt(ad.seconds, 10) || 0, 0);
+        var timer = null;
+
+        function hit(kind) {
+            var url = "/app/ad/" + ad.id + "/hit?kind=" + kind;
+            if (navigator.sendBeacon) {
+                navigator.sendBeacon(url);
+            } else {
+                fetch(url, { method: "POST", keepalive: true }).catch(function () {});
+            }
+        }
+        function unlock() {
+            clearInterval(timer);
+            left = 0;
+            close.disabled = false;
+            count.textContent = "×";
+        }
+        function tick() {
+            if (left <= 0) {
+                unlock();
+            } else {
+                count.textContent = String(left);
+                left -= 1;
+            }
+        }
+        function open() {
+            try {
+                sessionStorage.setItem("minbar.ad." + ad.id, "1");
+            } catch (error) {
+                /* no session storage: the announcement may show again */
+            }
+            store.set("ad." + ad.id, today);
+            dialog.showModal();
+            hit("view");
+            tick();
+            timer = setInterval(tick, 1000);
+        }
+
+        image.alt = ad.title || "إعلان";
+        if (ad.url) {
+            link.href = ad.url;
+            if (/^https?:/i.test(ad.url)) {
+                link.target = "_blank";
+                link.rel = "noopener noreferrer";
+            }
+            link.addEventListener("click", function () { hit("click"); });
+        }
+        close.addEventListener("click", function () { dialog.close(); });
+        // Escape and taps outside the poster only work once the countdown is over.
+        dialog.addEventListener("cancel", function (event) {
+            if (close.disabled) {
+                event.preventDefault();
+            }
+        });
+        dialog.addEventListener("click", function (event) {
+            if (event.target === dialog && !close.disabled) {
+                dialog.close();
+            }
+        });
+        dialog.addEventListener("close", function () { clearInterval(timer); });
+        // The poster opens only once its picture is ready, shortly after the page.
+        image.addEventListener("load", function () { setTimeout(open, 500); });
+        image.src = ad.image;
+    }
+
     function initServiceWorker() {
         if (!("serviceWorker" in navigator) || location.protocol === "file:") {
             return;
@@ -923,6 +1028,7 @@
     initBack();
     initReader();
     initInstall();
+    initAd();
     initOffline();
     initServiceWorker();
     void page;

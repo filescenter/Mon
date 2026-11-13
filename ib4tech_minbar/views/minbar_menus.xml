@@ -9,6 +9,10 @@
     <menuitem id="menu_minbar_majlis" name="Majalis" parent="menu_minbar_root"
               action="action_minbar_majlis" sequence="20"/>
 
+    <menuitem id="menu_minbar_ad" name="Announcements" parent="menu_minbar_root"
+              action="action_minbar_ad" sequence="25"
+              groups="ib4tech_minbar.group_minbar_editor"/>
+
     <menuitem id="menu_minbar_review" name="Review" parent="menu_minbar_root" sequence="30"
               groups="ib4tech_minbar.group_minbar_editor"/>
     <menuitem id="menu_minbar_review_entity" name="Pages" parent="menu_minbar_review"

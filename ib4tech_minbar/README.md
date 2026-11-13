@@ -3,7 +3,7 @@
 Odoo 19 module: a community platform for husseini services with an installable
 mobile web app (PWA) for anonymous visitors.
 
-- **Version:** 19.0.1.1.0
+- **Version:** 19.0.1.2.0
 - **Depends:** `mail`, `portal` (no `website` needed)
 - **License:** LGPL-3
 
@@ -13,6 +13,7 @@ mobile web app (PWA) for anonymous visitors.
 | --- | --- |
 | Directory | Pages for husseiniyas, mawakib, radoods and khatibs: picture, cover, city, map, contact channels, services offered. |
 | Majalis | Schedule by city, day and audience, announcement poster, live-stream link, calendar reminder (`.ics`), daily repetition (e.g. the ten nights of Muharram). The visitor's city comes first. |
+| Announcements | A poster opens over the home page when the app starts, with a close button after a countdown (3 seconds by default). Shown in a date window, optionally only in some cities, with view and tap counters. |
 | Library | Duas, ziyarat, taqibat in sections, with a reader (font size, screen kept on) and offline reading. |
 | Tools | Prayer times (Jafari / Leva method), qibla compass, tasbih counter, hijri date and occasions. |
 | Owners | Free portal accounts: each owner edits their own page and submits majalis; the administration approves. |
