@@ -2,6 +2,11 @@ from datetime import timedelta
 
 from odoo import http
 from odoo.tests import HttpCase, tagged
+from odoo.tests.common import HOST
+
+# Smallest valid PNG, used as a poster.
+PIXEL = (
+    "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==")
 
 from .common import MinbarCommon
 
@@ -14,6 +19,8 @@ class TestMinbarApp(HttpCase, MinbarCommon):
         super().setUpClass()
         cls.setup_minbar()
         cls.owner.password = "owner-password-1"
+        # Visitors who picked no city see the default one first.
+        cls.env["ir.config_parameter"].set_param("ib4tech_minbar.default_city_id", str(cls.city.id))
         category = cls.env["ib4tech.minbar.content.category"].create({"name": "Test Duas"})
         cls.content = cls.env["ib4tech.minbar.content"].create({
             "name": "Visible Dua", "category_id": category.id, "body": "<p>Text</p>"})
@@ -103,6 +110,54 @@ class TestMinbarApp(HttpCase, MinbarCommon):
         # Bots filling the hidden field are silently ignored.
         self.url_open("/app/join", data=dict(data, name="Bot Page", nickname="x"))
         self.assertFalse(Entity.search([("name", "=", "Bot Page")]))
+
+    def test_visitor_city_comes_first(self):
+        other_city = self.env["ib4tech.minbar.city"].create({"name": "Far City"})
+        far_page = self.env["ib4tech.minbar.entity"].create({
+            "name": "Far Husseiniya", "entity_type": "husseiniya", "state": "published",
+            "city_id": other_city.id})
+        self.env["ib4tech.minbar.majlis"].create({
+            "name": "Far Majlis", "entity_id": far_page.id, "date_start": self.start,
+            "state": "published"})
+        self.env["ir.config_parameter"].set_param("ib4tech_minbar.default_city_id", str(self.city.id))
+        # No choice yet: the default city decides.
+        home = self.url_open("/app").text
+        self.assertIn("Published Majlis", home)
+        self.assertNotIn("Far Majlis", home)
+        self.assertNotIn("Far Majlis", self.url_open("/app/majalis").text)
+        # An explicit "all cities" filter and a search both look everywhere.
+        self.assertIn("Far Majlis", self.url_open("/app/majalis?city=").text)
+        self.assertIn("Far Majlis", self.url_open("/app/majalis?q=Far").text)
+        # The city picked in the app wins over the default one.
+        self.opener.cookies.set("minbar_city", str(other_city.id), domain=HOST, path="/app")
+        home = self.url_open("/app").text
+        self.assertIn("Far Majlis", home)
+        self.assertNotIn("Published Majlis", home)
+
+    def test_poster_and_link_preview(self):
+        poster_url = "/app/image/majlis/%d/poster" % self.majlis.id
+        self.assertEqual(self.url_open(poster_url).status_code, 404)
+        self.majlis.poster = PIXEL
+        self.assertTrue(self.majlis.has_poster)
+        response = self.url_open(poster_url + "?size=thumb")
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue(response.headers["Content-Type"].startswith("image/"))
+        page = self.url_open("/app/majlis/%d" % self.majlis.id).text
+        self.assertIn('property="og:image"', page)
+        self.assertIn(poster_url, page)
+        # The poster of a majlis that is not public stays hidden.
+        self.majlis.state = "pending"
+        self.assertEqual(self.url_open(poster_url).status_code, 404)
+        self.authenticate("minbar_owner", "owner-password-1")
+        self.assertEqual(self.url_open(poster_url).status_code, 200)
+
+    def test_reader_navigation(self):
+        second = self.env["ib4tech.minbar.content"].create({
+            "name": "Second Dua", "category_id": self.content.category_id.id, "sequence": 20})
+        first_page = self.url_open("/app/read/%d" % self.content.id).text
+        self.assertIn("/app/read/%d" % second.id, first_page)
+        self.assertNotIn("/app/read/%d" % self.hidden_content.id, first_page)
+        self.assertIn("/app/read/%d" % self.content.id, self.url_open("/app/read/%d" % second.id).text)
 
     def test_owner_dashboard_requires_login(self):
         response = self.url_open("/app/my", allow_redirects=False)

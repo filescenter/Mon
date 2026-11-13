@@ -17,6 +17,11 @@ class ResConfigSettings(models.TransientModel):
     minbar_default_city_id = fields.Many2one(
         "ib4tech.minbar.city", string="Default City",
         config_parameter="ib4tech_minbar.default_city_id")
+    minbar_mourning_theme = fields.Boolean(
+        string="Mourning colours on days of mourning",
+        config_parameter="ib4tech_minbar.mourning_theme",
+        help="The app turns black during Muharram, Safar and on martyrdom anniversaries.",
+    )
     minbar_auto_publish_verified = fields.Boolean(
         string="Auto-publish majalis of verified pages",
         config_parameter="ib4tech_minbar.auto_publish_verified",

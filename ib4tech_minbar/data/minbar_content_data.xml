@@ -3,7 +3,7 @@
     <data noupdate="1">
         <record id="ir_config_app_name" model="ir.config_parameter">
             <field name="key">ib4tech_minbar.app_name</field>
-            <field name="value">المنبر</field>
+            <field name="value">الصدّيقة</field>
         </record>
         <record id="ir_config_tz" model="ir.config_parameter">
             <field name="key">ib4tech_minbar.tz</field>
@@ -12,6 +12,11 @@
         <record id="ir_config_hijri_offset" model="ir.config_parameter">
             <field name="key">ib4tech_minbar.hijri_offset</field>
             <field name="value">0</field>
+        </record>
+
+        <record id="ir_config_mourning_theme" model="ir.config_parameter">
+            <field name="key">ib4tech_minbar.mourning_theme</field>
+            <field name="value">True</field>
         </record>
 
         <record id="content_category_dua" model="ib4tech.minbar.content.category">

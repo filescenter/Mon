@@ -1,11 +1,11 @@
 {
-    "name": "IB4Tech Minbar",
-    "version": "19.0.1.0.0",
+    "name": "IB4Tech Al-Siddiqa",
+    "version": "19.0.1.1.0",
     "category": "Community",
     "summary": "Husseiniyas, mawakib, radoods, majalis schedule and devotional library with a mobile PWA",
     "description": """
-IB4Tech Minbar
-==============
+IB4Tech Al-Siddiqa (الصدّيقة)
+=============================
 Community platform for husseini services:
 
 * Directory of husseiniyas, mawakib, radoods and khatibs, each with its own page.

@@ -1,4 +1,4 @@
-/* IB4Tech Minbar service worker: makes the app installable and readable offline.
+/* IB4Tech Al-Siddiqa service worker: makes the app installable and readable offline.
  * Served from /app/sw.js with the module version substituted in. */
 const VERSION = "__VERSION__";
 const STATIC_CACHE = "minbar-static-" + VERSION;

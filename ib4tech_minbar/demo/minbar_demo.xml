@@ -1,28 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data noupdate="1">
-        <!-- Sample pages: fictional names, only to show how the app looks. -->
+        <!-- Sample pages: fictional names and numbers, only to show how the app looks. -->
         <record id="demo_husseiniya_1" model="ib4tech.minbar.entity">
-            <field name="name">حسينية الإمام الحسين (ع) - تجريبي</field>
+            <field name="name">حسينية الزهراء (ع) - تجريبي</field>
             <field name="entity_type">husseiniya</field>
             <field name="tagline">مجالس أسبوعية كل ليلة جمعة</field>
             <field name="description">حسينية تجريبية لعرض شكل الصفحة في التطبيق.
-تقام فيها المجالس الحسينية في المناسبات وليالي الجمعة.</field>
-            <field name="city_id" ref="city_qalat_sukkar"/>
-            <field name="address">قلعة سكر - الشارع العام</field>
-            <field name="latitude">31.8617</field>
-            <field name="longitude">46.0786</field>
+تقام فيها المجالس الحسينية في المناسبات وليالي الجمعة، ودروس للناشئة بعد صلاة المغرب.</field>
+            <field name="city_id" ref="city_sadr_city"/>
+            <field name="address">مدينة الصدر - قطاع 33</field>
+            <field name="latitude">33.389</field>
+            <field name="longitude">44.458</field>
             <field name="phone">07800000001</field>
             <field name="whatsapp">07800000001</field>
+            <field name="telegram">example_husseiniya</field>
             <field name="founded_year">1998</field>
+            <field name="image_1920" type="base64" file="ib4tech_minbar/static/demo/avatar-husseiniya.jpg"/>
+            <field name="cover_image" type="base64" file="ib4tech_minbar/static/demo/cover-green.jpg"/>
             <field name="is_verified" eval="True"/>
             <field name="state">published</field>
         </record>
         <record id="demo_husseiniya_2" model="ib4tech.minbar.entity">
             <field name="name">حسينية أهل البيت (ع) - تجريبي</field>
             <field name="entity_type">husseiniya</field>
-            <field name="city_id" ref="city_nasiriyah"/>
-            <field name="address">الناصرية - حي الشهداء</field>
+            <field name="city_id" ref="city_shula"/>
+            <field name="address">الشعلة - الشارع العام</field>
             <field name="phone">07800000002</field>
             <field name="state">published</field>
         </record>
@@ -30,18 +33,23 @@
             <field name="name">موكب أنصار الحسين (ع) - تجريبي</field>
             <field name="entity_type">mawkib</field>
             <field name="tagline">خدمة زوار الأربعين على طريق يا حسين</field>
-            <field name="description">موكب تجريبي يقدم الطعام والمبيت للزائرين في موسم الأربعين.</field>
-            <field name="city_id" ref="city_qalat_sukkar"/>
+            <field name="description">موكب تجريبي من أهالي مدينة الصدر يقدم الطعام والمبيت والطبابة للزائرين في موسم الأربعين.</field>
+            <field name="city_id" ref="city_sadr_city"/>
+            <field name="address">مدينة الصدر - قطاع 12</field>
             <field name="phone">07800000003</field>
+            <field name="whatsapp">07800000003</field>
             <field name="telegram">example_mawkib</field>
+            <field name="instagram">example_mawkib</field>
             <field name="service_ids" eval="[(6, 0, [ref('service_food'), ref('service_drinks'), ref('service_lodging'), ref('service_medical')])]"/>
+            <field name="image_1920" type="base64" file="ib4tech_minbar/static/demo/avatar-mawkib.jpg"/>
+            <field name="cover_image" type="base64" file="ib4tech_minbar/static/demo/cover-night.jpg"/>
             <field name="is_verified" eval="True"/>
             <field name="state">published</field>
         </record>
         <record id="demo_mawkib_2" model="ib4tech.minbar.entity">
             <field name="name">موكب شباب القاسم (ع) - تجريبي</field>
             <field name="entity_type">mawkib</field>
-            <field name="city_id" ref="city_rifai"/>
+            <field name="city_id" ref="city_baladiyat"/>
             <field name="service_ids" eval="[(6, 0, [ref('service_food'), ref('service_rest')])]"/>
             <field name="state">published</field>
         </record>
@@ -49,8 +57,9 @@
             <field name="name">الرادود التجريبي الأول</field>
             <field name="entity_type">radood</field>
             <field name="tagline">رادود حسيني</field>
-            <field name="city_id" ref="city_nasiriyah"/>
+            <field name="city_id" ref="city_sadr_city"/>
             <field name="instagram">example_radood</field>
+            <field name="image_1920" type="base64" file="ib4tech_minbar/static/demo/avatar-radood.jpg"/>
             <field name="is_verified" eval="True"/>
             <field name="state">published</field>
         </record>
@@ -64,13 +73,13 @@
             <field name="name">الخطيب التجريبي</field>
             <field name="entity_type">khatib</field>
             <field name="tagline">خطيب المنبر الحسيني</field>
-            <field name="city_id" ref="city_karbala"/>
+            <field name="city_id" ref="city_kadhimiya"/>
             <field name="state">published</field>
         </record>
         <record id="demo_pending_1" model="ib4tech.minbar.entity">
             <field name="name">موكب بانتظار المراجعة - تجريبي</field>
             <field name="entity_type">mawkib</field>
-            <field name="city_id" ref="city_shatra"/>
+            <field name="city_id" ref="city_shaab"/>
             <field name="contact_name">مسؤول تجريبي</field>
             <field name="contact_phone">07800000009</field>
             <field name="state">pending</field>
@@ -81,6 +90,7 @@
             <field name="name">المجلس الأسبوعي</field>
             <field name="entity_id" ref="demo_husseiniya_1"/>
             <field name="participant_ids" eval="[(6, 0, [ref('demo_radood_1'), ref('demo_khatib_1')])]"/>
+            <field name="poster" type="base64" file="ib4tech_minbar/static/demo/poster.jpg"/>
             <field name="date_start" eval="(DateTime.today() + relativedelta(days=0)).strftime('%Y-%m-%d 16:30:00')"/>
             <field name="date_end" eval="(DateTime.today() + relativedelta(days=0)).strftime('%Y-%m-%d 18:30:00')"/>
             <field name="state">published</field>
@@ -97,14 +107,14 @@
             <field name="name">أمسية حسينية</field>
             <field name="entity_id" ref="demo_mawkib_1"/>
             <field name="participant_ids" eval="[(6, 0, [ref('demo_radood_2')])]"/>
-            <field name="location">ساحة الموكب</field>
+            <field name="location">ساحة الموكب - قطاع 12</field>
             <field name="live_url">https://example.com/live</field>
             <field name="date_start" eval="(DateTime.today() + relativedelta(days=1)).strftime('%Y-%m-%d 17:00:00')"/>
             <field name="date_end" eval="(DateTime.today() + relativedelta(days=1)).strftime('%Y-%m-%d 19:00:00')"/>
             <field name="state">published</field>
         </record>
         <record id="demo_majlis_4" model="ib4tech.minbar.majlis">
-            <field name="name">مجلس الناصرية الأسبوعي</field>
+            <field name="name">مجلس الشعلة الأسبوعي</field>
             <field name="entity_id" ref="demo_husseiniya_2"/>
             <field name="participant_ids" eval="[(6, 0, [ref('demo_radood_1')])]"/>
             <field name="date_start" eval="(DateTime.today() + relativedelta(days=3)).strftime('%Y-%m-%d 16:00:00')"/>

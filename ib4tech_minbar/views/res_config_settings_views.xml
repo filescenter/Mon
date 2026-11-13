@@ -7,11 +7,11 @@
         <field name="inherit_id" ref="base.res_config_settings_view_form"/>
         <field name="arch" type="xml">
             <xpath expr="//form" position="inside">
-                <app data-string="Minbar" string="Minbar" name="ib4tech_minbar"
+                <app data-string="Al-Siddiqa" string="Al-Siddiqa" name="ib4tech_minbar"
                      groups="ib4tech_minbar.group_minbar_manager">
                     <block title="Mobile App" name="minbar_app">
                         <setting string="App Name" help="Shown in the header and on the phone home screen.">
-                            <field name="minbar_app_name" placeholder="المنبر"/>
+                            <field name="minbar_app_name" placeholder="الصدّيقة"/>
                         </setting>
                         <setting string="Timezone" help="Majalis times are shown in this timezone.">
                             <field name="minbar_tz"/>
@@ -22,6 +22,9 @@
                         <setting string="Hijri Date Adjustment"
                                  help="Shift the computed hijri date to follow the local moon sighting.">
                             <field name="minbar_hijri_offset"/> days
+                        </setting>
+                        <setting help="The app turns black during Muharram, Safar and on martyrdom anniversaries.">
+                            <field name="minbar_mourning_theme"/>
                         </setting>
                     </block>
                     <block title="Owners" name="minbar_owners">

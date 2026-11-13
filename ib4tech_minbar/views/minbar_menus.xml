@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <menuitem id="menu_minbar_root" name="Minbar" sequence="45"
+    <menuitem id="menu_minbar_root" name="Al-Siddiqa" sequence="45"
               web_icon="ib4tech_minbar,static/description/icon.png"
               groups="base.group_user"/>
 

@@ -1,4 +1,4 @@
-/* IB4Tech Minbar: public mobile app. Arabic, right-to-left, light and dark. */
+/* IB4Tech Al-Siddiqa: public mobile app. Arabic, right-to-left, light and dark. */
 
 @font-face {
     font-family: "Tajawal";
@@ -102,6 +102,10 @@
     }
 }
 
+/* Pages change with a short cross-fade while the header and the tab bar stay put. */
+@view-transition { navigation: auto; }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: .18s; }
+
 *, *::before, *::after { box-sizing: border-box; }
 
 html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
@@ -150,7 +154,17 @@ button, input, select, textarea { font: inherit; color: inherit; }
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--line);
 }
+.mb-bar { view-transition-name: mb-bar; }
 .mb-bar__space { flex: 1; }
+.mb-citychip {
+    display: inline-flex; align-items: center; gap: 4px;
+    max-width: 46vw; min-height: 36px; padding: 4px 12px 4px 10px;
+    border: 1px solid var(--line); border-radius: 999px;
+    background: var(--surface); color: var(--ink);
+    font-size: .88rem; font-weight: 500; cursor: pointer;
+}
+.mb-citychip .ic { width: 16px; height: 16px; color: var(--brand); }
+.mb-citychip span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .mb-bar__btn {
     display: grid; place-items: center;
     width: 44px; height: 44px; border-radius: 50%;
@@ -192,9 +206,10 @@ button, input, select, textarea { font: inherit; color: inherit; }
     display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
     color: var(--ink-2); font-size: .75rem; font-weight: 500;
 }
-.mb-tab .ic { width: 24px; height: 24px; }
+.mb-tabs { view-transition-name: mb-tabs; }
+.mb-tab .ic { width: 56px; height: 30px; padding: 3px 16px; border-radius: 999px; }
 .mb-tab.is-active { color: var(--brand); font-weight: 700; }
-.mb-tab.is-active .ic { stroke-width: 2.3; }
+.mb-tab.is-active .ic { stroke-width: 2.2; background: var(--brand-soft); }
 
 /* ------------------------------ Typography ------------------------------ */
 .mb-h2 { font-size: 1.05rem; font-weight: 700; }
@@ -407,6 +422,13 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .mb-majlis__meta { display: flex; align-items: center; gap: 6px; color: var(--ink-2); font-size: .86rem; }
 .mb-majlis__meta .ic { width: 16px; height: 16px; }
 .mb-majlis__tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+.mb-majlis__thumb {
+    flex: none; align-self: center;
+    width: 58px; height: 58px; border-radius: 12px; object-fit: cover;
+    background: var(--surface-2);
+}
+.mb-poster { display: block; border-radius: var(--radius); overflow: hidden; background: var(--surface-2); }
+.mb-poster img { width: 100%; max-height: 70vh; object-fit: contain; }
 .mb-majlis.is-live .mb-majlis__time { background: var(--danger-soft); }
 .mb-majlis.is-live .mb-majlis__time strong { color: var(--danger); }
 
@@ -550,7 +572,15 @@ select[multiple] option { padding: 8px; border-radius: 8px; }
         linear-gradient(150deg, #0c4a3f, #14705f);
     overflow: hidden;
 }
-.mb-profile__cover img { width: 100%; height: 100%; object-fit: cover; }
+.mb-profile__cover { position: relative; }
+.mb-profile__cover::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background-image:
+        repeating-linear-gradient(45deg, rgba(255, 255, 255, .06) 0 1px, transparent 1px 22px),
+        repeating-linear-gradient(-45deg, rgba(255, 255, 255, .06) 0 1px, transparent 1px 22px);
+}
+.mb-profile__cover img { position: relative; z-index: 1; width: 100%; height: 100%; object-fit: cover; }
+.mb-profile__head { position: relative; z-index: 2; }
 .mb-profile__head { display: flex; align-items: flex-start; gap: 14px; margin-top: -58px; }
 .mb-profile__head > div { padding-top: 54px; min-width: 0; }
 .mb-profile__name { font-size: 1.3rem; line-height: 1.4; }
@@ -597,6 +627,11 @@ select[multiple] option { padding: 8px; border-radius: 8px; }
 .mb-reader__body p { margin: 0 0 .7em; }
 .mb-reader__body p:last-child { margin-bottom: 0; }
 .mb-reader__source { color: var(--ink-2); font-size: .85rem; text-align: center; }
+.mb-reader__nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.mb-reader__nav .mb-btn { min-width: 0; }
+.mb-reader__nav .mb-btn span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.mb-reader__nav .mb-btn:last-child { justify-content: flex-end; }
+.mb-reader__nav .mb-btn:first-child { justify-content: flex-start; }
 
 /* ------------------------------ Prayer times ------------------------------ */
 .mb-daynav { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
@@ -675,6 +710,43 @@ select[multiple] option { padding: 8px; border-radius: 8px; }
 .mb-checks input { width: 20px; height: 20px; accent-color: var(--brand); }
 .mb-form__trap { position: absolute; inset-inline-start: -9999px; }
 
+/* ------------------------------ City sheet ------------------------------ */
+.mb-sheet {
+    position: fixed; inset: auto 0 0 0; margin: 0 auto;
+    width: 100%; max-width: 720px; max-height: 82dvh;
+    padding: 18px 16px calc(18px + env(safe-area-inset-bottom));
+    border: 0; border-radius: 22px 22px 0 0;
+    background: var(--bg); color: var(--ink);
+    box-shadow: 0 -12px 40px rgba(0, 0, 0, .25);
+}
+.mb-sheet[open] { display: flex; flex-direction: column; gap: 12px; }
+.mb-sheet::backdrop { background: rgba(10, 16, 14, .55); }
+.mb-sheet__head { display: flex; align-items: center; justify-content: space-between; }
+.mb-sheet__close {
+    width: 40px; height: 40px; border: 0; border-radius: 50%;
+    background: var(--surface-2); color: var(--ink); font-size: 1.4rem; line-height: 1; cursor: pointer;
+}
+.mb-sheet__body { overflow-y: auto; display: flex; flex-direction: column; gap: 10px; padding-bottom: 4px; }
+.mb-sheet__group { margin: 6px 0 0; font-size: .85rem; font-weight: 700; color: var(--ink-2); }
+.mb-sheet__list { display: flex; flex-wrap: wrap; gap: 8px; }
+
+/* ------------------------------ Days of mourning ------------------------------ */
+[data-mood="mourning"] .mb-hero {
+    background:
+        radial-gradient(circle at 12% -10%, rgba(176, 38, 46, .5), transparent 48%),
+        linear-gradient(150deg, #0a0a0b 0%, #161113 52%, #2a1216 100%);
+}
+[data-mood="mourning"] .mb-hero__occasion {
+    background: rgba(176, 38, 46, .28); border-color: rgba(214, 84, 90, .6); color: #f6c9cb;
+}
+[data-mood="mourning"] .mb-logo { background: #141112; color: #f1e6e6; }
+[data-mood="mourning"] .mb-profile__cover {
+    background:
+        radial-gradient(circle at 15% 0%, rgba(176, 38, 46, .45), transparent 50%),
+        linear-gradient(150deg, #0a0a0b, #2a1216);
+}
+[data-mood="mourning"] .mb-counter { background: radial-gradient(circle at 30% 20%, #3a1a1e, #0a0a0b); }
+
 /* ------------------------------ Wider screens ------------------------------ */
 @media (min-width: 560px) {
     .mb-tiles { gap: 14px; }
@@ -690,4 +762,5 @@ select[multiple] option { padding: 8px; border-radius: 8px; }
 
 @media (prefers-reduced-motion: reduce) {
     * { transition: none !important; scroll-behavior: auto !important; }
+    ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none !important; }
 }

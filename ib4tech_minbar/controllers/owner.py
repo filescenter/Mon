@@ -168,6 +168,9 @@ class MinbarOwner(http.Controller):
             if not error:
                 try:
                     with env.cr.savepoint():
+                        poster = self._read_upload("poster")
+                        if poster:
+                            vals["poster"] = poster
                         if majlis:
                             majlis.write(vals)
                         else:
@@ -179,6 +182,8 @@ class MinbarOwner(http.Controller):
                     error = "ليست لديك صلاحية لنشر مجلس على هذه الصفحة."
                 except (UserError, ValidationError) as exc:
                     error = str(exc.args[0]) if exc.args else "تعذر حفظ المجلس."
+                except ValueError:
+                    error = "تعذر قراءة صورة الإعلان، جرّب صورة أخرى."
         local = {}
         if majlis:
             start = to_local(majlis.date_start, tz)

@@ -8,7 +8,13 @@
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
         <title><t t-if="title"><t t-out="title"/> · </t><t t-out="app_name"/></title>
-        <meta name="description" content="مواعيد المجالس، دليل الحسينيات والمواكب والرواديد، الأدعية والزيارات وأوقات الصلاة."/>
+        <meta name="description" t-att-content="og_description"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:site_name" t-att-content="app_name"/>
+        <meta property="og:title" t-att-content="title or app_name"/>
+        <meta property="og:description" t-att-content="og_description"/>
+        <meta property="og:image" t-att-content="og_image"/>
+        <meta name="twitter:card" content="summary"/>
         <meta name="theme-color" content="#0f5a4c" media="(prefers-color-scheme: light)"/>
         <meta name="theme-color" content="#0e1513" media="(prefers-color-scheme: dark)"/>
         <meta name="mobile-web-app-capable" content="yes"/>
@@ -32,11 +38,14 @@
                 </t>
                 <t t-else="">
                     <a class="mb-bar__brand" href="/app">
-                        <span class="mb-logo"><svg class="ic"><use href="#i-minbar"/></svg></span>
+                        <span class="mb-logo"><svg class="ic"><use href="#i-dome"/></svg></span>
                         <span><t t-out="app_name"/></span>
                     </a>
                 </t>
                 <span class="mb-bar__space"/>
+                <button t-if="not back" type="button" class="mb-citychip" data-city-open="1" aria-haspopup="dialog">
+                    <svg class="ic"><use href="#i-pin"/></svg><span data-city-name="1">المدينة</span>
+                </button>
                 <a class="mb-bar__btn" href="/app/favorites" aria-label="المفضلة">
                     <svg class="ic"><use href="#i-heart"/></svg>
                 </a>
@@ -64,6 +73,25 @@
                 </a>
             </nav>
         </div>
+        <dialog class="mb-sheet" id="mb-city-sheet" aria-labelledby="mb-city-title">
+            <div class="mb-sheet__head">
+                <h2 class="mb-h2" id="mb-city-title">اختر مدينتك</h2>
+                <button type="button" class="mb-sheet__close" data-sheet-close="1" aria-label="إغلاق">×</button>
+            </div>
+            <p class="mb-note">تُعرض مجالس مدينتك أولاً، وتُحسب أوقات الصلاة عليها.</p>
+            <button type="button" class="mb-btn mb-btn--soft mb-btn--block" data-city-pick="gps">
+                <svg class="ic"><use href="#i-pin"/></svg>استخدم موقعي الحالي
+            </button>
+            <div class="mb-sheet__body">
+                <t t-foreach="city_groups" t-as="group">
+                    <h3 class="mb-sheet__group"><t t-out="group['name'] or 'أخرى'"/></h3>
+                    <div class="mb-sheet__list">
+                        <button t-foreach="group['cities']" t-as="c" type="button" class="mb-chip"
+                                t-att-data-city-pick="c.id"><t t-out="c.name"/></button>
+                    </div>
+                </t>
+            </div>
+        </dialog>
         <div class="mb-toast" id="mb-toast" role="status" aria-live="polite"/>
         <script t-attf-src="/ib4tech_minbar/static/src/app/app.js?v=#{asset_version}" defer="defer"/>
     </body>
@@ -110,6 +138,14 @@
             <symbol id="i-text" viewBox="0 0 24 24"><path d="M5 7V5h14v2M12 5v14M9 19h6"/></symbol>
             <symbol id="i-install" viewBox="0 0 24 24"><path d="M7 3h10a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zM12 8v6M9.500 11.500L12 14l2.500-2.500M10 18h4"/></symbol>
         </svg>
+    </template>
+
+    <!-- Options of a city drop-down, grouped by governorate. -->
+    <template id="app_city_options" name="Minbar App: City Options">
+        <optgroup t-foreach="city_groups" t-as="group" t-att-label="group['name'] or 'أخرى'">
+            <option t-foreach="group['cities']" t-as="c" t-att-value="c.id"
+                    t-att-selected="str(c.id) == str(selected_city)"><t t-out="c.name"/></option>
+        </optgroup>
     </template>
 
     <!-- Round picture of a directory page, falling back to the icon of its type. -->
@@ -163,6 +199,8 @@
                     <span t-if="card['rec'].live_url" class="mb-tag">بث مباشر</span>
                 </span>
             </span>
+            <img t-if="card['rec'].has_poster" class="mb-majlis__thumb" loading="lazy" alt=""
+                 t-attf-src="/app/image/majlis/#{card['rec'].id}/poster?size=thumb&amp;u=#{int(card['rec'].write_date.timestamp())}"/>
         </a>
     </template>
 

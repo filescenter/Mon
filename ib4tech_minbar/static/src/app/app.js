@@ -1,4 +1,4 @@
-/* IB4Tech Minbar: behaviour of the public mobile app (no framework, no build step). */
+/* IB4Tech Al-Siddiqa: behaviour of the public mobile app (no framework, no build step). */
 (function () {
     "use strict";
 
@@ -130,6 +130,16 @@
         setText('[data-hijri="full"]', hijriLabel(today));
         setText('[data-gregorian="full"]', gregorianLabel(today));
         var todays = occasionsOn(today);
+        // Muharram, Safar and martyrdom anniversaries: the app dresses in black.
+        var month = hijri(today).month;
+        var isMourning = month === 1 || month === 2
+            || todays.some(function (o) { return o.t === "shahadah"; });
+        if (data.mourningTheme && isMourning) {
+            document.documentElement.dataset.mood = "mourning";
+            $$('meta[name="theme-color"]').forEach(function (meta) {
+                meta.setAttribute("content", "#0a0a0b");
+            });
+        }
         $$("[data-occasion-today]").forEach(function (node) {
             if (todays.length) {
                 node.textContent = todays.map(function (o) { return o.name; }).join(" · ");
@@ -225,6 +235,11 @@
         }
     }
 
+    /** The server reads this cookie to show the majalis of the visitor's city first. */
+    function rememberCity(value) {
+        document.cookie = "minbar_city=" + value + "; path=/app; max-age=31536000; samesite=lax";
+    }
+
     function locate(done) {
         if (!navigator.geolocation) {
             toast("هذا المتصفح لا يدعم تحديد الموقع.");
@@ -234,6 +249,7 @@
             store.set("place", {
                 gps: true, lat: position.coords.latitude, lng: position.coords.longitude,
             });
+            rememberCity("gps");
             done();
         }, function () {
             toast("تعذر تحديد الموقع. اختر مدينتك من القائمة.");
@@ -252,6 +268,7 @@
                     locate(onChange);
                 } else {
                     store.set("place", { cityId: parseInt(select.value, 10) });
+                    rememberCity(select.value);
                     onChange();
                 }
             });
@@ -267,6 +284,47 @@
                 });
             });
         }
+    }
+
+    function initCitySheet() {
+        var sheet = $("#mb-city-sheet");
+        var place = currentPlace();
+        if (place) {
+            setText("[data-city-name]", place.name);
+        }
+        if (!sheet || typeof sheet.showModal !== "function") {
+            return;
+        }
+        $$("[data-city-open]").forEach(function (button) {
+            button.addEventListener("click", function () {
+                var current = currentPlace();
+                $$("[data-city-pick]", sheet).forEach(function (option) {
+                    option.setAttribute("aria-pressed",
+                        String(Boolean(current) && String(current.id) === option.dataset.cityPick));
+                });
+                sheet.showModal();
+            });
+        });
+        $$("[data-sheet-close]", sheet).forEach(function (button) {
+            button.addEventListener("click", function () { sheet.close(); });
+        });
+        sheet.addEventListener("click", function (event) {
+            if (event.target === sheet) {
+                sheet.close();
+            }
+        });
+        // The page is loaded again so that the majalis follow the new city.
+        $$("[data-city-pick]", sheet).forEach(function (option) {
+            option.addEventListener("click", function () {
+                if (option.dataset.cityPick === "gps") {
+                    locate(function () { location.reload(); });
+                } else {
+                    store.set("place", { cityId: parseInt(option.dataset.cityPick, 10) });
+                    rememberCity(option.dataset.cityPick);
+                    location.reload();
+                }
+            });
+        });
     }
 
     // ------------------------------------------------------------------
@@ -854,6 +912,7 @@
     };
 
     initDates();
+    initCitySheet();
     initPrayer();
     initQibla();
     initTasbih();

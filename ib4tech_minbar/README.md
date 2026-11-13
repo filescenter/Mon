@@ -1,9 +1,9 @@
-# IB4Tech Minbar (`ib4tech_minbar`)
+# IB4Tech Al-Siddiqa — الصدّيقة (`ib4tech_minbar`)
 
 Odoo 19 module: a community platform for husseini services with an installable
 mobile web app (PWA) for anonymous visitors.
 
-- **Version:** 19.0.1.0.0
+- **Version:** 19.0.1.1.0
 - **Depends:** `mail`, `portal` (no `website` needed)
 - **License:** LGPL-3
 
@@ -12,7 +12,7 @@ mobile web app (PWA) for anonymous visitors.
 | Area | Details |
 | --- | --- |
 | Directory | Pages for husseiniyas, mawakib, radoods and khatibs: picture, cover, city, map, contact channels, services offered. |
-| Majalis | Schedule by city, day and audience, live-stream link, calendar reminder (`.ics`), daily repetition (e.g. the ten nights of Muharram). |
+| Majalis | Schedule by city, day and audience, announcement poster, live-stream link, calendar reminder (`.ics`), daily repetition (e.g. the ten nights of Muharram). The visitor's city comes first. |
 | Library | Duas, ziyarat, taqibat in sections, with a reader (font size, screen kept on) and offline reading. |
 | Tools | Prayer times (Jafari / Leva method), qibla compass, tasbih counter, hijri date and occasions. |
 | Owners | Free portal accounts: each owner edits their own page and submits majalis; the administration approves. |
@@ -37,14 +37,14 @@ phone only.
 
 ## Back office
 
-Menu **Minbar**:
+Menu **Al-Siddiqa**:
 
 - **Directory / Majalis**: manage everything directly.
 - **Review**: pages and majalis submitted by owners, waiting for approval.
 - **Library**: sections and texts.
 - **Configuration**: settings, cities (with coordinates for prayer times), hijri occasions, services.
 
-Groups: **Minbar / Editor** (content and reviews) and **Minbar / Manager**
+Groups: **Al-Siddiqa / Editor** (content and reviews) and **Al-Siddiqa / Manager**
 (settings, deletion, owner accounts).
 
 ### Giving an owner an account
@@ -61,11 +61,12 @@ Portal accounts are free: they do not count as paid Odoo users.
 
 ## Settings
 
-Minbar > Configuration > Settings:
+Al-Siddiqa > Configuration > Settings:
 
 - **App Name**: shown in the header and on the phone home screen.
 - **Timezone**: majalis times are shown in it (default `Asia/Baghdad`).
-- **Default City**: for prayer times until the visitor picks one.
+- **Default City**: majalis and prayer times start from it until the visitor picks one (Sadr City by default).
+- **Mourning colours**: the app turns black in Muharram, Safar and on martyrdom anniversaries.
 - **Hijri Date Adjustment**: -2..+2 days, to follow the local moon sighting.
 - **Auto-publish majalis of verified pages**.
 

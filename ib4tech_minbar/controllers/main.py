@@ -125,6 +125,26 @@ def entity_links(entity):
     ]
 
 
+def visitor_city():
+    """City the visitor picked in the app (kept in a cookie), else the default city.
+
+    Visitors who use the position of their phone instead get no city at all.
+    """
+    picked = request.httprequest.cookies.get("minbar_city")
+    if picked == "gps":
+        return request.env["ib4tech.minbar.city"]
+    wanted = to_int(picked) or to_int(get_param("default_city_id"))
+    return request.env["ib4tech.minbar.city"].sudo().browse(wanted).exists()
+
+
+def group_cities(cities):
+    """Cities grouped by governorate, keeping the configured order."""
+    groups = {}
+    for city in cities:
+        groups.setdefault(city.governorate or "", []).append(city)
+    return [{"name": name, "cities": members} for name, members in groups.items()]
+
+
 def majlis_card(majlis, tz, now=None):
     """Display values of a majlis in the app timezone."""
     now = now or datetime.now(tz)
@@ -169,13 +189,14 @@ def group_by_day(cards):
 def render_app(template, values=None, tab="home", title=None, status=200):
     """Render an app page with the values every page needs."""
     env = request.env
-    app_name = get_param("app_name") or "المنبر"
+    app_name = get_param("app_name") or "الصدّيقة"
     cities = env["ib4tech.minbar.city"].sudo().search([])
     occasions = env["ib4tech.minbar.occasion"].sudo().search([])
     app_data = {
         "appName": app_name,
         "version": app_version(),
         "hijriOffset": to_int(get_param("hijri_offset")),
+        "mourningTheme": get_param("mourning_theme") in ("True", "1", "true"),
         "defaultCityId": to_int(get_param("default_city_id")) or cities[:1].id,
         "cities": [
             {"id": c.id, "name": c.name, "gov": c.governorate or "",
@@ -187,8 +208,13 @@ def render_app(template, values=None, tab="home", title=None, status=200):
             for o in occasions
         ],
     }
+    base_url = request.httprequest.host_url.rstrip("/")
     context = {
         "app_name": app_name,
+        "base_url": base_url,
+        "og_image": "%s/%s/static/src/app/icons/icon-512.png" % (base_url, MODULE),
+        "og_description": "مواعيد المجالس، دليل الحسينيات والمواكب والرواديد، الأدعية والزيارات وأوقات الصلاة.",
+        "city_groups": group_cities(cities),
         "title": title,
         "tab": tab,
         "app_data": json.dumps(app_data, ensure_ascii=False),
@@ -220,18 +246,33 @@ class MinbarApp(http.Controller):
         tz = app_tz()
         now = datetime.now(tz)
         now_utc = datetime.utcnow()
-        majalis = env["ib4tech.minbar.majlis"].sudo().search(
-            published_majlis_domain() + [("date_start", ">=", now_utc - timedelta(hours=2))],
-            order="date_start, id", limit=6)
+        city = visitor_city()
+        Majlis = env["ib4tech.minbar.majlis"].sudo()
+        upcoming = published_majlis_domain() + [("date_start", ">=", now_utc - timedelta(hours=2))]
+        majalis = Majlis
+        if city:
+            majalis = Majlis.search(upcoming + [("city_id", "=", city.id)], order="date_start, id", limit=6)
+        majalis_city = city if majalis else city.browse()
+        if not majalis:
+            majalis = Majlis.search(upcoming, order="date_start, id", limit=6)
         Content = env["ib4tech.minbar.content"].sudo()
         featured = Content.search(
             [("is_published", "=", True), ("weekday", "=", str(now.weekday()))], limit=2)
         featured |= Content.search(
             [("is_published", "=", True), ("is_featured", "=", True)], limit=4)
-        entities = env["ib4tech.minbar.entity"].sudo().search(
-            published_entity_domain(), order="is_verified desc, create_date desc", limit=8)
+        Entity = env["ib4tech.minbar.entity"].sudo()
+        newest = "is_verified desc, create_date desc"
+        entities = Entity
+        if city:
+            entities = Entity.search(
+                published_entity_domain() + [("city_id", "=", city.id)], order=newest, limit=6)
+        if len(entities) < 6:
+            entities |= Entity.search(
+                published_entity_domain() + [("id", "not in", entities.ids)],
+                order=newest, limit=6 - len(entities))
         return render_app("%s.app_home" % MODULE, {
             "majalis": [majlis_card(m, tz, now) for m in majalis],
+            "majalis_city": majalis_city,
             "featured": featured[:4],
             "entities": entities,
         }, tab="home")
@@ -243,9 +284,10 @@ class MinbarApp(http.Controller):
     def majalis(self, city=None, when="all", q="", audience="", offset=0, **kw):
         env = request.env
         tz = app_tz()
-        city_id = to_int(city)
-        offset = max(to_int(offset), 0)
         q = (q or "").strip()[:80]
+        # First visit (no filter chosen yet): start from the visitor's own city.
+        city_id = visitor_city().id if city is None and not q else to_int(city)
+        offset = max(to_int(offset), 0)
         domain = published_majlis_domain()
         if when == "today":
             domain += [("date_start", ">=", day_start_utc(tz)), ("date_start", "<", day_start_utc(tz, 1))]
@@ -288,11 +330,18 @@ class MinbarApp(http.Controller):
         majlis = self._get_public_majlis(majlis_id)
         if not majlis:
             return not_found()
-        return render_app("%s.app_majlis" % MODULE, {
-            "card": majlis_card(majlis, app_tz()),
+        card = majlis_card(majlis, app_tz())
+        host = request.httprequest.host_url.rstrip("/")
+        values = {
+            "card": card,
             "majlis": majlis,
-            "share_url": "%s/app/majlis/%d" % (request.httprequest.host_url.rstrip("/"), majlis.id),
-        }, tab="majalis", title=majlis.name)
+            "share_url": "%s/app/majlis/%d" % (host, majlis.id),
+            "og_description": " · ".join(filter(None, [
+                card["full_date"], card["time_label"], majlis.entity_id.name, majlis.city_id.name])),
+        }
+        if majlis.has_poster:
+            values["og_image"] = "%s/app/image/majlis/%d/poster" % (host, majlis.id)
+        return render_app("%s.app_majlis" % MODULE, values, tab="majalis", title=majlis.name)
 
     @http.route("/app/majlis/<int:majlis_id>/calendar.ics", type="http", auth="public", readonly=True)
     def majlis_ics(self, majlis_id, **kw):
@@ -393,14 +442,20 @@ class MinbarApp(http.Controller):
                 ("date_start", ">=", datetime.utcnow() - timedelta(hours=3)),
                 "|", ("entity_id", "=", entity.id), ("participant_ids", "in", entity.id),
             ], order="date_start, id", limit=30)
-        return render_app("%s.app_entity" % MODULE, {
+        values = {}
+        if entity.has_image:
+            values["og_image"] = "%s/app/image/entity/%d/image_512" % (
+                request.httprequest.host_url.rstrip("/"), entity.id)
+        if entity.tagline:
+            values["og_description"] = entity.tagline
+        return render_app("%s.app_entity" % MODULE, dict(values, **{
             "entity": entity,
             "meta": ENTITY_TYPES[entity.entity_type],
             "links": entity_links(entity),
             "is_owner": is_owner,
             "majalis": [majlis_card(m, tz) for m in majalis],
             "share_url": "%s/app/e/%d" % (request.httprequest.host_url.rstrip("/"), entity.id),
-        }, tab="directory", title=entity.name)
+        }), tab="directory", title=entity.name)
 
     @http.route("/app/image/entity/<int:entity_id>/<string:field>", type="http", auth="public", readonly=True)
     def entity_image(self, entity_id, field, **kw):
@@ -411,6 +466,21 @@ class MinbarApp(http.Controller):
         if not entity or (entity.state != "published" and entity.owner_user_id != env.user):
             raise request.not_found()
         stream = env["ir.binary"]._get_image_stream_from(entity, field)
+        return stream.get_response(max_age=http.STATIC_CACHE_LONG if kw.get("u") else 3600)
+
+    @http.route("/app/image/majlis/<int:majlis_id>/poster", type="http", auth="public", readonly=True)
+    def majlis_poster(self, majlis_id, size="", **kw):
+        env = request.env
+        majlis = self._get_public_majlis(majlis_id)
+        if not majlis:
+            # The owner may look at the poster of a majlis that is still in review.
+            majlis = env["ib4tech.minbar.majlis"].sudo().browse(majlis_id).exists()
+            if not majlis or env.user._is_public() or majlis.owner_user_id != env.user:
+                raise request.not_found()
+        if not majlis.has_poster:
+            raise request.not_found()
+        options = {"width": 192, "height": 192, "crop": True} if size == "thumb" else {}
+        stream = env["ir.binary"]._get_image_stream_from(majlis, "poster", **options)
         return stream.get_response(max_age=http.STATIC_CACHE_LONG if kw.get("u") else 3600)
 
     # ------------------------------------------------------------------
@@ -449,8 +519,13 @@ class MinbarApp(http.Controller):
         content = request.env["ib4tech.minbar.content"].sudo().browse(content_id).exists()
         if not content or not content.is_published:
             return not_found()
+        siblings = request.env["ib4tech.minbar.content"].sudo().search(
+            [("category_id", "=", content.category_id.id), ("is_published", "=", True)])
+        position = siblings.ids.index(content.id)
         return render_app("%s.app_read" % MODULE, {
             "content": content,
+            "previous_content": siblings[position - 1] if position else siblings.browse(),
+            "next_content": siblings[position + 1:position + 2],
             "share_url": "%s/app/read/%d" % (request.httprequest.host_url.rstrip("/"), content.id),
         }, tab="library", title=content.name)
 
@@ -546,7 +621,7 @@ class MinbarApp(http.Controller):
     # ------------------------------------------------------------------
     @http.route("/app/manifest.webmanifest", type="http", auth="public", readonly=True)
     def manifest(self, **kw):
-        app_name = get_param("app_name") or "المنبر"
+        app_name = get_param("app_name") or "الصدّيقة"
         icons = "/%s/static/src/app/icons" % MODULE
         manifest = {
             "id": "/app",

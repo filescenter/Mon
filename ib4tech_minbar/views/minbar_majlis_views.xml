@@ -74,6 +74,7 @@
                     <field name="state" widget="statusbar" statusbar_visible="draft,pending,published"/>
                 </header>
                 <sheet>
+                    <field name="poster" widget="image" class="oe_avatar" options="{'size': [120, 120]}"/>
                     <div class="oe_title">
                         <label for="name"/>
                         <h1><field name="name" placeholder="e.g. Majlis of the first night of Muharram"/></h1>

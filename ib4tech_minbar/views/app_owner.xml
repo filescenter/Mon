@@ -114,8 +114,7 @@
                     <select name="city_id">
                         <option value="">اختر المدينة</option>
                         <t t-set="city_value" t-value="form.get('city_id') if form else str(entity.city_id.id or '')"/>
-                        <option t-foreach="cities" t-as="c" t-att-value="c.id"
-                                t-att-selected="city_value == str(c.id)"><t t-out="c.name"/></option>
+                        <t t-call="ib4tech_minbar.app_city_options"><t t-set="selected_city" t-value="city_value"/></t>
                     </select>
                 </label>
                 <label class="mb-field">
@@ -192,7 +191,7 @@
             <t t-set="back" t-value="'/app/my'"/>
             <t t-set="val" t-value="lambda name: form.get(name) if form else (majlis[name] if majlis else '')"/>
             <t t-set="entity_value" t-value="int(form.get('entity_id') or 0) if form else (majlis.entity_id.id or default_entity)"/>
-            <form class="mb-form" method="post"
+            <form class="mb-form" method="post" enctype="multipart/form-data"
                   t-att-action="'/app/my/majlis/%d' % majlis.id if majlis else '/app/my/majlis/new'">
                 <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
                 <p t-if="error" class="mb-alert mb-alert--danger" role="alert"><t t-out="error"/></p>
@@ -250,8 +249,7 @@
                         <select name="city_id">
                             <option value="">مدينة الصفحة</option>
                             <t t-set="city_value" t-value="form.get('city_id') if form else str(majlis.city_id.id or '')"/>
-                            <option t-foreach="cities" t-as="c" t-att-value="c.id"
-                                    t-att-selected="city_value == str(c.id)"><t t-out="c.name"/></option>
+                            <t t-call="ib4tech_minbar.app_city_options"><t t-set="selected_city" t-value="city_value"/></t>
                         </select>
                     </label>
                     <label class="mb-field">
@@ -275,6 +273,10 @@
                         <option t-foreach="occasions" t-as="o" t-att-value="o.id"
                                 t-att-selected="occasion_value == str(o.id)"><t t-out="o.name"/></option>
                     </select>
+                </label>
+                <label class="mb-field">
+                    <span>صورة الإعلان (البوستر) <small>اختياري</small></span>
+                    <input type="file" name="poster" accept="image/*"/>
                 </label>
                 <label class="mb-field">
                     <span>رابط البث المباشر <small>اختياري</small></span>

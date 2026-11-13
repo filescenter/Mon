@@ -4,7 +4,7 @@
     <template id="app_city_picker" name="Minbar App: City Picker">
         <div class="mb-filters__row">
             <select data-city-select="1" aria-label="المدينة">
-                <option t-foreach="cities" t-as="c" t-att-value="c.id"><t t-out="c.name"/></option>
+                <t t-call="ib4tech_minbar.app_city_options"><t t-set="selected_city" t-value="0"/></t>
                 <option value="gps">موقعي الحالي</option>
             </select>
             <button type="button" class="mb-btn mb-btn--soft" data-locate="1">
@@ -224,8 +224,7 @@
                     <span>المدينة</span>
                     <select name="city_id">
                         <option value="">اختر المدينة</option>
-                        <option t-foreach="cities" t-as="c" t-att-value="c.id"
-                                t-att-selected="form.get('city_id') == str(c.id)"><t t-out="c.name"/></option>
+                        <t t-call="ib4tech_minbar.app_city_options"><t t-set="selected_city" t-value="form.get('city_id')"/></t>
                     </select>
                 </label>
                 <label class="mb-field">

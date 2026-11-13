@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 19.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-13 08:01+0000\n"
-"PO-Revision-Date: 2026-11-13 08:01+0000\n"
+"POT-Creation-Date: 2026-11-13 08:34+0000\n"
+"PO-Revision-Date: 2026-11-13 08:34+0000\n"
 "Last-Translator: IB4Tech\n"
 "Language-Team: IB4Tech\n"
 "Language: ar\n"
@@ -399,6 +399,11 @@ msgid "<span>سنة التأسيس <small>اختياري</small></span>"
 msgstr ""
 
 #. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my_majlis_form
+msgid "<span>صورة الإعلان (البوستر) <small>اختياري</small></span>"
+msgstr ""
+
+#. module: ib4tech_minbar
 #: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my_entity_form
 msgid "<span>صورة الغلاف</span>"
 msgstr ""
@@ -500,6 +505,19 @@ msgstr "أضف أول حسينية أو موكب أو رادود"
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__address
 msgid "Address"
 msgstr "العنوان"
+
+#. module: ib4tech_minbar
+#: model:ir.module.category,name:ib4tech_minbar.module_category_minbar
+#: model:ir.ui.menu,name:ib4tech_minbar.menu_minbar_root
+#: model:res.groups.privilege,name:ib4tech_minbar.res_groups_privilege_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.res_config_settings_view_form
+msgid "Al-Siddiqa"
+msgstr "الصدّيقة"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,help:ib4tech_minbar.field_ib4tech_minbar_majlis__poster
+msgid "Announcement picture of the majlis."
+msgstr "صورة إعلان المجلس."
 
 #. module: ib4tech_minbar
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_res_config_settings__minbar_app_name
@@ -853,6 +871,11 @@ msgid "Has Message"
 msgstr "يحتوي رسالة"
 
 #. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis__has_poster
+msgid "Has Poster"
+msgstr "له إعلان"
+
+#. module: ib4tech_minbar
 #: model_terms:ir.ui.view,arch_db:ib4tech_minbar.res_config_settings_view_form
 msgid "Hijri Date Adjustment"
 msgstr "تعديل التاريخ الهجري"
@@ -1156,14 +1179,6 @@ msgid "Messages"
 msgstr "الرسائل"
 
 #. module: ib4tech_minbar
-#: model:ir.module.category,name:ib4tech_minbar.module_category_minbar
-#: model:ir.ui.menu,name:ib4tech_minbar.menu_minbar_root
-#: model:res.groups.privilege,name:ib4tech_minbar.res_groups_privilege_minbar
-#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.res_config_settings_view_form
-msgid "Minbar"
-msgstr "المنبر"
-
-#. module: ib4tech_minbar
 #: model:ir.model,name:ib4tech_minbar.model_ib4tech_minbar_city
 msgid "Minbar City"
 msgstr "مدينة"
@@ -1207,6 +1222,11 @@ msgstr "تطبيق الهاتف"
 #: model:ir.model.fields.selection,name:ib4tech_minbar.selection__ib4tech_minbar_content__weekday__0
 msgid "Monday"
 msgstr "الاثنين"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_res_config_settings__minbar_mourning_theme
+msgid "Mourning colours on days of mourning"
+msgstr "ألوان الحداد في أيام العزاء"
 
 #. module: ib4tech_minbar
 #: model:ir.model.fields.selection,name:ib4tech_minbar.selection__ib4tech_minbar_occasion__hijri_month__1
@@ -1293,7 +1313,7 @@ msgstr "المناسبة"
 #. odoo-python
 #: code:addons/ib4tech_minbar/models/minbar_entity.py:0
 msgid "Only Minbar managers can grant owner accounts."
-msgstr "مديرو المنبر فقط يستطيعون منح حسابات لأصحاب الصفحات."
+msgstr "المديرون فقط يستطيعون منح حسابات لأصحاب الصفحات."
 
 #. module: ib4tech_minbar
 #. odoo-python
@@ -1387,6 +1407,11 @@ msgstr "الصورة"
 #: model:ir.model.fields,help:ib4tech_minbar.field_ib4tech_minbar_majlis__owner_user_id
 msgid "Portal account allowed to edit this page and publish its majalis."
 msgstr "حساب البوابة المسموح له بتعديل هذه الصفحة ونشر مجالسها."
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis__poster
+msgid "Poster"
+msgstr "الإعلان (البوستر)"
 
 #. module: ib4tech_minbar
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content__is_published
@@ -1650,6 +1675,13 @@ msgid "The account %s is linked. An invitation email is sent to new owners."
 msgstr "تم ربط الحساب %s. تُرسل رسالة دعوة بالبريد لأصحاب الصفحات الجدد."
 
 #. module: ib4tech_minbar
+#: model:ir.model.fields,help:ib4tech_minbar.field_res_config_settings__minbar_mourning_theme
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.res_config_settings_view_form
+msgid ""
+"The app turns black during Muharram, Safar and on martyrdom anniversaries."
+msgstr "تتّشح الواجهة بالسواد في محرم وصفر وذكريات الشهادة."
+
+#. module: ib4tech_minbar
 #. odoo-python
 #: code:addons/ib4tech_minbar/models/minbar_entity.py:0
 msgid "The existing account %s is now the owner of this page."
@@ -1910,6 +1942,11 @@ msgid "إضافة مجلس"
 msgstr ""
 
 #. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_majlis
+msgid "إعلان المجلس"
+msgstr ""
+
+#. module: ib4tech_minbar
 #: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_home
 msgid "إغلاق"
 msgstr ""
@@ -1995,6 +2032,11 @@ msgid "التاريخ الهجري محسوب وقد يختلف يوماً عن 
 msgstr ""
 
 #. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_read
+msgid "التنقل بين النصوص"
+msgstr ""
+
+#. module: ib4tech_minbar
 #: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_majlis
 msgid "الجهة المنظِّمة"
 msgstr ""
@@ -2022,6 +2064,11 @@ msgstr ""
 #. module: ib4tech_minbar
 #: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_home
 msgid "الدليل"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.res_config_settings_view_form
+msgid "الصدّيقة"
 msgstr ""
 
 #. module: ib4tech_minbar
@@ -2106,11 +2153,6 @@ msgstr ""
 #. module: ib4tech_minbar
 #: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_occasions
 msgid "المناسبات القادمة"
-msgstr ""
-
-#. module: ib4tech_minbar
-#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.res_config_settings_view_form
-msgid "المنبر"
 msgstr ""
 
 #. module: ib4tech_minbar
@@ -2446,6 +2488,11 @@ msgstr ""
 #. module: ib4tech_minbar
 #: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_join
 msgid "مثال: موكب أنصار الحسين (ع)"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_home
+msgid "مجالس"
 msgstr ""
 
 #. module: ib4tech_minbar

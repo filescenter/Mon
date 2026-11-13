@@ -34,6 +34,8 @@ class MinbarMajlis(models.Model):
         [("all", "Everyone"), ("men", "Men"), ("women", "Women")],
         required=True, default="all")
     live_url = fields.Char(string="Live Stream Link")
+    poster = fields.Image(max_width=1600, max_height=1600, help="Announcement picture of the majlis.")
+    has_poster = fields.Boolean(compute="_compute_has_poster", store=True)
     description = fields.Text()
     state = fields.Selection(
         [
@@ -53,6 +55,11 @@ class MinbarMajlis(models.Model):
         "CHECK (date_end IS NULL OR date_end >= date_start)",
         "The majlis cannot end before it starts.",
     )
+
+    @api.depends("poster")
+    def _compute_has_poster(self):
+        for majlis in self:
+            majlis.has_poster = bool(majlis.poster)
 
     @api.depends("entity_id")
     def _compute_city_id(self):

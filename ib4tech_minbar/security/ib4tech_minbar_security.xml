@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <record id="module_category_minbar" model="ir.module.category">
-        <field name="name">Minbar</field>
+        <field name="name">Al-Siddiqa</field>
         <field name="sequence">60</field>
     </record>
 
     <record id="res_groups_privilege_minbar" model="res.groups.privilege">
-        <field name="name">Minbar</field>
+        <field name="name">Al-Siddiqa</field>
         <field name="sequence">60</field>
         <field name="category_id" ref="module_category_minbar"/>
     </record>

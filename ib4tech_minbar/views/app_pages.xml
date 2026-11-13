@@ -46,7 +46,8 @@
 
             <section class="mb-section">
                 <div class="mb-section__head">
-                    <h2 class="mb-h2">المجالس القادمة</h2>
+                    <h2 class="mb-h2" t-if="majalis_city">مجالس <t t-out="majalis_city.name"/></h2>
+                    <h2 class="mb-h2" t-else="">المجالس القادمة</h2>
                     <a href="/app/majalis">عرض الكل</a>
                 </div>
                 <t t-if="majalis">
@@ -124,9 +125,7 @@
                 <div class="mb-filters__row">
                     <select name="city" aria-label="المدينة">
                         <option value="">كل المدن</option>
-                        <option t-foreach="cities" t-as="c" t-att-value="c.id" t-att-selected="filters['city'] == c.id">
-                            <t t-out="c.name"/>
-                        </option>
+                        <t t-call="ib4tech_minbar.app_city_options"><t t-set="selected_city" t-value="filters['city']"/></t>
                     </select>
                     <select name="audience" aria-label="الحضور">
                         <option value="">الرجال والنساء</option>
@@ -169,6 +168,10 @@
                 <p t-elif="card['is_live']" class="mb-alert mb-alert--live">المجلس جارٍ الآن</p>
                 <p t-elif="card['is_past']" class="mb-alert">انتهى هذا المجلس.</p>
 
+                <a t-if="majlis.has_poster" class="mb-poster" target="_blank" rel="noopener"
+                   t-attf-href="/app/image/majlis/#{majlis.id}/poster">
+                    <img alt="إعلان المجلس" t-attf-src="/app/image/majlis/#{majlis.id}/poster?u=#{int(majlis.write_date.timestamp())}"/>
+                </a>
                 <h2 class="mb-detail__title"><t t-out="majlis.name"/></h2>
                 <p t-if="majlis.occasion_id" class="mb-detail__kicker"><t t-out="majlis.occasion_id.name"/></p>
 
@@ -280,9 +283,7 @@
                 <div class="mb-filters__row">
                     <select name="city" aria-label="المدينة">
                         <option value="">كل المدن</option>
-                        <option t-foreach="cities" t-as="c" t-att-value="c.id" t-att-selected="filters['city'] == c.id">
-                            <t t-out="c.name"/>
-                        </option>
+                        <t t-call="ib4tech_minbar.app_city_options"><t t-set="selected_city" t-value="filters['city']"/></t>
                     </select>
                     <select t-if="services" name="service" aria-label="الخدمة">
                         <option value="">كل الخدمات</option>
@@ -494,6 +495,15 @@
                 <audio t-if="content.audio_url" class="mb-reader__audio" controls="controls" preload="none" t-att-src="content.audio_url"/>
                 <div class="mb-reader__body" id="mb-reader-body"><t t-out="content.body"/></div>
                 <p t-if="content.source" class="mb-reader__source">المصدر: <t t-out="content.source"/></p>
+                <nav t-if="previous_content or next_content" class="mb-reader__nav" aria-label="التنقل بين النصوص">
+                    <a t-if="previous_content" class="mb-btn mb-btn--soft" t-attf-href="/app/read/#{previous_content.id}">
+                        <svg class="ic"><use href="#i-back"/></svg><span><t t-out="previous_content.name"/></span>
+                    </a>
+                    <span t-else=""/>
+                    <a t-if="next_content" class="mb-btn mb-btn--soft" t-attf-href="/app/read/#{next_content.id}">
+                        <span><t t-out="next_content.name"/></span><svg class="ic"><use href="#i-chevron"/></svg>
+                    </a>
+                </nav>
             </article>
         </t>
     </template>
