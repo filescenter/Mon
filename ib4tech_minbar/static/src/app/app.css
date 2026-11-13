@@ -633,6 +633,17 @@ select[multiple] option { padding: 8px; border-radius: 8px; }
 .mb-reader__nav .mb-btn:last-child { justify-content: flex-end; }
 .mb-reader__nav .mb-btn:first-child { justify-content: flex-start; }
 
+/* ------------------------------ Information pages ------------------------------ */
+.mb-info {
+    padding: 18px; border-radius: var(--radius);
+    background: var(--surface); border: 1px solid var(--line);
+    overflow-wrap: anywhere;
+}
+.mb-info h2, .mb-info h3 { margin: 1.2em 0 .3em; font-size: 1.05rem; color: var(--brand); }
+.mb-info h2:first-child, .mb-info h3:first-child { margin-top: 0; }
+.mb-info p { margin: 0 0 .7em; }
+.mb-info p:last-child { margin-bottom: 0; }
+
 /* ------------------------------ Prayer times ------------------------------ */
 .mb-daynav { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
 .mb-times {

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 19.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-13 12:03+0000\n"
-"PO-Revision-Date: 2026-11-13 12:03+0000\n"
+"POT-Creation-Date: 2026-11-13 13:10+0000\n"
+"PO-Revision-Date: 2026-11-13 13:10+0000\n"
 "Last-Translator: IB4Tech\n"
 "Language-Team: IB4Tech\n"
 "Language: ar\n"
@@ -476,6 +476,11 @@ msgid "<span>ينتهي <small>اختياري</small></span>"
 msgstr ""
 
 #. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.res_config_settings_view_form
+msgid "AA:BB:CC:..."
+msgstr ""
+
+#. module: ib4tech_minbar
 #: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_entity_form
 msgid "About"
 msgstr "نبذة"
@@ -498,6 +503,7 @@ msgstr "إجراء مطلوب"
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content_category__active
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__active
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_occasion__active
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_page__active
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_service__active
 msgid "Active"
 msgstr "نشط"
@@ -523,12 +529,28 @@ msgid "Address"
 msgstr "العنوان"
 
 #. module: ib4tech_minbar
+#: model:ir.model.fields,help:ib4tech_minbar.field_ib4tech_minbar_page__show_in_menu
+msgid "Adds a link to this page in the More tab."
+msgstr "يضيف رابطاً لهذه الصفحة في تبويب المزيد."
+
+#. module: ib4tech_minbar
 #: model:ir.module.category,name:ib4tech_minbar.module_category_minbar
 #: model:ir.ui.menu,name:ib4tech_minbar.menu_minbar_root
 #: model:res.groups.privilege,name:ib4tech_minbar.res_groups_privilege_minbar
 #: model_terms:ir.ui.view,arch_db:ib4tech_minbar.res_config_settings_view_form
 msgid "Al-Siddiqa"
 msgstr "الصدّيقة"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_res_config_settings__minbar_android_package
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.res_config_settings_view_form
+msgid "Android Package Name"
+msgstr "اسم حزمة أندرويد"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_res_config_settings__minbar_android_fingerprints
+msgid "Android Signing Fingerprints"
+msgstr "بصمات توقيع أندرويد"
 
 #. module: ib4tech_minbar
 #: model:ir.model.fields,help:ib4tech_minbar.field_ib4tech_minbar_majlis__poster
@@ -542,6 +564,11 @@ msgid "Announcements"
 msgstr "الإعلانات"
 
 #. module: ib4tech_minbar
+#: model:ir.model.constraint,message:ib4tech_minbar.constraint_ib4tech_minbar_page_slug_uniq
+msgid "Another page already uses this address."
+msgstr "توجد صفحة أخرى بهذا العنوان."
+
+#. module: ib4tech_minbar
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_res_config_settings__minbar_app_name
 #: model_terms:ir.ui.view,arch_db:ib4tech_minbar.res_config_settings_view_form
 msgid "App Name"
@@ -551,6 +578,11 @@ msgstr "اسم التطبيق"
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_res_config_settings__minbar_tz
 msgid "App Timezone"
 msgstr "المنطقة الزمنية للتطبيق"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,help:ib4tech_minbar.field_res_config_settings__minbar_android_package
+msgid "Application ID of the Google Play app, e.g. com.ib4tech.siddiqa."
+msgstr "معرّف تطبيق كوكل بلي، مثل com.ib4tech.siddiqa."
 
 #. module: ib4tech_minbar
 #: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_entity_form
@@ -692,6 +724,7 @@ msgstr "إنشاء حساب لصاحب الصفحة"
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis__create_uid
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis_repeat__create_uid
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_occasion__create_uid
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_page__create_uid
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_service__create_uid
 msgid "Created by"
 msgstr "أنشئ بواسطة"
@@ -705,6 +738,7 @@ msgstr "أنشئ بواسطة"
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis__create_date
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis_repeat__create_date
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_occasion__create_date
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_page__create_date
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_service__create_date
 msgid "Created on"
 msgstr "أنشئ في"
@@ -791,6 +825,7 @@ msgstr "العرض"
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis__display_name
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis_repeat__display_name
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_occasion__display_name
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_page__display_name
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_service__display_name
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_res_config_settings__display_name
 msgid "Display Name"
@@ -887,6 +922,11 @@ msgid "Full access: configuration, deletion and owner accounts."
 msgstr "صلاحية كاملة: الإعدادات والحذف وحسابات أصحاب الصفحات."
 
 #. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.res_config_settings_view_form
+msgid "Google Play"
+msgstr "كوكل بلي"
+
+#. module: ib4tech_minbar
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_city__governorate
 msgid "Governorate"
 msgstr "المحافظة"
@@ -968,6 +1008,7 @@ msgstr "الحسينيات"
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis__id
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis_repeat__id
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_occasion__id
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_page__id
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_service__id
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_res_config_settings__id
 msgid "ID"
@@ -1016,6 +1057,12 @@ msgstr "صورة 256"
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__image_512
 msgid "Image 512"
 msgstr "صورة 512"
+
+#. module: ib4tech_minbar
+#: model:ir.actions.act_window,name:ib4tech_minbar.action_minbar_page
+#: model:ir.ui.menu,name:ib4tech_minbar.menu_minbar_page
+msgid "Information Pages"
+msgstr "صفحات المعلومات"
 
 #. module: ib4tech_minbar
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__instagram
@@ -1077,6 +1124,7 @@ msgstr "الخطباء"
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis__write_uid
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis_repeat__write_uid
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_occasion__write_uid
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_page__write_uid
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_service__write_uid
 msgid "Last Updated by"
 msgstr "آخر تحديث بواسطة"
@@ -1090,9 +1138,19 @@ msgstr "آخر تحديث بواسطة"
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis__write_date
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis_repeat__write_date
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_occasion__write_date
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_page__write_date
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_service__write_date
 msgid "Last Updated on"
 msgstr "آخر تحديث في"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,help:ib4tech_minbar.field_ib4tech_minbar_page__slug
+msgid ""
+"Last part of the page address: /app/page/<address>. Latin letters, digits "
+"and dashes."
+msgstr ""
+"الجزء الأخير من رابط الصفحة: ‎/app/page/<address>‎. حروف لاتينية وأرقام "
+"وشرطات."
 
 #. module: ib4tech_minbar
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_city__latitude
@@ -1104,6 +1162,13 @@ msgstr "خط العرض"
 #: model:ir.model.fields,help:ib4tech_minbar.field_ib4tech_minbar_ad__city_ids
 msgid "Leave empty to show the announcement everywhere."
 msgstr "اتركه فارغاً ليظهر الإعلان في كل المدن."
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.res_config_settings_view_form
+msgid ""
+"Lets the Google Play app open this site full screen, without the browser "
+"bar."
+msgstr "يجعل تطبيق كوكل بلي يفتح الموقع ملء الشاشة بدون شريط المتصفح."
 
 #. module: ib4tech_minbar
 #: model:ir.ui.menu,name:ib4tech_minbar.menu_minbar_library
@@ -1119,6 +1184,11 @@ msgstr "أقسام المكتبة"
 #: model:ir.actions.act_window,name:ib4tech_minbar.action_minbar_content
 msgid "Library Texts"
 msgstr "نصوص المكتبة"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_page__show_in_menu
+msgid "Listed in the App"
+msgstr "تظهر في التطبيق"
 
 #. module: ib4tech_minbar
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis__live_url
@@ -1256,6 +1326,11 @@ msgstr "صفحة في الدليل"
 #: model:ir.model,name:ib4tech_minbar.model_ib4tech_minbar_occasion
 msgid "Minbar Hijri Occasion"
 msgstr "مناسبة هجرية"
+
+#. module: ib4tech_minbar
+#: model:ir.model,name:ib4tech_minbar.model_ib4tech_minbar_page
+msgid "Minbar Information Page"
+msgstr "صفحة معلومات"
 
 #. module: ib4tech_minbar
 #: model:ir.model,name:ib4tech_minbar.model_ib4tech_minbar_content_category
@@ -1472,6 +1547,11 @@ msgid "Page"
 msgstr "الصفحة"
 
 #. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_page__slug
+msgid "Page Address"
+msgstr "عنوان الصفحة (الرابط)"
+
+#. module: ib4tech_minbar
 #: model:ir.ui.menu,name:ib4tech_minbar.menu_minbar_review_entity
 msgid "Pages"
 msgstr "الصفحات"
@@ -1616,6 +1696,20 @@ msgid "Review"
 msgstr "المراجعة"
 
 #. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.res_config_settings_view_form
+msgid "SHA-256 fingerprints from Play Console, separated by commas."
+msgstr "بصمات SHA-256 من Play Console، مفصولة بفواصل."
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,help:ib4tech_minbar.field_res_config_settings__minbar_android_fingerprints
+msgid ""
+"SHA-256 fingerprints of the signing certificates, separated by commas. "
+"Google Play Console shows them under App integrity > App signing."
+msgstr ""
+"بصمات SHA-256 لشهادات التوقيع، مفصولة بفواصل. تجدها في Google Play Console "
+"تحت App integrity ثم App signing."
+
+#. module: ib4tech_minbar
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__message_has_sms_error
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis__message_has_sms_error
 msgid "SMS Delivery error"
@@ -1662,6 +1756,7 @@ msgstr "إرسال للمراجعة"
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_city__sequence
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content__sequence
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content_category__sequence
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_page__sequence
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_service__sequence
 msgid "Sequence"
 msgstr "الترتيب"
@@ -1735,6 +1830,11 @@ msgid "Shown to the owner when the page is rejected"
 msgstr "يظهر لصاحب الصفحة عند رفضها"
 
 #. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.res_config_settings_view_form
+msgid "Signing Fingerprints"
+msgstr "بصمات التوقيع"
+
+#. module: ib4tech_minbar
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content__source
 msgid "Source"
 msgstr "المصدر"
@@ -1789,6 +1889,7 @@ msgstr "تلغرام"
 
 #. module: ib4tech_minbar
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content__body
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_page__body
 #: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_content_form
 msgid "Text"
 msgstr "النص"
@@ -1811,6 +1912,12 @@ msgstr "الحساب %s موجود لكنه مؤرشف."
 #: code:addons/ib4tech_minbar/models/minbar_entity.py:0
 msgid "The account %s is linked. An invitation email is sent to new owners."
 msgstr "تم ربط الحساب %s. تُرسل رسالة دعوة بالبريد لأصحاب الصفحات الجدد."
+
+#. module: ib4tech_minbar
+#: model:ir.model.constraint,message:ib4tech_minbar.constraint_ib4tech_minbar_page_slug_format
+msgid ""
+"The address may only contain lowercase Latin letters, digits and dashes."
+msgstr "العنوان يقبل حروفاً لاتينية صغيرة وأرقاماً وشرطات فقط."
 
 #. module: ib4tech_minbar
 #: model:ir.model.constraint,message:ib4tech_minbar.constraint_ib4tech_minbar_ad_check_dates
@@ -1898,6 +2005,7 @@ msgstr "المنطقة الزمنية"
 #. module: ib4tech_minbar
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content__name
 #: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis__name
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_page__name
 msgid "Title"
 msgstr "العنوان"
 
@@ -2031,6 +2139,11 @@ msgstr "يوتيوب"
 #: model:ir.model.fields.selection,name:ib4tech_minbar.selection__ib4tech_minbar_content_category__icon__ziyarah
 msgid "Ziyarah"
 msgstr "زيارة"
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.res_config_settings_view_form
+msgid "com.ib4tech.siddiqa"
+msgstr ""
 
 #. module: ib4tech_minbar
 #: model_terms:ir.ui.view,arch_db:ib4tech_minbar.res_config_settings_view_form

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_minbar_page_list" model="ir.ui.view">
+        <field name="name">ib4tech.minbar.page.list</field>
+        <field name="model">ib4tech.minbar.page</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="slug"/>
+                <field name="show_in_menu" widget="boolean_toggle"/>
+                <field name="active" widget="boolean_toggle"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_minbar_page_form" model="ir.ui.view">
+        <field name="name">ib4tech.minbar.page.form</field>
+        <field name="model">ib4tech.minbar.page</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <field name="active" invisible="1"/>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1><field name="name"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="slug"/>
+                            <field name="show_in_menu"/>
+                        </group>
+                    </group>
+                    <field name="body"/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_minbar_page" model="ir.actions.act_window">
+        <field name="name">Information Pages</field>
+        <field name="res_model">ib4tech.minbar.page</field>
+        <field name="view_mode">list,form</field>
+        <field name="context">{'active_test': False}</field>
+    </record>
+</odoo>

@@ -31,6 +31,9 @@
     <menuitem id="menu_minbar_settings" name="Settings" parent="menu_minbar_config"
               action="action_minbar_settings" sequence="5"
               groups="ib4tech_minbar.group_minbar_manager"/>
+    <menuitem id="menu_minbar_page" name="Information Pages" parent="menu_minbar_config"
+              action="action_minbar_page" sequence="8"
+              groups="ib4tech_minbar.group_minbar_manager"/>
     <menuitem id="menu_minbar_city" name="Cities" parent="menu_minbar_config"
               action="action_minbar_city" sequence="10"/>
     <menuitem id="menu_minbar_occasion" name="Hijri Occasions" parent="menu_minbar_config"

@@ -147,7 +147,21 @@
                 <span>ثبّت التطبيق على هاتفك.</span>
                 <button type="button" class="mb-btn mb-btn--small" data-install="1">تثبيت</button>
             </section>
+            <div t-if="info_pages" class="mb-list">
+                <a t-foreach="info_pages" t-as="info" class="mb-row" t-attf-href="/app/page/#{info.slug}">
+                    <span class="mb-avatar"><svg class="ic"><use href="#i-text"/></svg></span>
+                    <span class="mb-row__body"><span class="mb-row__title"><t t-out="info.name"/></span></span>
+                    <svg class="ic mb-row__go"><use href="#i-chevron"/></svg>
+                </a>
+            </div>
             <p class="mb-note">الإصدار <t t-out="asset_version"/></p>
+        </t>
+    </template>
+
+    <template id="app_info_page" name="Minbar App: Information Page">
+        <t t-call="ib4tech_minbar.app_layout">
+            <t t-set="back" t-value="'/app/more'"/>
+            <article class="mb-info"><t t-out="info.body"/></article>
         </t>
     </template>
 

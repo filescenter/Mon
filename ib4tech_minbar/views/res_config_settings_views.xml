@@ -27,6 +27,16 @@
                             <field name="minbar_mourning_theme"/>
                         </setting>
                     </block>
+                    <block title="Google Play" name="minbar_android">
+                        <setting string="Android Package Name"
+                                 help="Lets the Google Play app open this site full screen, without the browser bar.">
+                            <field name="minbar_android_package" placeholder="com.ib4tech.siddiqa"/>
+                        </setting>
+                        <setting string="Signing Fingerprints"
+                                 help="SHA-256 fingerprints from Play Console, separated by commas.">
+                            <field name="minbar_android_fingerprints" placeholder="AA:BB:CC:..."/>
+                        </setting>
+                    </block>
                     <block title="Owners" name="minbar_owners">
                         <setting help="Majalis added by the owner of a verified page skip the review queue.">
                             <field name="minbar_auto_publish_verified"/>

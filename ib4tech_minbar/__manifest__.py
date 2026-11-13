@@ -1,6 +1,6 @@
 {
     "name": "IB4Tech Al-Siddiqa",
-    "version": "19.0.1.2.1",
+    "version": "19.0.1.3.0",
     "category": "Community",
     "summary": "Husseiniyas, mawakib, radoods, majalis schedule and devotional library with a mobile PWA",
     "description": """
@@ -19,7 +19,7 @@ Community platform for husseini services:
     "company": "IB4Tech",
     "website": "https://ib4tech.com",
     "license": "LGPL-3",
-    "depends": ["mail", "portal"],
+    "depends": ["mail", "portal", "auth_passkey"],
     "data": [
         "security/ib4tech_minbar_security.xml",
         "security/ir.model.access.csv",
@@ -27,11 +27,13 @@ Community platform for husseini services:
         "data/minbar_service_data.xml",
         "data/minbar_occasion_data.xml",
         "data/minbar_content_data.xml",
+        "data/minbar_page_data.xml",
         "wizard/minbar_majlis_repeat_views.xml",
         "views/minbar_entity_views.xml",
         "views/minbar_majlis_views.xml",
         "views/minbar_content_views.xml",
         "views/minbar_ad_views.xml",
+        "views/minbar_page_views.xml",
         "views/minbar_config_views.xml",
         "views/res_config_settings_views.xml",
         "views/minbar_menus.xml",

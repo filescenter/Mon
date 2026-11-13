@@ -6,6 +6,7 @@ from datetime import datetime, time, timedelta
 import pytz
 
 from odoo import http
+from odoo.addons.auth_passkey.controllers.main import WebauthnController
 from odoo.http import request
 from odoo.modules.module import Manifest
 from odoo.tools import file_open
@@ -145,6 +146,25 @@ def group_cities(cities):
     return [{"name": name, "cities": members} for name, members in groups.items()]
 
 
+def android_asset_statement():
+    """Digital Asset Links statement of the Google Play app, or None when not configured."""
+    package = (get_param("android_package") or "").strip()
+    fingerprints = [
+        part.strip().upper()
+        for part in re.split(r"[,\s]+", get_param("android_fingerprints") or "") if part.strip()
+    ]
+    if not package or not fingerprints:
+        return None
+    return {
+        "relation": ["delegate_permission/common.handle_all_urls"],
+        "target": {
+            "namespace": "android_app",
+            "package_name": package,
+            "sha256_cert_fingerprints": fingerprints,
+        },
+    }
+
+
 def majlis_card(majlis, tz, now=None):
     """Display values of a majlis in the app timezone."""
     now = now or datetime.now(tz)
@@ -210,6 +230,7 @@ def render_app(template, values=None, tab="home", title=None, status=200):
     }
     base_url = request.httprequest.host_url.rstrip("/")
     context = {
+        "info_pages": env["ib4tech.minbar.page"].sudo().search([("show_in_menu", "=", True)]),
         "app_name": app_name,
         "base_url": base_url,
         "og_image": "%s/%s/static/src/app/icons/icon-512.png" % (base_url, MODULE),
@@ -233,6 +254,23 @@ def render_app(template, values=None, tab="home", title=None, status=200):
 
 def not_found():
     return render_app("%s.app_not_found" % MODULE, title="غير موجود", status=404)
+
+
+class MinbarAssetLinks(WebauthnController):
+    """Adds the Google Play app of this site to /.well-known/assetlinks.json.
+
+    Odoo already serves that address for its own mobile app (passkeys), so the
+    statement is appended to its answer instead of replacing it.
+    """
+
+    @http.route()
+    def web_well_known_android(self):
+        response = super().web_well_known_android()
+        statement = android_asset_statement()
+        if not statement:
+            return response
+        statements = json.loads(response.get_data(as_text=True)) + [statement]
+        return request.make_json_response(statements, {"Content-Type": "application/json"})
 
 
 class MinbarApp(http.Controller):
@@ -644,6 +682,13 @@ class MinbarApp(http.Controller):
                 values["done"] = True
         return render_app("%s.app_join" % MODULE, values, tab="more", title="سجّل جهتك")
 
+    @http.route("/app/page/<string:slug>", type="http", auth="public", readonly=True)
+    def info_page(self, slug, **kw):
+        info = request.env["ib4tech.minbar.page"].sudo().search([("slug", "=", slug)], limit=1)
+        if not info:
+            return not_found()
+        return render_app("%s.app_info_page" % MODULE, {"info": info}, tab="more", title=info.name)
+
     # ------------------------------------------------------------------
     # Progressive web app plumbing
     # ------------------------------------------------------------------
@@ -664,6 +709,7 @@ class MinbarApp(http.Controller):
             "orientation": "portrait",
             "background_color": "#f6f3ec",
             "theme_color": "#0f5a4c",
+            "categories": ["lifestyle", "reference"],
             "icons": [
                 {"src": icons + "/icon-192.png", "sizes": "192x192", "type": "image/png"},
                 {"src": icons + "/icon-512.png", "sizes": "512x512", "type": "image/png"},

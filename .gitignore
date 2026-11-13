@@ -2,3 +2,7 @@ __pycache__/
 *.py[cod]
 .DS_Store
 *.zip
+
+# Android signing keys must never be committed
+*.keystore
+*.jks

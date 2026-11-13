@@ -22,6 +22,14 @@ class ResConfigSettings(models.TransientModel):
         config_parameter="ib4tech_minbar.mourning_theme",
         help="The app turns black during Muharram, Safar and on martyrdom anniversaries.",
     )
+    minbar_android_package = fields.Char(
+        string="Android Package Name", config_parameter="ib4tech_minbar.android_package",
+        help="Application ID of the Google Play app, e.g. com.ib4tech.siddiqa.")
+    minbar_android_fingerprints = fields.Char(
+        string="Android Signing Fingerprints",
+        config_parameter="ib4tech_minbar.android_fingerprints",
+        help="SHA-256 fingerprints of the signing certificates, separated by commas. "
+             "Google Play Console shows them under App integrity > App signing.")
     minbar_auto_publish_verified = fields.Boolean(
         string="Auto-publish majalis of verified pages",
         config_parameter="ib4tech_minbar.auto_publish_verified",

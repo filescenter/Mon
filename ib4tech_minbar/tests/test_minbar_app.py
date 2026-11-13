@@ -192,6 +192,36 @@ class TestMinbarApp(HttpCase, MinbarCommon):
         ad.url = "https://example.com/poster"
         self.assertEqual(ad._target_url(), "https://example.com/poster")
 
+    def test_information_pages(self):
+        Page = self.env["ib4tech.minbar.page"]
+        privacy = self.env.ref("ib4tech_minbar.page_privacy")
+        response = self.url_open("/app/page/privacy")
+        self.assertEqual(response.status_code, 200)
+        self.assertIn(privacy.name, response.text)
+        self.assertIn("/app/page/privacy", self.url_open("/app/more").text)
+        self.assertEqual(self.url_open("/app/page/unknown").status_code, 404)
+        privacy.active = False
+        self.assertEqual(self.url_open("/app/page/privacy").status_code, 404)
+        with self.assertRaises(Exception), self.cr.savepoint():
+            Page.create({"name": "Bad", "slug": "Not Valid"})
+
+    def test_android_asset_links(self):
+        def packages():
+            return [item["target"].get("package_name") for item in self.url_open(
+                "/.well-known/assetlinks.json").json()]
+
+        # Odoo's own entries (its mobile app) stay; ours appears once configured.
+        before = packages()
+        self.assertNotIn("com.ib4tech.siddiqa", before)
+        params = self.env["ir.config_parameter"]
+        params.set_param("ib4tech_minbar.android_package", "com.ib4tech.siddiqa")
+        params.set_param("ib4tech_minbar.android_fingerprints", "aa:bb:cc, DD:EE:FF")
+        links = self.url_open("/.well-known/assetlinks.json").json()
+        self.assertEqual([item["target"].get("package_name") for item in links[:-1]], before)
+        self.assertEqual(links[-1]["target"]["package_name"], "com.ib4tech.siddiqa")
+        self.assertEqual(links[-1]["target"]["sha256_cert_fingerprints"], ["AA:BB:CC", "DD:EE:FF"])
+        self.assertEqual(links[-1]["relation"], ["delegate_permission/common.handle_all_urls"])
+
     def test_reader_navigation(self):
         second = self.env["ib4tech.minbar.content"].create({
             "name": "Second Dua", "category_id": self.content.category_id.id, "sequence": 20})
