@@ -1,6 +1,6 @@
 {
     "name": "IB4Tech Al-Siddiqa",
-    "version": "19.0.1.2.0",
+    "version": "19.0.1.2.1",
     "category": "Community",
     "summary": "Husseiniyas, mawakib, radoods, majalis schedule and devotional library with a mobile PWA",
     "description": """

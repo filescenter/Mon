@@ -897,7 +897,10 @@
         });
     }
 
-    // Announcement poster over the home page: a countdown first, then the close button.
+    // Announcement posters over the home page, one after another: each shows a countdown
+    // first, then its close button.
+    var MAX_ADS_PER_VISIT = 3;
+
     function initAd() {
         var dialog = $("#mb-ad");
         if (!dialog || typeof dialog.showModal !== "function") {
@@ -917,7 +920,7 @@
                 return false;
             }
         }
-        var ad = ads.filter(function (item) {
+        var queue = ads.filter(function (item) {
             if (sessionSeen(item.id)) {
                 return false;
             }
@@ -929,15 +932,16 @@
                 return seen !== today;
             }
             return true;
-        })[0];
-        if (!ad) {
+        }).slice(0, MAX_ADS_PER_VISIT);
+        if (!queue.length) {
             return;
         }
         var image = $("[data-ad-image]", dialog);
         var link = $("[data-ad-link]", dialog);
         var close = $("[data-ad-close]", dialog);
         var count = $("[data-ad-count]", dialog);
-        var left = Math.max(parseInt(ad.seconds, 10) || 0, 0);
+        var ad = null;
+        var left = 0;
         var timer = null;
 
         function hit(kind) {
@@ -974,16 +978,34 @@
             tick();
             timer = setInterval(tick, 1000);
         }
-
-        image.alt = ad.title || "إعلان";
-        if (ad.url) {
-            link.href = ad.url;
-            if (/^https?:/i.test(ad.url)) {
-                link.target = "_blank";
-                link.rel = "noopener noreferrer";
+        // Prepares the next poster; it opens once its picture is ready.
+        function next() {
+            ad = queue.shift();
+            if (!ad) {
+                return;
             }
-            link.addEventListener("click", function () { hit("click"); });
+            left = Math.max(parseInt(ad.seconds, 10) || 0, 0);
+            close.disabled = true;
+            count.textContent = String(left);
+            image.alt = ad.title || "إعلان";
+            link.removeAttribute("href");
+            link.removeAttribute("target");
+            link.removeAttribute("rel");
+            if (ad.url) {
+                link.href = ad.url;
+                if (/^https?:/i.test(ad.url)) {
+                    link.target = "_blank";
+                    link.rel = "noopener noreferrer";
+                }
+            }
+            image.src = ad.image;
         }
+
+        link.addEventListener("click", function () {
+            if (ad && ad.url) {
+                hit("click");
+            }
+        });
         close.addEventListener("click", function () { dialog.close(); });
         // Escape and taps outside the poster only work once the countdown is over.
         dialog.addEventListener("cancel", function (event) {
@@ -996,10 +1018,12 @@
                 dialog.close();
             }
         });
-        dialog.addEventListener("close", function () { clearInterval(timer); });
-        // The poster opens only once its picture is ready, shortly after the page.
+        dialog.addEventListener("close", function () {
+            clearInterval(timer);
+            next();
+        });
         image.addEventListener("load", function () { setTimeout(open, 500); });
-        image.src = ad.image;
+        next();
     }
 
     function initServiceWorker() {
