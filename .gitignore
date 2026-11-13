@@ -6,3 +6,6 @@ __pycache__/
 # Android signing keys must never be committed
 *.keystore
 *.jks
+
+# Server secrets
+deploy/.env

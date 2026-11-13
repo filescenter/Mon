@@ -4,6 +4,7 @@
 
 - [`ib4tech_minbar`](ib4tech_minbar/README.md): الدليل والمجالس والمكتبة وتطبيق الموبايل `/app`.
 - [`android`](android/README.md): خطوات نشر التطبيق على Google Play ونصوص صفحة المتجر.
+- [`deploy`](deploy/README.md): تشغيل التطبيق على خادم (VPS) مع HTTPS ونسخ احتياطي.
 
 ## التشغيل على الحاسبة بالدوكر
 
