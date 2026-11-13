@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="module_category_minbar" model="ir.module.category">
+        <field name="name">Minbar</field>
+        <field name="sequence">60</field>
+    </record>
+
+    <record id="res_groups_privilege_minbar" model="res.groups.privilege">
+        <field name="name">Minbar</field>
+        <field name="sequence">60</field>
+        <field name="category_id" ref="module_category_minbar"/>
+    </record>
+
+    <record id="group_minbar_editor" model="res.groups">
+        <field name="name">Editor</field>
+        <field name="sequence">10</field>
+        <field name="privilege_id" ref="res_groups_privilege_minbar"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        <field name="comment">Manages pages, majalis and the library, and reviews what owners submit.</field>
+    </record>
+
+    <record id="group_minbar_manager" model="res.groups">
+        <field name="name">Manager</field>
+        <field name="sequence">20</field>
+        <field name="privilege_id" ref="res_groups_privilege_minbar"/>
+        <field name="implied_ids" eval="[(4, ref('group_minbar_editor'))]"/>
+        <field name="user_ids" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        <field name="comment">Full access: configuration, deletion and owner accounts.</field>
+    </record>
+
+    <data noupdate="1">
+        <!-- Owners (portal accounts): read what is published plus their own records,
+             write only their own. -->
+        <record id="rule_minbar_entity_portal_read" model="ir.rule">
+            <field name="name">Minbar page: portal reads published or own</field>
+            <field name="model_id" ref="model_ib4tech_minbar_entity"/>
+            <field name="groups" eval="[(4, ref('base.group_portal'))]"/>
+            <field name="domain_force">['|', ('owner_user_id', '=', user.id), ('state', '=', 'published')]</field>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+        <record id="rule_minbar_entity_portal_write" model="ir.rule">
+            <field name="name">Minbar page: portal writes own</field>
+            <field name="model_id" ref="model_ib4tech_minbar_entity"/>
+            <field name="groups" eval="[(4, ref('base.group_portal'))]"/>
+            <field name="domain_force">[('owner_user_id', '=', user.id)]</field>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="True"/>
+        </record>
+        <record id="rule_minbar_majlis_portal_read" model="ir.rule">
+            <field name="name">Minbar majlis: portal reads published or own</field>
+            <field name="model_id" ref="model_ib4tech_minbar_majlis"/>
+            <field name="groups" eval="[(4, ref('base.group_portal'))]"/>
+            <field name="domain_force">['|', ('owner_user_id', '=', user.id), ('state', '=', 'published')]</field>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+        <record id="rule_minbar_majlis_portal_write" model="ir.rule">
+            <field name="name">Minbar majlis: portal writes own</field>
+            <field name="model_id" ref="model_ib4tech_minbar_majlis"/>
+            <field name="groups" eval="[(4, ref('base.group_portal'))]"/>
+            <field name="domain_force">[('entity_id.owner_user_id', '=', user.id)]</field>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="True"/>
+        </record>
+    </data>
+</odoo>

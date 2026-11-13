@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_minbar_majlis_repeat_form" model="ir.ui.view">
+        <field name="name">ib4tech.minbar.majlis.repeat.form</field>
+        <field name="model">ib4tech.minbar.majlis.repeat</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="majlis_id" readonly="1"/>
+                    <field name="days"/>
+                </group>
+                <footer>
+                    <button name="action_repeat" type="object" string="Repeat" class="btn-primary"/>
+                    <button string="Discard" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_minbar_majlis_repeat" model="ir.actions.act_window">
+        <field name="name">Repeat Daily</field>
+        <field name="res_model">ib4tech.minbar.majlis.repeat</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

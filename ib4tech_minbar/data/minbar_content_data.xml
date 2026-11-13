@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="ir_config_app_name" model="ir.config_parameter">
+            <field name="key">ib4tech_minbar.app_name</field>
+            <field name="value">المنبر</field>
+        </record>
+        <record id="ir_config_tz" model="ir.config_parameter">
+            <field name="key">ib4tech_minbar.tz</field>
+            <field name="value">Asia/Baghdad</field>
+        </record>
+        <record id="ir_config_hijri_offset" model="ir.config_parameter">
+            <field name="key">ib4tech_minbar.hijri_offset</field>
+            <field name="value">0</field>
+        </record>
+
+        <record id="content_category_dua" model="ib4tech.minbar.content.category">
+            <field name="name">الأدعية</field>
+            <field name="description">أدعية الأيام والمناسبات</field>
+            <field name="icon">dua</field>
+            <field name="sequence">10</field>
+        </record>
+        <record id="content_category_ziyarah" model="ib4tech.minbar.content.category">
+            <field name="name">الزيارات</field>
+            <field name="description">زيارات النبي وأهل البيت (عليهم السلام)</field>
+            <field name="icon">ziyarah</field>
+            <field name="sequence">20</field>
+        </record>
+        <record id="content_category_taqib" model="ib4tech.minbar.content.category">
+            <field name="name">التعقيبات</field>
+            <field name="description">تعقيبات الصلوات اليومية</field>
+            <field name="icon">taqib</field>
+            <field name="sequence">30</field>
+        </record>
+        <record id="content_category_munajat" model="ib4tech.minbar.content.category">
+            <field name="name">المناجاة</field>
+            <field name="description">المناجاة والابتهالات</field>
+            <field name="icon">munajat</field>
+            <field name="sequence">40</field>
+        </record>
+        <record id="content_category_dhikr" model="ib4tech.minbar.content.category">
+            <field name="name">الأذكار</field>
+            <field name="description">الأذكار والتسبيحات</field>
+            <field name="icon">dhikr</field>
+            <field name="sequence">50</field>
+        </record>
+
+        <!-- Short starter texts. The full library is entered by the administration
+             from a verified source. -->
+        <record id="content_dua_faraj" model="ib4tech.minbar.content">
+            <field name="name">دعاء الفرج</field>
+            <field name="category_id" ref="content_category_dua"/>
+            <field name="intro">دعاء لسلامة الإمام المهدي (عجل الله فرجه)، يُقرأ في كل وقت ولا سيما في ليلة الثالث والعشرين من شهر رمضان.</field>
+            <field name="body" type="html"><p>اللهم كن لوليك الحجة بن الحسن، صلواتك عليه وعلى آبائه، في هذه الساعة وفي كل ساعة، ولياً وحافظاً وقائداً وناصراً ودليلاً وعيناً، حتى تسكنه أرضك طوعاً وتمتعه فيها طويلاً.</p></field>
+            <field name="is_featured" eval="True"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="content_salam_husayn" model="ib4tech.minbar.content">
+            <field name="name">السلام على الحسين (عليه السلام)</field>
+            <field name="category_id" ref="content_category_ziyarah"/>
+            <field name="intro">من زيارة عاشوراء.</field>
+            <field name="body" type="html"><p>السلام على الحسين، وعلى علي بن الحسين، وعلى أولاد الحسين، وعلى أصحاب الحسين.</p></field>
+            <field name="is_featured" eval="True"/>
+            <field name="sequence">10</field>
+        </record>
+        <record id="content_tasbih_zahra" model="ib4tech.minbar.content">
+            <field name="name">تسبيح السيدة الزهراء (عليها السلام)</field>
+            <field name="category_id" ref="content_category_taqib"/>
+            <field name="intro">يُستحب بعد كل صلاة وعند النوم.</field>
+            <field name="body" type="html"><p>الله أكبر (٣٤ مرة)</p><p>الحمد لله (٣٣ مرة)</p><p>سبحان الله (٣٣ مرة)</p></field>
+            <field name="sequence">10</field>
+        </record>
+    </data>
+</odoo>

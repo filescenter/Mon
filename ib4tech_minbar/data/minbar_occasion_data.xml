@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="occasion_new_year" model="ib4tech.minbar.occasion">
+            <field name="name">بداية السنة الهجرية</field>
+            <field name="hijri_month">1</field>
+            <field name="hijri_day">1</field>
+            <field name="occasion_type">other</field>
+        </record>
+        <record id="occasion_tasua" model="ib4tech.minbar.occasion">
+            <field name="name">تاسوعاء</field>
+            <field name="hijri_month">1</field>
+            <field name="hijri_day">9</field>
+            <field name="occasion_type">other</field>
+        </record>
+        <record id="occasion_ashura" model="ib4tech.minbar.occasion">
+            <field name="name">عاشوراء: استشهاد الإمام الحسين (عليه السلام)</field>
+            <field name="hijri_month">1</field>
+            <field name="hijri_day">10</field>
+            <field name="occasion_type">shahadah</field>
+        </record>
+        <record id="occasion_sajjad_sh" model="ib4tech.minbar.occasion">
+            <field name="name">استشهاد الإمام علي بن الحسين السجاد (عليه السلام)</field>
+            <field name="hijri_month">1</field>
+            <field name="hijri_day">25</field>
+            <field name="occasion_type">shahadah</field>
+        </record>
+        <record id="occasion_hasan_sh" model="ib4tech.minbar.occasion">
+            <field name="name">استشهاد الإمام الحسن المجتبى (عليه السلام)</field>
+            <field name="hijri_month">2</field>
+            <field name="hijri_day">7</field>
+            <field name="occasion_type">shahadah</field>
+        </record>
+        <record id="occasion_arbaeen" model="ib4tech.minbar.occasion">
+            <field name="name">أربعينية الإمام الحسين (عليه السلام)</field>
+            <field name="hijri_month">2</field>
+            <field name="hijri_day">20</field>
+            <field name="occasion_type">other</field>
+        </record>
+        <record id="occasion_prophet_wafat" model="ib4tech.minbar.occasion">
+            <field name="name">وفاة النبي الأكرم محمد (صلى الله عليه وآله)</field>
+            <field name="hijri_month">2</field>
+            <field name="hijri_day">28</field>
+            <field name="occasion_type">shahadah</field>
+        </record>
+        <record id="occasion_askari_sh" model="ib4tech.minbar.occasion">
+            <field name="name">استشهاد الإمام الحسن العسكري (عليه السلام)</field>
+            <field name="hijri_month">3</field>
+            <field name="hijri_day">8</field>
+            <field name="occasion_type">shahadah</field>
+        </record>
+        <record id="occasion_prophet_mawlid" model="ib4tech.minbar.occasion">
+            <field name="name">مولد النبي الأكرم (صلى الله عليه وآله) والإمام الصادق (عليه السلام)</field>
+            <field name="hijri_month">3</field>
+            <field name="hijri_day">17</field>
+            <field name="occasion_type">wiladah</field>
+        </record>
+        <record id="occasion_zahra_sh" model="ib4tech.minbar.occasion">
+            <field name="name">استشهاد السيدة فاطمة الزهراء (عليها السلام)</field>
+            <field name="hijri_month">6</field>
+            <field name="hijri_day">3</field>
+            <field name="occasion_type">shahadah</field>
+        </record>
+        <record id="occasion_zahra_w" model="ib4tech.minbar.occasion">
+            <field name="name">مولد السيدة فاطمة الزهراء (عليها السلام)</field>
+            <field name="hijri_month">6</field>
+            <field name="hijri_day">20</field>
+            <field name="occasion_type">wiladah</field>
+        </record>
+        <record id="occasion_baqir_w" model="ib4tech.minbar.occasion">
+            <field name="name">مولد الإمام محمد الباقر (عليه السلام)</field>
+            <field name="hijri_month">7</field>
+            <field name="hijri_day">1</field>
+            <field name="occasion_type">wiladah</field>
+        </record>
+        <record id="occasion_hadi_sh" model="ib4tech.minbar.occasion">
+            <field name="name">استشهاد الإمام علي الهادي (عليه السلام)</field>
+            <field name="hijri_month">7</field>
+            <field name="hijri_day">3</field>
+            <field name="occasion_type">shahadah</field>
+        </record>
+        <record id="occasion_jawad_w" model="ib4tech.minbar.occasion">
+            <field name="name">مولد الإمام محمد الجواد (عليه السلام)</field>
+            <field name="hijri_month">7</field>
+            <field name="hijri_day">10</field>
+            <field name="occasion_type">wiladah</field>
+        </record>
+        <record id="occasion_ali_w" model="ib4tech.minbar.occasion">
+            <field name="name">مولد أمير المؤمنين علي بن أبي طالب (عليه السلام)</field>
+            <field name="hijri_month">7</field>
+            <field name="hijri_day">13</field>
+            <field name="occasion_type">wiladah</field>
+        </record>
+        <record id="occasion_kadhim_sh" model="ib4tech.minbar.occasion">
+            <field name="name">استشهاد الإمام موسى الكاظم (عليه السلام)</field>
+            <field name="hijri_month">7</field>
+            <field name="hijri_day">25</field>
+            <field name="occasion_type">shahadah</field>
+        </record>
+        <record id="occasion_mabath" model="ib4tech.minbar.occasion">
+            <field name="name">المبعث النبوي الشريف</field>
+            <field name="hijri_month">7</field>
+            <field name="hijri_day">27</field>
+            <field name="occasion_type">eid</field>
+        </record>
+        <record id="occasion_husayn_w" model="ib4tech.minbar.occasion">
+            <field name="name">مولد الإمام الحسين (عليه السلام)</field>
+            <field name="hijri_month">8</field>
+            <field name="hijri_day">3</field>
+            <field name="occasion_type">wiladah</field>
+        </record>
+        <record id="occasion_abbas_w" model="ib4tech.minbar.occasion">
+            <field name="name">مولد أبي الفضل العباس (عليه السلام)</field>
+            <field name="hijri_month">8</field>
+            <field name="hijri_day">4</field>
+            <field name="occasion_type">wiladah</field>
+        </record>
+        <record id="occasion_sajjad_w" model="ib4tech.minbar.occasion">
+            <field name="name">مولد الإمام علي بن الحسين السجاد (عليه السلام)</field>
+            <field name="hijri_month">8</field>
+            <field name="hijri_day">5</field>
+            <field name="occasion_type">wiladah</field>
+        </record>
+        <record id="occasion_mahdi_w" model="ib4tech.minbar.occasion">
+            <field name="name">مولد الإمام المهدي (عجل الله فرجه)</field>
+            <field name="hijri_month">8</field>
+            <field name="hijri_day">15</field>
+            <field name="occasion_type">wiladah</field>
+        </record>
+        <record id="occasion_hasan_w" model="ib4tech.minbar.occasion">
+            <field name="name">مولد الإمام الحسن المجتبى (عليه السلام)</field>
+            <field name="hijri_month">9</field>
+            <field name="hijri_day">15</field>
+            <field name="occasion_type">wiladah</field>
+        </record>
+        <record id="occasion_ali_wound" model="ib4tech.minbar.occasion">
+            <field name="name">ليلة القدر الأولى وجرح أمير المؤمنين (عليه السلام)</field>
+            <field name="hijri_month">9</field>
+            <field name="hijri_day">19</field>
+            <field name="occasion_type">shahadah</field>
+        </record>
+        <record id="occasion_ali_sh" model="ib4tech.minbar.occasion">
+            <field name="name">استشهاد أمير المؤمنين علي بن أبي طالب (عليه السلام)</field>
+            <field name="hijri_month">9</field>
+            <field name="hijri_day">21</field>
+            <field name="occasion_type">shahadah</field>
+        </record>
+        <record id="occasion_qadr" model="ib4tech.minbar.occasion">
+            <field name="name">ليلة القدر (ليلة الثالث والعشرين)</field>
+            <field name="hijri_month">9</field>
+            <field name="hijri_day">23</field>
+            <field name="occasion_type">other</field>
+        </record>
+        <record id="occasion_fitr" model="ib4tech.minbar.occasion">
+            <field name="name">عيد الفطر المبارك</field>
+            <field name="hijri_month">10</field>
+            <field name="hijri_day">1</field>
+            <field name="occasion_type">eid</field>
+        </record>
+        <record id="occasion_sadiq_sh" model="ib4tech.minbar.occasion">
+            <field name="name">استشهاد الإمام جعفر الصادق (عليه السلام)</field>
+            <field name="hijri_month">10</field>
+            <field name="hijri_day">25</field>
+            <field name="occasion_type">shahadah</field>
+        </record>
+        <record id="occasion_ridha_w" model="ib4tech.minbar.occasion">
+            <field name="name">مولد الإمام علي الرضا (عليه السلام)</field>
+            <field name="hijri_month">11</field>
+            <field name="hijri_day">11</field>
+            <field name="occasion_type">wiladah</field>
+        </record>
+        <record id="occasion_baqir_sh" model="ib4tech.minbar.occasion">
+            <field name="name">استشهاد الإمام محمد الباقر (عليه السلام)</field>
+            <field name="hijri_month">12</field>
+            <field name="hijri_day">7</field>
+            <field name="occasion_type">shahadah</field>
+        </record>
+        <record id="occasion_arafah" model="ib4tech.minbar.occasion">
+            <field name="name">يوم عرفة</field>
+            <field name="hijri_month">12</field>
+            <field name="hijri_day">9</field>
+            <field name="occasion_type">other</field>
+        </record>
+        <record id="occasion_adha" model="ib4tech.minbar.occasion">
+            <field name="name">عيد الأضحى المبارك</field>
+            <field name="hijri_month">12</field>
+            <field name="hijri_day">10</field>
+            <field name="occasion_type">eid</field>
+        </record>
+        <record id="occasion_hadi_w" model="ib4tech.minbar.occasion">
+            <field name="name">مولد الإمام علي الهادي (عليه السلام)</field>
+            <field name="hijri_month">12</field>
+            <field name="hijri_day">15</field>
+            <field name="occasion_type">wiladah</field>
+        </record>
+        <record id="occasion_ghadir" model="ib4tech.minbar.occasion">
+            <field name="name">عيد الغدير الأغر</field>
+            <field name="hijri_month">12</field>
+            <field name="hijri_day">18</field>
+            <field name="occasion_type">eid</field>
+        </record>
+        <record id="occasion_mubahala" model="ib4tech.minbar.occasion">
+            <field name="name">يوم المباهلة</field>
+            <field name="hijri_month">12</field>
+            <field name="hijri_day">24</field>
+            <field name="occasion_type">eid</field>
+        </record>
+    </data>
+</odoo>

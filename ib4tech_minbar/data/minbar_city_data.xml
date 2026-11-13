@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="city_najaf" model="ib4tech.minbar.city">
+            <field name="name">النجف الأشرف</field>
+            <field name="governorate">النجف</field>
+            <field name="latitude">31.9957</field>
+            <field name="longitude">44.3148</field>
+            <field name="sequence">10</field>
+        </record>
+        <record id="city_karbala" model="ib4tech.minbar.city">
+            <field name="name">كربلاء المقدسة</field>
+            <field name="governorate">كربلاء</field>
+            <field name="latitude">32.6164</field>
+            <field name="longitude">44.0324</field>
+            <field name="sequence">20</field>
+        </record>
+        <record id="city_kadhimiya" model="ib4tech.minbar.city">
+            <field name="name">الكاظمية المقدسة</field>
+            <field name="governorate">بغداد</field>
+            <field name="latitude">33.3797</field>
+            <field name="longitude">44.3383</field>
+            <field name="sequence">30</field>
+        </record>
+        <record id="city_samarra" model="ib4tech.minbar.city">
+            <field name="name">سامراء المقدسة</field>
+            <field name="governorate">صلاح الدين</field>
+            <field name="latitude">34.1983</field>
+            <field name="longitude">43.8742</field>
+            <field name="sequence">40</field>
+        </record>
+        <record id="city_baghdad" model="ib4tech.minbar.city">
+            <field name="name">بغداد</field>
+            <field name="governorate">بغداد</field>
+            <field name="latitude">33.3152</field>
+            <field name="longitude">44.3661</field>
+            <field name="sequence">50</field>
+        </record>
+        <record id="city_kufa" model="ib4tech.minbar.city">
+            <field name="name">الكوفة</field>
+            <field name="governorate">النجف</field>
+            <field name="latitude">32.0347</field>
+            <field name="longitude">44.4011</field>
+            <field name="sequence">60</field>
+        </record>
+        <record id="city_hillah" model="ib4tech.minbar.city">
+            <field name="name">الحلة</field>
+            <field name="governorate">بابل</field>
+            <field name="latitude">32.4833</field>
+            <field name="longitude">44.4333</field>
+            <field name="sequence">70</field>
+        </record>
+        <record id="city_diwaniyah" model="ib4tech.minbar.city">
+            <field name="name">الديوانية</field>
+            <field name="governorate">القادسية</field>
+            <field name="latitude">31.9889</field>
+            <field name="longitude">44.9258</field>
+            <field name="sequence">80</field>
+        </record>
+        <record id="city_samawah" model="ib4tech.minbar.city">
+            <field name="name">السماوة</field>
+            <field name="governorate">المثنى</field>
+            <field name="latitude">31.3189</field>
+            <field name="longitude">45.2806</field>
+            <field name="sequence">90</field>
+        </record>
+        <record id="city_nasiriyah" model="ib4tech.minbar.city">
+            <field name="name">الناصرية</field>
+            <field name="governorate">ذي قار</field>
+            <field name="latitude">31.0439</field>
+            <field name="longitude">46.2575</field>
+            <field name="sequence">100</field>
+        </record>
+        <record id="city_qalat_sukkar" model="ib4tech.minbar.city">
+            <field name="name">قلعة سكر</field>
+            <field name="governorate">ذي قار</field>
+            <field name="latitude">31.8617</field>
+            <field name="longitude">46.0786</field>
+            <field name="sequence">110</field>
+        </record>
+        <record id="city_rifai" model="ib4tech.minbar.city">
+            <field name="name">الرفاعي</field>
+            <field name="governorate">ذي قار</field>
+            <field name="latitude">31.7167</field>
+            <field name="longitude">46.1</field>
+            <field name="sequence">120</field>
+        </record>
+        <record id="city_shatra" model="ib4tech.minbar.city">
+            <field name="name">الشطرة</field>
+            <field name="governorate">ذي قار</field>
+            <field name="latitude">31.4097</field>
+            <field name="longitude">46.1717</field>
+            <field name="sequence">130</field>
+        </record>
+        <record id="city_suq_shuyukh" model="ib4tech.minbar.city">
+            <field name="name">سوق الشيوخ</field>
+            <field name="governorate">ذي قار</field>
+            <field name="latitude">30.8894</field>
+            <field name="longitude">46.4572</field>
+            <field name="sequence">140</field>
+        </record>
+        <record id="city_kut" model="ib4tech.minbar.city">
+            <field name="name">الكوت</field>
+            <field name="governorate">واسط</field>
+            <field name="latitude">32.5128</field>
+            <field name="longitude">45.8182</field>
+            <field name="sequence">150</field>
+        </record>
+        <record id="city_amarah" model="ib4tech.minbar.city">
+            <field name="name">العمارة</field>
+            <field name="governorate">ميسان</field>
+            <field name="latitude">31.8356</field>
+            <field name="longitude">47.1447</field>
+            <field name="sequence">160</field>
+        </record>
+        <record id="city_basra" model="ib4tech.minbar.city">
+            <field name="name">البصرة</field>
+            <field name="governorate">البصرة</field>
+            <field name="latitude">30.5081</field>
+            <field name="longitude">47.7835</field>
+            <field name="sequence">170</field>
+        </record>
+        <record id="city_balad" model="ib4tech.minbar.city">
+            <field name="name">بلد</field>
+            <field name="governorate">صلاح الدين</field>
+            <field name="latitude">34.0158</field>
+            <field name="longitude">44.1453</field>
+            <field name="sequence">180</field>
+        </record>
+    </data>
+</odoo>

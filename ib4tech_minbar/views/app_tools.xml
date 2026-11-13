@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- City picker shared by the pages that depend on the visitor's location. -->
+    <template id="app_city_picker" name="Minbar App: City Picker">
+        <div class="mb-filters__row">
+            <select data-city-select="1" aria-label="المدينة">
+                <option t-foreach="cities" t-as="c" t-att-value="c.id"><t t-out="c.name"/></option>
+                <option value="gps">موقعي الحالي</option>
+            </select>
+            <button type="button" class="mb-btn mb-btn--soft" data-locate="1">
+                <svg class="ic"><use href="#i-pin"/></svg>تحديد موقعي
+            </button>
+        </div>
+    </template>
+
+    <template id="app_prayer" name="Minbar App: Prayer Times">
+        <t t-call="ib4tech_minbar.app_layout">
+            <t t-set="back" t-value="'/app/more'"/>
+            <t t-set="page" t-value="'prayer'"/>
+            <t t-call="ib4tech_minbar.app_city_picker"/>
+            <section class="mb-hero mb-hero--compact">
+                <div class="mb-hero__date">
+                    <strong data-hijri="full">&#160;</strong>
+                    <span data-gregorian="full">&#160;</span>
+                </div>
+                <div class="mb-hero__prayer">
+                    <span>
+                        <small>الصلاة القادمة</small>
+                        <strong data-next-prayer="name">&#160;</strong>
+                    </span>
+                    <span class="mb-hero__clock">
+                        <strong data-next-prayer="time">--:--</strong>
+                        <small data-next-prayer="left">&#160;</small>
+                    </span>
+                </div>
+            </section>
+            <div class="mb-daynav">
+                <button type="button" class="mb-btn mb-btn--soft mb-btn--small" data-prayer-day="-1">اليوم السابق</button>
+                <strong data-prayer-date="1">&#160;</strong>
+                <button type="button" class="mb-btn mb-btn--soft mb-btn--small" data-prayer-day="1">اليوم التالي</button>
+            </div>
+            <table class="mb-times" id="mb-times">
+                <tbody>
+                    <tr data-prayer="imsak"><th>الإمساك</th><td>--:--</td></tr>
+                    <tr data-prayer="fajr"><th>الفجر</th><td>--:--</td></tr>
+                    <tr data-prayer="sunrise"><th>شروق الشمس</th><td>--:--</td></tr>
+                    <tr data-prayer="dhuhr"><th>الظهر</th><td>--:--</td></tr>
+                    <tr data-prayer="sunset"><th>غروب الشمس</th><td>--:--</td></tr>
+                    <tr data-prayer="maghrib"><th>المغرب</th><td>--:--</td></tr>
+                    <tr data-prayer="midnight"><th>منتصف الليل الشرعي</th><td>--:--</td></tr>
+                </tbody>
+            </table>
+            <p class="mb-note">الأوقات محسوبة فلكياً وفق طريقة معهد الجيوفيزياء (ليفا - قم): زاوية الفجر ١٦° وزاوية المغرب ٤°. قد تختلف دقيقة أو دقيقتين عن إمساكية مدينتك، فاحتط لذلك.</p>
+        </t>
+    </template>
+
+    <template id="app_qibla" name="Minbar App: Qibla">
+        <t t-call="ib4tech_minbar.app_layout">
+            <t t-set="back" t-value="'/app/more'"/>
+            <t t-set="page" t-value="'qibla'"/>
+            <t t-call="ib4tech_minbar.app_city_picker"/>
+            <div class="mb-compass" id="mb-compass">
+                <div class="mb-compass__dial" data-compass-dial="1">
+                    <span class="mb-compass__n">ش</span>
+                    <span class="mb-compass__e">ق</span>
+                    <span class="mb-compass__s">ج</span>
+                    <span class="mb-compass__w">غ</span>
+                    <span class="mb-compass__hub"/>
+                    <div class="mb-compass__needle" data-compass-needle="1">
+                        <svg viewBox="0 0 44 112" aria-hidden="true">
+                            <path class="mb-compass__stem" d="M22 30l6 82H16z"/>
+                            <rect class="mb-compass__kaaba" x="8" y="2" width="28" height="26" rx="3"/>
+                            <path class="mb-compass__band" d="M8 10h28"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <p class="mb-compass__value">
+                اتجاه القبلة <strong data-qibla-angle="1">--</strong> درجة من الشمال
+                <small data-qibla-city="1">&#160;</small>
+            </p>
+            <button type="button" class="mb-btn mb-btn--block" data-compass-start="1">
+                <svg class="ic"><use href="#i-compass"/></svg>تشغيل البوصلة
+            </button>
+            <p class="mb-note" data-compass-status="1">بدون البوصلة: وجّه أعلى الهاتف نحو الشمال، فيشير السهم إلى القبلة. عند تشغيل البوصلة أدر الهاتف حتى يتجه السهم إلى الأعلى.</p>
+        </t>
+    </template>
+
+    <template id="app_tasbih" name="Minbar App: Tasbih">
+        <t t-call="ib4tech_minbar.app_layout">
+            <t t-set="back" t-value="'/app/more'"/>
+            <t t-set="page" t-value="'tasbih'"/>
+            <div class="mb-chips" role="group" aria-label="نوع الذكر">
+                <button type="button" class="mb-chip" data-tasbih-preset="zahra">تسبيح الزهراء (ع)</button>
+                <button type="button" class="mb-chip" data-tasbih-preset="salawat">الصلوات</button>
+                <button type="button" class="mb-chip" data-tasbih-preset="istighfar">الاستغفار</button>
+                <button type="button" class="mb-chip" data-tasbih-preset="free">عدّاد حر</button>
+            </div>
+            <button type="button" class="mb-counter" id="mb-counter" aria-label="اضغط للتسبيح">
+                <span class="mb-counter__phrase" data-tasbih="phrase">&#160;</span>
+                <strong class="mb-counter__count" data-tasbih="count">0</strong>
+                <span class="mb-counter__goal" data-tasbih="goal">&#160;</span>
+            </button>
+            <div class="mb-actions">
+                <button type="button" class="mb-btn mb-btn--soft" data-tasbih-reset="1">تصفير</button>
+                <span class="mb-counter__total">المجموع اليوم: <strong data-tasbih="total">0</strong></span>
+            </div>
+        </t>
+    </template>
+
+    <template id="app_occasions" name="Minbar App: Occasions">
+        <t t-call="ib4tech_minbar.app_layout">
+            <t t-set="back" t-value="'/app/more'"/>
+            <t t-set="page" t-value="'occasions'"/>
+            <section class="mb-hero mb-hero--compact">
+                <div class="mb-hero__date">
+                    <strong data-hijri="full">&#160;</strong>
+                    <span data-gregorian="full">&#160;</span>
+                </div>
+                <p class="mb-hero__occasion" data-occasion-today="1" hidden="hidden"/>
+            </section>
+            <h2 class="mb-h2">المناسبات القادمة</h2>
+            <div class="mb-list" id="mb-occasions"/>
+            <p class="mb-note">التاريخ الهجري محسوب وقد يختلف يوماً عن الرؤية الشرعية للهلال.</p>
+        </t>
+    </template>
+
+    <template id="app_more" name="Minbar App: More">
+        <t t-call="ib4tech_minbar.app_layout">
+            <t t-set="back" t-value="'/app'"/>
+            <div class="mb-list">
+                <a class="mb-row" href="/app/prayer"><span class="mb-avatar"><svg class="ic"><use href="#i-clock"/></svg></span><span class="mb-row__body"><span class="mb-row__title">أوقات الصلاة</span><span class="mb-row__meta">حسب مدينتك أو موقعك</span></span><svg class="ic mb-row__go"><use href="#i-chevron"/></svg></a>
+                <a class="mb-row" href="/app/qibla"><span class="mb-avatar"><svg class="ic"><use href="#i-compass"/></svg></span><span class="mb-row__body"><span class="mb-row__title">اتجاه القبلة</span><span class="mb-row__meta">بوصلة القبلة</span></span><svg class="ic mb-row__go"><use href="#i-chevron"/></svg></a>
+                <a class="mb-row" href="/app/tasbih"><span class="mb-avatar"><svg class="ic"><use href="#i-beads"/></svg></span><span class="mb-row__body"><span class="mb-row__title">المسبحة</span><span class="mb-row__meta">تسبيح الزهراء والصلوات والاستغفار</span></span><svg class="ic mb-row__go"><use href="#i-chevron"/></svg></a>
+                <a class="mb-row" href="/app/occasions"><span class="mb-avatar"><svg class="ic"><use href="#i-moon"/></svg></span><span class="mb-row__body"><span class="mb-row__title">المناسبات الهجرية</span><span class="mb-row__meta">الولادات والوفيات والأعياد</span></span><svg class="ic mb-row__go"><use href="#i-chevron"/></svg></a>
+                <a class="mb-row" href="/app/favorites"><span class="mb-avatar"><svg class="ic"><use href="#i-heart"/></svg></span><span class="mb-row__body"><span class="mb-row__title">المفضلة</span><span class="mb-row__meta">الصفحات التي تتابعها والمجالس المحفوظة</span></span><svg class="ic mb-row__go"><use href="#i-chevron"/></svg></a>
+            </div>
+            <h2 class="mb-h2">لأصحاب الحسينيات والمواكب والرواديد</h2>
+            <div class="mb-list">
+                <a t-if="is_logged" class="mb-row" href="/app/my"><span class="mb-avatar"><svg class="ic"><use href="#i-user"/></svg></span><span class="mb-row__body"><span class="mb-row__title">لوحة صاحب الصفحة</span><span class="mb-row__meta">عدّل صفحتك وانشر مجالسك</span></span><svg class="ic mb-row__go"><use href="#i-chevron"/></svg></a>
+                <a t-else="" class="mb-row" href="/web/login?redirect=/app/my"><span class="mb-avatar"><svg class="ic"><use href="#i-user"/></svg></span><span class="mb-row__body"><span class="mb-row__title">دخول أصحاب الصفحات</span><span class="mb-row__meta">بالحساب الذي استلمته من الإدارة</span></span><svg class="ic mb-row__go"><use href="#i-chevron"/></svg></a>
+                <a class="mb-row" href="/app/join"><span class="mb-avatar"><svg class="ic"><use href="#i-plus"/></svg></span><span class="mb-row__body"><span class="mb-row__title">سجّل جهتك</span><span class="mb-row__meta">أضف حسينيتك أو موكبك إلى الدليل مجاناً</span></span><svg class="ic mb-row__go"><use href="#i-chevron"/></svg></a>
+                <a t-if="is_logged" class="mb-row" href="/web/session/logout?redirect=/app"><span class="mb-avatar"><svg class="ic"><use href="#i-back"/></svg></span><span class="mb-row__body"><span class="mb-row__title">تسجيل الخروج</span></span></a>
+            </div>
+            <section class="mb-install mb-install--inline" id="mb-install" hidden="hidden">
+                <svg class="ic"><use href="#i-install"/></svg>
+                <span>ثبّت التطبيق على هاتفك.</span>
+                <button type="button" class="mb-btn mb-btn--small" data-install="1">تثبيت</button>
+            </section>
+            <p class="mb-note">الإصدار <t t-out="asset_version"/></p>
+        </t>
+    </template>
+
+    <template id="app_favorites" name="Minbar App: Favourites">
+        <t t-call="ib4tech_minbar.app_layout">
+            <t t-set="back" t-value="'/app/more'"/>
+            <t t-set="page" t-value="'favorites'"/>
+            <div id="mb-favorites" aria-live="polite">
+                <p class="mb-note">جارٍ التحميل…</p>
+            </div>
+            <div id="mb-favorites-empty" hidden="hidden">
+                <div class="mb-empty">
+                    <svg class="ic"><use href="#i-heart"/></svg>
+                    <p class="mb-empty__title">لا توجد مفضلة بعد</p>
+                    <p>تابع حسينية أو موكباً أو احفظ مجلساً ليظهر هنا. المفضلة تُحفظ على هذا الهاتف فقط.</p>
+                    <a class="mb-btn mb-btn--soft" href="/app/directory">تصفّح الدليل</a>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="app_favorites_cards" name="Minbar App: Favourites Cards">
+        <section t-if="majalis" class="mb-section">
+            <h2 class="mb-h2">المجالس المحفوظة</h2>
+            <t t-set="show_day" t-value="True"/>
+            <div class="mb-list">
+                <t t-foreach="majalis" t-as="card">
+                    <t t-call="ib4tech_minbar.app_majlis_card"/>
+                </t>
+            </div>
+        </section>
+        <section t-if="entities" class="mb-section">
+            <h2 class="mb-h2">الصفحات التي تتابعها</h2>
+            <div class="mb-list">
+                <t t-foreach="entities" t-as="e">
+                    <t t-call="ib4tech_minbar.app_entity_card"/>
+                </t>
+            </div>
+        </section>
+    </template>
+
+    <!-- ============================== Join request ============================== -->
+    <template id="app_join" name="Minbar App: Join Request">
+        <t t-call="ib4tech_minbar.app_layout">
+            <t t-set="back" t-value="'/app/more'"/>
+            <t t-if="done">
+                <div class="mb-empty">
+                    <svg class="ic"><use href="#i-check"/></svg>
+                    <p class="mb-empty__title">وصل طلبك</p>
+                    <p>ستراجع الإدارة الطلب وتتواصل معك لتسليمك حساب الدخول إلى صفحتك.</p>
+                    <a class="mb-btn mb-btn--soft" href="/app">العودة للرئيسية</a>
+                </div>
+            </t>
+            <form t-else="" class="mb-form" method="post" action="/app/join">
+                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                <p class="mb-lead">سجّل حسينيتك أو موكبك أو صفحتك كرادود أو خطيب. التسجيل مجاني، وبعد الموافقة تستلم حساباً لتعديل الصفحة ونشر مواعيد المجالس.</p>
+                <p t-if="error" class="mb-alert mb-alert--danger" role="alert"><t t-out="error"/></p>
+                <p class="mb-form__trap" aria-hidden="true">
+                    <label>اتركه فارغاً <input type="text" name="nickname" tabindex="-1" autocomplete="off"/></label>
+                </p>
+                <label class="mb-field">
+                    <span>نوع الصفحة</span>
+                    <select name="entity_type" required="required">
+                        <option t-foreach="entity_types.items()" t-as="item" t-att-value="item[0]"
+                                t-att-selected="form.get('entity_type') == item[0]"><t t-out="item[1]['label']"/></option>
+                    </select>
+                </label>
+                <label class="mb-field">
+                    <span>الاسم</span>
+                    <input type="text" name="name" required="required" maxlength="120" t-att-value="form.get('name')"
+                           placeholder="مثال: موكب أنصار الحسين (ع)"/>
+                </label>
+                <label class="mb-field">
+                    <span>المدينة</span>
+                    <select name="city_id">
+                        <option value="">اختر المدينة</option>
+                        <option t-foreach="cities" t-as="c" t-att-value="c.id"
+                                t-att-selected="form.get('city_id') == str(c.id)"><t t-out="c.name"/></option>
+                    </select>
+                </label>
+                <label class="mb-field">
+                    <span>العنوان <small>اختياري</small></span>
+                    <input type="text" name="address" maxlength="200" t-att-value="form.get('address')"/>
+                </label>
+                <label class="mb-field">
+                    <span>هاتف الصفحة المعلن <small>اختياري</small></span>
+                    <input type="tel" name="phone" maxlength="40" dir="ltr" t-att-value="form.get('phone')"/>
+                </label>
+                <label class="mb-field">
+                    <span>نبذة <small>اختياري</small></span>
+                    <textarea name="description" rows="3" maxlength="3000"><t t-out="form.get('description')"/></textarea>
+                </label>
+                <h2 class="mb-h2">بيانات المسؤول</h2>
+                <p class="mb-note">لا تُنشر هذه البيانات، وتستخدمها الإدارة للتواصل معك فقط.</p>
+                <label class="mb-field">
+                    <span>اسم المسؤول</span>
+                    <input type="text" name="contact_name" required="required" maxlength="120" t-att-value="form.get('contact_name')"/>
+                </label>
+                <label class="mb-field">
+                    <span>رقم الهاتف أو الواتساب</span>
+                    <input type="tel" name="contact_phone" required="required" maxlength="40" dir="ltr" t-att-value="form.get('contact_phone')"/>
+                </label>
+                <label class="mb-field">
+                    <span>البريد الإلكتروني <small>اختياري</small></span>
+                    <input type="email" name="contact_email" maxlength="120" dir="ltr" t-att-value="form.get('contact_email')"/>
+                </label>
+                <button type="submit" class="mb-btn mb-btn--block">إرسال الطلب</button>
+            </form>
+        </t>
+    </template>
+</odoo>

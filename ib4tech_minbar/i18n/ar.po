@@ -1,0 +1,2542 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ib4tech_minbar
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-13 08:01+0000\n"
+"PO-Revision-Date: 2026-11-13 08:01+0000\n"
+"Last-Translator: IB4Tech\n"
+"Language-Team: IB4Tech\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5);\n"
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my
+msgid ". من هنا تعدّل صفحتك وتنشر مواعيد مجالسك."
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my_entity_form
+msgid "07xxxxxxxxx"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_join
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my_entity_form
+msgid "<option value=\"\">اختر المدينة</option>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_majalis
+msgid "<option value=\"\">الرجال والنساء</option>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my_majlis_form
+msgid "<option value=\"\">بدون</option>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_directory_type
+msgid "<option value=\"\">كل الخدمات</option>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_directory_type
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_majalis
+msgid "<option value=\"\">كل المدن</option>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my_majlis_form
+msgid "<option value=\"\">مدينة الصفحة</option>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_city_picker
+msgid "<option value=\"gps\">موقعي الحالي</option>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_qibla
+msgid ""
+"<span class=\"mb-compass__n\">ش</span>\n"
+"                    <span class=\"mb-compass__e\">ق</span>\n"
+"                    <span class=\"mb-compass__s\">ج</span>\n"
+"                    <span class=\"mb-compass__w\">غ</span>\n"
+"                    <span class=\"mb-compass__hub\"/>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_tasbih
+msgid ""
+"<span class=\"mb-counter__phrase\" data-tasbih=\"phrase\"> </span>\n"
+"                <strong class=\"mb-counter__count\" data-tasbih=\"count\">0</strong>\n"
+"                <span class=\"mb-counter__goal\" data-tasbih=\"goal\"> </span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_tasbih
+msgid ""
+"<span class=\"mb-counter__total\">المجموع اليوم: <strong data-"
+"tasbih=\"total\">0</strong></span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_more
+msgid ""
+"<span class=\"mb-row__body\"><span class=\"mb-row__title\">أوقات "
+"الصلاة</span><span class=\"mb-row__meta\">حسب مدينتك أو موقعك</span></span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_more
+msgid ""
+"<span class=\"mb-row__body\"><span class=\"mb-row__title\">اتجاه "
+"القبلة</span><span class=\"mb-row__meta\">بوصلة القبلة</span></span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_more
+msgid ""
+"<span class=\"mb-row__body\"><span class=\"mb-"
+"row__title\">المسبحة</span><span class=\"mb-row__meta\">تسبيح الزهراء "
+"والصلوات والاستغفار</span></span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_more
+msgid ""
+"<span class=\"mb-row__body\"><span class=\"mb-"
+"row__title\">المفضلة</span><span class=\"mb-row__meta\">الصفحات التي تتابعها"
+" والمجالس المحفوظة</span></span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_more
+msgid ""
+"<span class=\"mb-row__body\"><span class=\"mb-row__title\">المناسبات "
+"الهجرية</span><span class=\"mb-row__meta\">الولادات والوفيات "
+"والأعياد</span></span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_more
+msgid ""
+"<span class=\"mb-row__body\"><span class=\"mb-row__title\">تسجيل "
+"الخروج</span></span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_more
+msgid ""
+"<span class=\"mb-row__body\"><span class=\"mb-row__title\">دخول أصحاب "
+"الصفحات</span><span class=\"mb-row__meta\">بالحساب الذي استلمته من "
+"الإدارة</span></span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_more
+msgid ""
+"<span class=\"mb-row__body\"><span class=\"mb-row__title\">سجّل "
+"جهتك</span><span class=\"mb-row__meta\">أضف حسينيتك أو موكبك إلى الدليل "
+"مجاناً</span></span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_more
+msgid ""
+"<span class=\"mb-row__body\"><span class=\"mb-row__title\">لوحة صاحب "
+"الصفحة</span><span class=\"mb-row__meta\">عدّل صفحتك وانشر "
+"مجالسك</span></span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_entity_form
+msgid "<span class=\"o_stat_text\">Open in App</span>"
+msgstr "<span class=\"o_stat_text\">فتح في التطبيق</span>"
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_majlis
+msgid "<span data-fav-label=\"1\">حفظ</span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_entity
+msgid "<span data-fav-label=\"1\">متابعة</span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_home
+msgid ""
+"<span>\n"
+"                        <small>الصلاة القادمة · <span data-city-name=\"1\"> </span></small>\n"
+"                        <strong data-next-prayer=\"name\"> </strong>\n"
+"                    </span>\n"
+"                    <span class=\"mb-hero__clock\">\n"
+"                        <strong data-next-prayer=\"time\">--:--</strong>\n"
+"                        <small data-next-prayer=\"left\"> </small>\n"
+"                    </span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_prayer
+msgid ""
+"<span>\n"
+"                        <small>الصلاة القادمة</small>\n"
+"                        <strong data-next-prayer=\"name\"> </strong>\n"
+"                    </span>\n"
+"                    <span class=\"mb-hero__clock\">\n"
+"                        <strong data-next-prayer=\"time\">--:--</strong>\n"
+"                        <small data-next-prayer=\"left\"> </small>\n"
+"                    </span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_library
+msgid ""
+"<span>\n"
+"                        <strong>القراءة بدون إنترنت</strong>\n"
+"                        <small data-offline-status=\"1\">احفظ المكتبة على هاتفك لتقرأها في أي مكان.</small>\n"
+"                    </span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_home
+msgid ""
+"<span>\n"
+"                        <strong>عندك موكب أو حسينية؟</strong>\n"
+"                        <small>سجّل صفحتك مجاناً وانشر مواعيد مجالسك.</small>\n"
+"                    </span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_directory
+msgid ""
+"<span>\n"
+"                    <strong>أضف صفحتك إلى الدليل</strong>\n"
+"                    <small>للحسينيات والمواكب والرواديد والخطباء، مجاناً.</small>\n"
+"                </span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_home
+msgid "<span>أوقات الصلاة</span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my_entity_form
+msgid "<span>إنستغرام <small>اسم المستخدم</small></span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_join
+msgid "<span>اسم المسؤول</span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_home
+msgid "<span>اقرأ الآن</span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_home
+msgid "<span>الأدعية والزيارات</span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_join
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my_entity_form
+msgid "<span>الاسم</span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_join
+msgid "<span>البريد الإلكتروني <small>اختياري</small></span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my_majlis_form
+msgid "<span>التاريخ</span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_home
+msgid "<span>الحسينيات</span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my_majlis_form
+msgid "<span>الحضور</span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my_majlis_form
+msgid "<span>الرواديد والخطباء <small>من الدليل</small></span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_home
+msgid "<span>الرواديد</span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my_majlis_form
+msgid "<span>الصفحة المنظِّمة</span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my_entity_form
+msgid "<span>الصورة الشخصية أو الشعار</span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_join
+msgid "<span>العنوان <small>اختياري</small></span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my_entity_form
+msgid "<span>العنوان</span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_home
+msgid "<span>القبلة</span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_home
+msgid "<span>المجالس</span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_join
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my_entity_form
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my_majlis_form
+msgid "<span>المدينة</span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_home
+msgid "<span>المسبحة</span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my_majlis_form
+msgid "<span>المكان <small>إن اختلف عن عنوان الصفحة</small></span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my_majlis_form
+msgid "<span>المناسبة <small>اختياري</small></span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_home
+msgid "<span>المواكب</span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my_entity_form
+msgid "<span>الموقع الإلكتروني</span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my_entity_form
+msgid "<span>الهاتف</span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my_majlis_form
+msgid "<span>تفاصيل <small>اختياري</small></span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my_entity_form
+msgid "<span>تلغرام <small>اسم المستخدم</small></span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_home
+msgid "<span>ثبّت التطبيق على هاتفك للوصول السريع والعمل بدون إنترنت.</span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_more
+msgid "<span>ثبّت التطبيق على هاتفك.</span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my_majlis_form
+msgid "<span>رابط البث المباشر <small>اختياري</small></span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my_entity_form
+msgid "<span>رابط فيسبوك</span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my_entity_form
+msgid "<span>رابط يوتيوب</span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_join
+msgid "<span>رقم الهاتف أو الواتساب</span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my_entity_form
+msgid "<span>سنة التأسيس <small>اختياري</small></span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my_entity_form
+msgid "<span>صورة الغلاف</span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my_majlis_form
+msgid "<span>عنوان المجلس</span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my_majlis_form
+msgid "<span>مشاركون آخرون <small>غير موجودين في الدليل</small></span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_join
+msgid "<span>نبذة <small>اختياري</small></span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my_entity_form
+msgid "<span>نبذة</span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_join
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my_entity_form
+msgid "<span>نوع الصفحة</span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_join
+msgid "<span>هاتف الصفحة المعلن <small>اختياري</small></span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my_entity_form
+msgid "<span>واتساب</span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my_entity_form
+msgid "<span>وصف قصير <small>يظهر تحت الاسم</small></span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my_majlis_form
+msgid "<span>يبدأ</span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my_majlis_form
+msgid ""
+"<span>يتكرر يومياً لعدد أيام إضافية <small>مثلاً 9 لعشرة محرم</small></span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my_majlis_form
+msgid "<span>ينتهي <small>اختياري</small></span>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_entity_form
+msgid "About"
+msgstr "نبذة"
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_entity_form
+msgid "Account"
+msgstr "الحساب"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__message_needaction
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis__message_needaction
+msgid "Action Needed"
+msgstr "إجراء مطلوب"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_city__active
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content__active
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content_category__active
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__active
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_occasion__active
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_service__active
+msgid "Active"
+msgstr "نشط"
+
+#. module: ib4tech_minbar
+#: model_terms:ir.actions.act_window,help:ib4tech_minbar.action_minbar_content
+msgid "Add the first dua or ziyarah"
+msgstr "أضف أول دعاء أو زيارة"
+
+#. module: ib4tech_minbar
+#: model_terms:ir.actions.act_window,help:ib4tech_minbar.action_minbar_entity
+msgid "Add the first husseiniya, mawkib or radood"
+msgstr "أضف أول حسينية أو موكب أو رادود"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__address
+msgid "Address"
+msgstr "العنوان"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_res_config_settings__minbar_app_name
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.res_config_settings_view_form
+msgid "App Name"
+msgstr "اسم التطبيق"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_res_config_settings__minbar_tz
+msgid "App Timezone"
+msgstr "المنطقة الزمنية للتطبيق"
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_entity_form
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_majlis_form
+msgid "Approve & Publish"
+msgstr "موافقة ونشر"
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_content_form
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_content_search
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_entity_form
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_entity_search
+msgid "Archived"
+msgstr "مؤرشف"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__message_attachment_count
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis__audience
+msgid "Audience"
+msgstr "الحضور"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content__audio_url
+msgid "Audio Link"
+msgstr "رابط الصوت"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_res_config_settings__minbar_auto_publish_verified
+msgid "Auto-publish majalis of verified pages"
+msgstr "نشر مجالس الصفحات الموثّقة تلقائياً"
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_majlis_form
+msgid "Back to Draft"
+msgstr "إرجاع إلى مسودة"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields.selection,name:ib4tech_minbar.selection__ib4tech_minbar_occasion__occasion_type__wiladah
+msgid "Birth"
+msgstr "ولادة"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields.selection,name:ib4tech_minbar.selection__ib4tech_minbar_content_category__icon__book
+msgid "Book"
+msgstr "كتاب"
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_majlis_form
+msgid "Cancel Majlis"
+msgstr "إلغاء المجلس"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields.selection,name:ib4tech_minbar.selection__ib4tech_minbar_majlis__state__cancelled
+msgid "Cancelled"
+msgstr "ملغى"
+
+#. module: ib4tech_minbar
+#: model:ir.actions.act_window,name:ib4tech_minbar.action_minbar_city
+#: model:ir.ui.menu,name:ib4tech_minbar.menu_minbar_city
+msgid "Cities"
+msgstr "المدن"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__city_id
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis__city_id
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_entity_search
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_majlis_search
+msgid "City"
+msgstr "المدينة"
+
+#. module: ib4tech_minbar
+#: model:ir.model,name:ib4tech_minbar.model_res_config_settings
+msgid "Config Settings"
+msgstr "إعدادات التهيئة"
+
+#. module: ib4tech_minbar
+#: model:ir.ui.menu,name:ib4tech_minbar.menu_minbar_config
+msgid "Configuration"
+msgstr "الإعدادات"
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_entity_form
+msgid "Contact Channels"
+msgstr "وسائل التواصل"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__contact_email
+msgid "Contact Email"
+msgstr "بريد المسؤول"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__contact_name
+msgid "Contact Name"
+msgstr "اسم المسؤول"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__contact_phone
+msgid "Contact Phone"
+msgstr "هاتف المسؤول"
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_entity_form
+msgid "Contact of the Applicant"
+msgstr "بيانات مقدّم الطلب"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content_category__content_count
+msgid "Content Count"
+msgstr "عدد النصوص"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__cover_image
+msgid "Cover"
+msgstr "الغلاف"
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_entity_form
+msgid "Cover & Map"
+msgstr "الغلاف والخريطة"
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_entity_form
+msgid "Create Owner Account"
+msgstr "إنشاء حساب لصاحب الصفحة"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_city__create_uid
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content__create_uid
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content_category__create_uid
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__create_uid
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis__create_uid
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis_repeat__create_uid
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_occasion__create_uid
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_service__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_city__create_date
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content__create_date
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content_category__create_date
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__create_date
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis__create_date
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis_repeat__create_date
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_occasion__create_date
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_service__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_majlis_search
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_majlis_search
+msgid "Day"
+msgstr "اليوم"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content__weekday
+msgid "Day of the Week"
+msgstr "يوم الأسبوع"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,help:ib4tech_minbar.field_res_config_settings__minbar_hijri_offset
+msgid ""
+"Days added to the computed hijri date so that it matches the local moon "
+"sighting (-2 to +2)."
+msgstr ""
+"عدد الأيام المضافة إلى التاريخ الهجري المحسوب ليطابق رؤية الهلال المحلية (من"
+" -2 إلى +2)."
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_res_config_settings__minbar_default_city_id
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.res_config_settings_view_form
+msgid "Default City"
+msgstr "المدينة الافتراضية"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content_category__description
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__description
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis__description
+msgid "Description"
+msgstr "الوصف"
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_majlis_form
+msgid "Details"
+msgstr "التفاصيل"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields.selection,name:ib4tech_minbar.selection__ib4tech_minbar_content_category__icon__dhikr
+msgid "Dhikr"
+msgstr "ذكر"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields.selection,name:ib4tech_minbar.selection__ib4tech_minbar_occasion__hijri_month__12
+msgid "Dhu al-Hijjah"
+msgstr "ذو الحجة"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields.selection,name:ib4tech_minbar.selection__ib4tech_minbar_occasion__hijri_month__11
+msgid "Dhu al-Qadah"
+msgstr "ذو القعدة"
+
+#. module: ib4tech_minbar
+#: model:ir.actions.act_window,name:ib4tech_minbar.action_minbar_entity
+#: model:ir.ui.menu,name:ib4tech_minbar.menu_minbar_directory
+msgid "Directory"
+msgstr "الدليل"
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_majlis_repeat_form
+msgid "Discard"
+msgstr "إلغاء"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_city__display_name
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content__display_name
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content_category__display_name
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__display_name
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis__display_name
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis_repeat__display_name
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_occasion__display_name
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_service__display_name
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_res_config_settings__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields.selection,name:ib4tech_minbar.selection__ib4tech_minbar_entity__state__draft
+#: model:ir.model.fields.selection,name:ib4tech_minbar.selection__ib4tech_minbar_majlis__state__draft
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields.selection,name:ib4tech_minbar.selection__ib4tech_minbar_content_category__icon__dua
+msgid "Dua"
+msgstr "دعاء"
+
+#. module: ib4tech_minbar
+#: model_terms:ir.actions.act_window,help:ib4tech_minbar.action_minbar_entity
+msgid "Each page is shown in the app once it is published."
+msgstr "تظهر كل صفحة في التطبيق بعد نشرها."
+
+#. module: ib4tech_minbar
+#: model:res.groups,name:ib4tech_minbar.group_minbar_editor
+msgid "Editor"
+msgstr "محرر"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields.selection,name:ib4tech_minbar.selection__ib4tech_minbar_occasion__occasion_type__eid
+msgid "Eid"
+msgstr "عيد"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis__date_end
+msgid "Ends At"
+msgstr "ينتهي في"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields.selection,name:ib4tech_minbar.selection__ib4tech_minbar_majlis__audience__all
+msgid "Everyone"
+msgstr "للجميع"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis_repeat__days
+msgid "Extra Days"
+msgstr "أيام إضافية"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__facebook
+msgid "Facebook"
+msgstr "فيسبوك"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content__is_featured
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_content_search
+msgid "Featured"
+msgstr "مميّز"
+
+#. module: ib4tech_minbar
+#. odoo-python
+#: code:addons/ib4tech_minbar/models/minbar_entity.py:0
+msgid "Fill in the contact email or phone of the owner first."
+msgstr "أدخل بريد المسؤول أو رقم هاتفه أولاً."
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__message_follower_ids
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__message_partner_ids
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__founded_year
+msgid "Founded Year"
+msgstr "سنة التأسيس"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields.selection,name:ib4tech_minbar.selection__ib4tech_minbar_content__weekday__4
+msgid "Friday"
+msgstr "الجمعة"
+
+#. module: ib4tech_minbar
+#: model:res.groups,comment:ib4tech_minbar.group_minbar_manager
+msgid "Full access: configuration, deletion and owner accounts."
+msgstr "صلاحية كاملة: الإعدادات والحذف وحسابات أصحاب الصفحات."
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_city__governorate
+msgid "Governorate"
+msgstr "المحافظة"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__has_cover
+msgid "Has Cover"
+msgstr "له غلاف"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__has_image
+msgid "Has Image"
+msgstr "له صورة"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__has_message
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis__has_message
+msgid "Has Message"
+msgstr "يحتوي رسالة"
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.res_config_settings_view_form
+msgid "Hijri Date Adjustment"
+msgstr "تعديل التاريخ الهجري"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_res_config_settings__minbar_hijri_offset
+msgid "Hijri Date Adjustment (days)"
+msgstr "تعديل التاريخ الهجري (أيام)"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_occasion__hijri_day
+msgid "Hijri Day"
+msgstr "اليوم الهجري"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_occasion__hijri_month
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_occasion_search
+msgid "Hijri Month"
+msgstr "الشهر الهجري"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_occasion__hijri_month_number
+msgid "Hijri Month Number"
+msgstr "رقم الشهر الهجري"
+
+#. module: ib4tech_minbar
+#: model:ir.actions.act_window,name:ib4tech_minbar.action_minbar_occasion
+#: model:ir.ui.menu,name:ib4tech_minbar.menu_minbar_occasion
+msgid "Hijri Occasions"
+msgstr "المناسبات الهجرية"
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_entity_form
+msgid "History, activities, weekly programme..."
+msgstr "التاريخ، النشاطات، البرنامج الأسبوعي..."
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields.selection,name:ib4tech_minbar.selection__ib4tech_minbar_entity__entity_type__husseiniya
+msgid "Husseiniya"
+msgstr "حسينية"
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_entity_search
+msgid "Husseiniyas"
+msgstr "الحسينيات"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_city__id
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content__id
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content_category__id
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__id
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis__id
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis_repeat__id
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_occasion__id
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_service__id
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_res_config_settings__id
+msgid "ID"
+msgstr "المعرّف"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content_category__icon
+msgid "Icon"
+msgstr "الأيقونة"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,help:ib4tech_minbar.field_ib4tech_minbar_entity__message_needaction
+#: model:ir.model.fields,help:ib4tech_minbar.field_ib4tech_minbar_majlis__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "عند التحديد، توجد رسائل جديدة تتطلب انتباهك."
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,help:ib4tech_minbar.field_ib4tech_minbar_entity__message_has_error
+#: model:ir.model.fields,help:ib4tech_minbar.field_ib4tech_minbar_entity__message_has_sms_error
+#: model:ir.model.fields,help:ib4tech_minbar.field_ib4tech_minbar_majlis__message_has_error
+#: model:ir.model.fields,help:ib4tech_minbar.field_ib4tech_minbar_majlis__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "عند التحديد، بعض الرسائل فيها خطأ في التسليم."
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__image_1920
+msgid "Image"
+msgstr "الصورة"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__image_1024
+msgid "Image 1024"
+msgstr "صورة 1024"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__image_128
+msgid "Image 128"
+msgstr "صورة 128"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__image_256
+msgid "Image 256"
+msgstr "صورة 256"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__image_512
+msgid "Image 512"
+msgstr "صورة 512"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__instagram
+msgid "Instagram"
+msgstr "إنستغرام"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content__intro
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_content_form
+msgid "Introduction"
+msgstr "المقدمة"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__message_is_follower
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields.selection,name:ib4tech_minbar.selection__ib4tech_minbar_occasion__hijri_month__6
+msgid "Jumada al-Akhirah"
+msgstr "جمادى الآخرة"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields.selection,name:ib4tech_minbar.selection__ib4tech_minbar_occasion__hijri_month__5
+msgid "Jumada al-Ula"
+msgstr "جمادى الأولى"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields.selection,name:ib4tech_minbar.selection__ib4tech_minbar_entity__entity_type__khatib
+msgid "Khatib"
+msgstr "خطيب"
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_entity_search
+msgid "Khatibs"
+msgstr "الخطباء"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_city__write_uid
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content__write_uid
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content_category__write_uid
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__write_uid
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis__write_uid
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis_repeat__write_uid
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_occasion__write_uid
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_service__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_city__write_date
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content__write_date
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content_category__write_date
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__write_date
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis__write_date
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis_repeat__write_date
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_occasion__write_date
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_service__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_city__latitude
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__latitude
+msgid "Latitude"
+msgstr "خط العرض"
+
+#. module: ib4tech_minbar
+#: model:ir.ui.menu,name:ib4tech_minbar.menu_minbar_library
+msgid "Library"
+msgstr "المكتبة"
+
+#. module: ib4tech_minbar
+#: model:ir.actions.act_window,name:ib4tech_minbar.action_minbar_content_category
+msgid "Library Sections"
+msgstr "أقسام المكتبة"
+
+#. module: ib4tech_minbar
+#: model:ir.actions.act_window,name:ib4tech_minbar.action_minbar_content
+msgid "Library Texts"
+msgstr "نصوص المكتبة"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis__live_url
+msgid "Live Stream Link"
+msgstr "رابط البث المباشر"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis__location
+msgid "Location"
+msgstr "المكان"
+
+#. module: ib4tech_minbar
+#. odoo-python
+#: code:addons/ib4tech_minbar/models/minbar_entity.py:0
+msgid ""
+"Login: %(login)s — temporary password: %(password)s. It is shown only once, "
+"send it to the owner now."
+msgstr ""
+"اسم الدخول: %(login)s — كلمة المرور المؤقتة: %(password)s. تظهر مرة واحدة "
+"فقط، أرسلها لصاحب الصفحة الآن."
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_city__longitude
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__longitude
+msgid "Longitude"
+msgstr "خط الطول"
+
+#. module: ib4tech_minbar
+#. odoo-python
+#: code:addons/ib4tech_minbar/models/minbar_entity.py:0
+#: model:ir.actions.act_window,name:ib4tech_minbar.action_minbar_majlis
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__majlis_ids
+#: model:ir.ui.menu,name:ib4tech_minbar.menu_minbar_majlis
+#: model:ir.ui.menu,name:ib4tech_minbar.menu_minbar_review_majlis
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_entity_form
+msgid "Majalis"
+msgstr "المجالس"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,help:ib4tech_minbar.field_res_config_settings__minbar_auto_publish_verified
+msgid ""
+"Majalis added by the owner of a verified page are published without waiting "
+"for a review."
+msgstr "المجالس التي يضيفها صاحب صفحة موثّقة تُنشر دون انتظار المراجعة."
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.res_config_settings_view_form
+msgid "Majalis added by the owner of a verified page skip the review queue."
+msgstr "المجالس التي يضيفها صاحب صفحة موثّقة لا تمر بقائمة المراجعة."
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.res_config_settings_view_form
+msgid "Majalis times are shown in this timezone."
+msgstr "تُعرض أوقات المجالس بهذه المنطقة الزمنية."
+
+#. module: ib4tech_minbar
+#: model:ir.actions.act_window,name:ib4tech_minbar.action_minbar_majlis_review
+msgid "Majalis to Review"
+msgstr "مجالس بانتظار المراجعة"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis_repeat__majlis_id
+msgid "Majlis"
+msgstr "المجلس"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__majlis_count
+msgid "Majlis Count"
+msgstr "عدد المجالس"
+
+#. module: ib4tech_minbar
+#: model:res.groups,name:ib4tech_minbar.group_minbar_manager
+msgid "Manager"
+msgstr "مدير"
+
+#. module: ib4tech_minbar
+#: model:res.groups,comment:ib4tech_minbar.group_minbar_editor
+msgid ""
+"Manages pages, majalis and the library, and reviews what owners submit."
+msgstr "يدير الصفحات والمجالس والمكتبة ويراجع ما يرسله أصحاب الصفحات."
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields.selection,name:ib4tech_minbar.selection__ib4tech_minbar_occasion__occasion_type__shahadah
+msgid "Martyrdom"
+msgstr "شهادة"
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_entity_search
+msgid "Mawakib"
+msgstr "المواكب"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields.selection,name:ib4tech_minbar.selection__ib4tech_minbar_entity__entity_type__mawkib
+msgid "Mawkib"
+msgstr "موكب"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields.selection,name:ib4tech_minbar.selection__ib4tech_minbar_majlis__audience__men
+msgid "Men"
+msgstr "للرجال"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,help:ib4tech_minbar.field_ib4tech_minbar_content__intro
+msgid "Merit, timing or how to recite it."
+msgstr "الفضل أو الوقت أو كيفية القراءة."
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__message_has_error
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسالة"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__message_ids
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: ib4tech_minbar
+#: model:ir.module.category,name:ib4tech_minbar.module_category_minbar
+#: model:ir.ui.menu,name:ib4tech_minbar.menu_minbar_root
+#: model:res.groups.privilege,name:ib4tech_minbar.res_groups_privilege_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.res_config_settings_view_form
+msgid "Minbar"
+msgstr "المنبر"
+
+#. module: ib4tech_minbar
+#: model:ir.model,name:ib4tech_minbar.model_ib4tech_minbar_city
+msgid "Minbar City"
+msgstr "مدينة"
+
+#. module: ib4tech_minbar
+#: model:ir.model,name:ib4tech_minbar.model_ib4tech_minbar_entity
+msgid "Minbar Directory Page"
+msgstr "صفحة في الدليل"
+
+#. module: ib4tech_minbar
+#: model:ir.model,name:ib4tech_minbar.model_ib4tech_minbar_occasion
+msgid "Minbar Hijri Occasion"
+msgstr "مناسبة هجرية"
+
+#. module: ib4tech_minbar
+#: model:ir.model,name:ib4tech_minbar.model_ib4tech_minbar_content_category
+msgid "Minbar Library Section"
+msgstr "قسم في المكتبة"
+
+#. module: ib4tech_minbar
+#: model:ir.model,name:ib4tech_minbar.model_ib4tech_minbar_content
+msgid "Minbar Library Text"
+msgstr "نص في المكتبة"
+
+#. module: ib4tech_minbar
+#: model:ir.model,name:ib4tech_minbar.model_ib4tech_minbar_majlis
+msgid "Minbar Majlis"
+msgstr "مجلس"
+
+#. module: ib4tech_minbar
+#: model:ir.model,name:ib4tech_minbar.model_ib4tech_minbar_service
+msgid "Minbar Service Offered"
+msgstr "خدمة مقدَّمة"
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.res_config_settings_view_form
+msgid "Mobile App"
+msgstr "تطبيق الهاتف"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields.selection,name:ib4tech_minbar.selection__ib4tech_minbar_content__weekday__0
+msgid "Monday"
+msgstr "الاثنين"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields.selection,name:ib4tech_minbar.selection__ib4tech_minbar_occasion__hijri_month__1
+msgid "Muharram"
+msgstr "محرم"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields.selection,name:ib4tech_minbar.selection__ib4tech_minbar_content_category__icon__munajat
+msgid "Munajat"
+msgstr "مناجاة"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_city__name
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content_category__name
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__name
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_occasion__name
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_service__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,help:ib4tech_minbar.field_ib4tech_minbar_majlis__guest_names
+msgid "Names of radoods or khatibs who have no page in the directory."
+msgstr "أسماء الرواديد أو الخطباء الذين ليست لهم صفحة في الدليل."
+
+#. module: ib4tech_minbar
+#. odoo-python
+#: code:addons/ib4tech_minbar/models/minbar_entity.py:0
+msgid "No reason given."
+msgstr "لم يُذكر سبب."
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_content_search
+msgid "Not Published"
+msgstr "غير منشور"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_occasion__note
+msgid "Note"
+msgstr "ملاحظة"
+
+#. module: ib4tech_minbar
+#: model_terms:ir.actions.act_window,help:ib4tech_minbar.action_minbar_entity_review
+#: model_terms:ir.actions.act_window,help:ib4tech_minbar.action_minbar_majlis_review
+msgid "Nothing is waiting for a review"
+msgstr "لا شيء بانتظار المراجعة"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__message_needaction_counter
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__message_has_error_counter
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,help:ib4tech_minbar.field_ib4tech_minbar_majlis_repeat__days
+msgid "Number of following days on which the majlis is repeated."
+msgstr "عدد الأيام التالية التي يتكرر فيها المجلس."
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,help:ib4tech_minbar.field_ib4tech_minbar_entity__message_needaction_counter
+#: model:ir.model.fields,help:ib4tech_minbar.field_ib4tech_minbar_majlis__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "عدد الرسائل التي تتطلب إجراء"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,help:ib4tech_minbar.field_ib4tech_minbar_entity__message_has_error_counter
+#: model:ir.model.fields,help:ib4tech_minbar.field_ib4tech_minbar_majlis__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل التي فيها خطأ تسليم"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content__occasion_id
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis__occasion_id
+msgid "Occasion"
+msgstr "المناسبة"
+
+#. module: ib4tech_minbar
+#. odoo-python
+#: code:addons/ib4tech_minbar/models/minbar_entity.py:0
+msgid "Only Minbar managers can grant owner accounts."
+msgstr "مديرو المنبر فقط يستطيعون منح حسابات لأصحاب الصفحات."
+
+#. module: ib4tech_minbar
+#. odoo-python
+#: code:addons/ib4tech_minbar/models/minbar_entity.py:0
+msgid "Only draft or rejected pages can be sent for review."
+msgstr "يمكن إرسال الصفحات المسودة أو المرفوضة فقط للمراجعة."
+
+#. module: ib4tech_minbar
+#. odoo-python
+#: code:addons/ib4tech_minbar/models/minbar_majlis.py:0
+msgid "Only the administration can change the status of a majlis."
+msgstr "الإدارة فقط تستطيع تغيير حالة المجلس."
+
+#. module: ib4tech_minbar
+#. odoo-python
+#: code:addons/ib4tech_minbar/models/minbar_entity.py:0
+msgid "Only the administration can change the status or the owner of a page."
+msgstr "الإدارة فقط تستطيع تغيير حالة الصفحة أو صاحبها."
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis__entity_id
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_majlis_search
+msgid "Organizer"
+msgstr "الجهة المنظِّمة"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields.selection,name:ib4tech_minbar.selection__ib4tech_minbar_occasion__occasion_type__other
+msgid "Other"
+msgstr "أخرى"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis__guest_names
+msgid "Other Participants"
+msgstr "مشاركون آخرون"
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_entity_form
+msgid "Owner"
+msgstr "صاحب الصفحة"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__owner_user_id
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis__owner_user_id
+msgid "Owner Account"
+msgstr "حساب صاحب الصفحة"
+
+#. module: ib4tech_minbar
+#. odoo-python
+#: code:addons/ib4tech_minbar/models/minbar_entity.py:0
+msgid "Owner account ready"
+msgstr "حساب صاحب الصفحة جاهز"
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.res_config_settings_view_form
+msgid "Owners"
+msgstr "أصحاب الصفحات"
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_entity_form
+msgid "Page"
+msgstr "الصفحة"
+
+#. module: ib4tech_minbar
+#: model:ir.ui.menu,name:ib4tech_minbar.menu_minbar_review_entity
+msgid "Pages"
+msgstr "الصفحات"
+
+#. module: ib4tech_minbar
+#: model:ir.actions.act_window,name:ib4tech_minbar.action_minbar_entity_review
+msgid "Pages to Review"
+msgstr "صفحات بانتظار المراجعة"
+
+#. module: ib4tech_minbar
+#. odoo-python
+#: code:addons/ib4tech_minbar/models/minbar_majlis.py:0
+msgid "Participants must be radoods or khatibs."
+msgstr "المشاركون يجب أن يكونوا رواديد أو خطباء."
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__phone
+msgid "Phone"
+msgstr "الهاتف"
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_entity_kanban
+msgid "Picture"
+msgstr "الصورة"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,help:ib4tech_minbar.field_ib4tech_minbar_entity__owner_user_id
+#: model:ir.model.fields,help:ib4tech_minbar.field_ib4tech_minbar_majlis__owner_user_id
+msgid "Portal account allowed to edit this page and publish its majalis."
+msgstr "حساب البوابة المسموح له بتعديل هذه الصفحة ونشر مجالسها."
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content__is_published
+#: model:ir.model.fields.selection,name:ib4tech_minbar.selection__ib4tech_minbar_entity__state__published
+#: model:ir.model.fields.selection,name:ib4tech_minbar.selection__ib4tech_minbar_majlis__state__published
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_entity_search
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_majlis_search
+msgid "Published"
+msgstr "منشور"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields.selection,name:ib4tech_minbar.selection__ib4tech_minbar_occasion__hijri_month__3
+msgid "Rabi al-Awwal"
+msgstr "ربيع الأول"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields.selection,name:ib4tech_minbar.selection__ib4tech_minbar_occasion__hijri_month__4
+msgid "Rabi al-Thani"
+msgstr "ربيع الآخر"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields.selection,name:ib4tech_minbar.selection__ib4tech_minbar_entity__entity_type__radood
+msgid "Radood"
+msgstr "رادود"
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_entity_search
+msgid "Radoods"
+msgstr "الرواديد"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis__participant_ids
+msgid "Radoods and Khatibs"
+msgstr "الرواديد والخطباء"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields.selection,name:ib4tech_minbar.selection__ib4tech_minbar_occasion__hijri_month__7
+msgid "Rajab"
+msgstr "رجب"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields.selection,name:ib4tech_minbar.selection__ib4tech_minbar_occasion__hijri_month__9
+msgid "Ramadan"
+msgstr "شهر رمضان"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,help:ib4tech_minbar.field_ib4tech_minbar_content__source
+msgid "Reference of the text, e.g. the book it is taken from."
+msgstr "مصدر النص، مثل الكتاب المأخوذ منه."
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_entity_form
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_majlis_form
+msgid "Reject"
+msgstr "رفض"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__reject_reason
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis__reject_reason
+msgid "Reject Reason"
+msgstr "سبب الرفض"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields.selection,name:ib4tech_minbar.selection__ib4tech_minbar_entity__state__rejected
+#: model:ir.model.fields.selection,name:ib4tech_minbar.selection__ib4tech_minbar_majlis__state__rejected
+msgid "Rejected"
+msgstr "مرفوض"
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_entity_form
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_majlis_form
+msgid "Rejection Reason"
+msgstr "سبب الرفض"
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_majlis_repeat_form
+msgid "Repeat"
+msgstr "تكرار"
+
+#. module: ib4tech_minbar
+#: model:ir.actions.act_window,name:ib4tech_minbar.action_minbar_majlis_repeat
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_majlis_form
+msgid "Repeat Daily"
+msgstr "تكرار يومي"
+
+#. module: ib4tech_minbar
+#: model:ir.model,name:ib4tech_minbar.model_ib4tech_minbar_majlis_repeat
+msgid "Repeat a Majlis Daily"
+msgstr "تكرار المجلس يومياً"
+
+#. module: ib4tech_minbar
+#. odoo-python
+#: code:addons/ib4tech_minbar/wizard/minbar_majlis_repeat.py:0
+msgid "Repeated Majalis"
+msgstr "المجالس المكررة"
+
+#. module: ib4tech_minbar
+#: model:ir.ui.menu,name:ib4tech_minbar.menu_minbar_review
+msgid "Review"
+msgstr "المراجعة"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__message_has_sms_error
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسالة النصية"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields.selection,name:ib4tech_minbar.selection__ib4tech_minbar_occasion__hijri_month__2
+msgid "Safar"
+msgstr "صفر"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields.selection,name:ib4tech_minbar.selection__ib4tech_minbar_content__weekday__5
+msgid "Saturday"
+msgstr "السبت"
+
+#. module: ib4tech_minbar
+#: model_terms:ir.actions.act_window,help:ib4tech_minbar.action_minbar_majlis
+msgid "Schedule the first majlis"
+msgstr "أضف أول مجلس"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content__category_id
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_content_search
+msgid "Section"
+msgstr "القسم"
+
+#. module: ib4tech_minbar
+#: model:ir.ui.menu,name:ib4tech_minbar.menu_minbar_content_category
+msgid "Sections"
+msgstr "الأقسام"
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_entity_form
+msgid "Send for Review"
+msgstr "إرسال للمراجعة"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_city__sequence
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content__sequence
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content_category__sequence
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_service__sequence
+msgid "Sequence"
+msgstr "الترتيب"
+
+#. module: ib4tech_minbar
+#: model:ir.actions.act_window,name:ib4tech_minbar.action_minbar_service
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__service_ids
+#: model:ir.ui.menu,name:ib4tech_minbar.menu_minbar_service
+msgid "Services"
+msgstr "الخدمات"
+
+#. module: ib4tech_minbar
+#: model:ir.actions.act_window,name:ib4tech_minbar.action_minbar_settings
+#: model:ir.ui.menu,name:ib4tech_minbar.menu_minbar_settings
+msgid "Settings"
+msgstr "الإعدادات"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields.selection,name:ib4tech_minbar.selection__ib4tech_minbar_occasion__hijri_month__8
+msgid "Shaban"
+msgstr "شعبان"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields.selection,name:ib4tech_minbar.selection__ib4tech_minbar_occasion__hijri_month__10
+msgid "Shawwal"
+msgstr "شوال"
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.res_config_settings_view_form
+msgid "Shift the computed hijri date to follow the local moon sighting."
+msgstr "عدّل التاريخ الهجري المحسوب ليتبع رؤية الهلال المحلية."
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_entity_form
+msgid "Short line shown under the name"
+msgstr "سطر قصير يظهر تحت الاسم"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,help:ib4tech_minbar.field_ib4tech_minbar_entity__tagline
+msgid "Short line shown under the name."
+msgstr "سطر قصير يظهر تحت الاسم."
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.res_config_settings_view_form
+msgid "Shown in the header and on the phone home screen."
+msgstr "يظهر في أعلى التطبيق وعلى الشاشة الرئيسية للهاتف."
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,help:ib4tech_minbar.field_ib4tech_minbar_content__weekday
+msgid "Shown on the home page on that day."
+msgstr "يظهر في الصفحة الرئيسية في ذلك اليوم."
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_entity_form
+msgid "Shown to the owner when the page is rejected"
+msgstr "يظهر لصاحب الصفحة عند رفضها"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content__source
+msgid "Source"
+msgstr "المصدر"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis__date_start
+msgid "Starts At"
+msgstr "يبدأ في"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__state
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis__state
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_entity_search
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_majlis_search
+msgid "Status"
+msgstr "الحالة"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields.selection,name:ib4tech_minbar.selection__ib4tech_minbar_content__weekday__6
+msgid "Sunday"
+msgstr "الأحد"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__tagline
+msgid "Tagline"
+msgstr "الوصف القصير"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields.selection,name:ib4tech_minbar.selection__ib4tech_minbar_content_category__icon__taqib
+msgid "Taqibat"
+msgstr "تعقيبات"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__telegram
+msgid "Telegram"
+msgstr "تلغرام"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content__body
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_content_form
+msgid "Text"
+msgstr "النص"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content_category__content_ids
+#: model:ir.ui.menu,name:ib4tech_minbar.menu_minbar_content
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_content_category_list
+msgid "Texts"
+msgstr "النصوص"
+
+#. module: ib4tech_minbar
+#. odoo-python
+#: code:addons/ib4tech_minbar/models/minbar_entity.py:0
+msgid "The account %s exists but is archived."
+msgstr "الحساب %s موجود لكنه مؤرشف."
+
+#. module: ib4tech_minbar
+#. odoo-python
+#: code:addons/ib4tech_minbar/models/minbar_entity.py:0
+msgid "The account %s is linked. An invitation email is sent to new owners."
+msgstr "تم ربط الحساب %s. تُرسل رسالة دعوة بالبريد لأصحاب الصفحات الجدد."
+
+#. module: ib4tech_minbar
+#. odoo-python
+#: code:addons/ib4tech_minbar/models/minbar_entity.py:0
+msgid "The existing account %s is now the owner of this page."
+msgstr "الحساب الموجود %s أصبح صاحب هذه الصفحة."
+
+#. module: ib4tech_minbar
+#. odoo-python
+#: code:addons/ib4tech_minbar/models/minbar_occasion.py:0
+msgid "The hijri day must be between 1 and 30."
+msgstr "اليوم الهجري يجب أن يكون بين 1 و30."
+
+#. module: ib4tech_minbar
+#: model:ir.model.constraint,message:ib4tech_minbar.constraint_ib4tech_minbar_majlis_check_dates
+msgid "The majlis cannot end before it starts."
+msgstr "لا يمكن أن ينتهي المجلس قبل أن يبدأ."
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_majlis_form
+msgid "The majlis will be shown as cancelled in the app. Continue?"
+msgstr "سيظهر المجلس ملغى في التطبيق. هل تريد المتابعة؟"
+
+#. module: ib4tech_minbar
+#. odoo-python
+#: code:addons/ib4tech_minbar/models/minbar_majlis.py:0
+msgid "The number of extra days must be between 1 and 60."
+msgstr "عدد الأيام الإضافية يجب أن يكون بين 1 و60."
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_entity_form
+msgid "The page and its majalis will disappear from the app. Continue?"
+msgstr "ستختفي الصفحة ومجالسها من التطبيق. هل تريد المتابعة؟"
+
+#. module: ib4tech_minbar
+#: model:ir.model.constraint,message:ib4tech_minbar.constraint_ib4tech_minbar_city_name_uniq
+msgid "This city already exists in the same governorate."
+msgstr "هذه المدينة موجودة مسبقاً في المحافظة نفسها."
+
+#. module: ib4tech_minbar
+#. odoo-python
+#: code:addons/ib4tech_minbar/models/minbar_entity.py:0
+msgid "This page already has an owner account."
+msgstr "لهذه الصفحة حساب صاحب مسبقاً."
+
+#. module: ib4tech_minbar
+#: model:ir.model.constraint,message:ib4tech_minbar.constraint_ib4tech_minbar_service_name_uniq
+msgid "This service already exists."
+msgstr "هذه الخدمة موجودة مسبقاً."
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields.selection,name:ib4tech_minbar.selection__ib4tech_minbar_content__weekday__3
+msgid "Thursday"
+msgstr "الخميس"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_city__tz
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.res_config_settings_view_form
+msgid "Timezone"
+msgstr "المنطقة الزمنية"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_content__name
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis__name
+msgid "Title"
+msgstr "العنوان"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields.selection,name:ib4tech_minbar.selection__ib4tech_minbar_content__weekday__1
+msgid "Tuesday"
+msgstr "الثلاثاء"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__entity_type
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_occasion__occasion_type
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_entity_search
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_occasion_search
+msgid "Type"
+msgstr "النوع"
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_entity_form
+msgid "Unpublish"
+msgstr "إلغاء النشر"
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_majlis_search
+msgid "Upcoming"
+msgstr "القادمة"
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.res_config_settings_view_form
+msgid "Used for prayer times until the visitor picks a city."
+msgstr "تُستخدم لأوقات الصلاة إلى أن يختار الزائر مدينته."
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,help:ib4tech_minbar.field_ib4tech_minbar_majlis__location
+msgid "Venue or address if different from the organizer's address."
+msgstr "المكان أو العنوان إن اختلف عن عنوان الجهة المنظِّمة."
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__is_verified
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_entity_search
+msgid "Verified"
+msgstr "موثّق"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields.selection,name:ib4tech_minbar.selection__ib4tech_minbar_entity__state__pending
+#: model:ir.model.fields.selection,name:ib4tech_minbar.selection__ib4tech_minbar_majlis__state__pending
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_entity_search
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_majlis_search
+msgid "Waiting Review"
+msgstr "بانتظار المراجعة"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__website_url
+msgid "Website"
+msgstr "الموقع الإلكتروني"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__website_message_ids
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_majlis__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,help:ib4tech_minbar.field_ib4tech_minbar_entity__website_message_ids
+#: model:ir.model.fields,help:ib4tech_minbar.field_ib4tech_minbar_majlis__website_message_ids
+msgid "Website communication history"
+msgstr "سجل مراسلات الموقع"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields.selection,name:ib4tech_minbar.selection__ib4tech_minbar_content__weekday__2
+msgid "Wednesday"
+msgstr "الأربعاء"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__whatsapp
+msgid "Whatsapp"
+msgstr "واتساب"
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_majlis_form
+msgid "When & Where"
+msgstr "الزمان والمكان"
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_majlis_form
+msgid "Who"
+msgstr "المشاركون"
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_entity_search
+msgid "Without Owner Account"
+msgstr "بدون حساب صاحب"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields.selection,name:ib4tech_minbar.selection__ib4tech_minbar_majlis__audience__women
+msgid "Women"
+msgstr "للنساء"
+
+#. module: ib4tech_minbar
+#. odoo-python
+#: code:addons/ib4tech_minbar/models/minbar_entity.py:0
+msgid "Your page has been approved and is now visible in the app."
+msgstr "تمت الموافقة على صفحتك وهي الآن ظاهرة في التطبيق."
+
+#. module: ib4tech_minbar
+#. odoo-python
+#: code:addons/ib4tech_minbar/models/minbar_entity.py:0
+msgid "Your page was not approved. Reason: %s"
+msgstr "لم تتم الموافقة على صفحتك. السبب: %s"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields,field_description:ib4tech_minbar.field_ib4tech_minbar_entity__youtube
+msgid "Youtube"
+msgstr "يوتيوب"
+
+#. module: ib4tech_minbar
+#: model:ir.model.fields.selection,name:ib4tech_minbar.selection__ib4tech_minbar_content_category__icon__ziyarah
+msgid "Ziyarah"
+msgstr "زيارة"
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.res_config_settings_view_form
+msgid "days"
+msgstr "أيام"
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_content_form
+msgid "e.g. Dua Kumayl"
+msgstr "مثال: دعاء كميل"
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_entity_form
+msgid "e.g. Husseiniya of ..."
+msgstr "مثال: حسينية ..."
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.view_minbar_majlis_form
+msgid "e.g. Majlis of the first night of Muharram"
+msgstr "مثال: مجلس الليلة الأولى من محرم"
+
+#. module: ib4tech_minbar
+#. odoo-python
+#: code:addons/ib4tech_minbar/models/minbar_entity.py:0
+msgid "entity_id"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my_entity_form
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my_majlis_form
+msgid "https://"
+msgstr ""
+
+#. module: ib4tech_minbar
+#. odoo-python
+#: code:addons/ib4tech_minbar/wizard/minbar_majlis_repeat.py:0
+msgid "id"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_entity
+msgid "· تأسس"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_read
+msgid "أ+"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my
+msgid "أضف موعد مجلسك ليظهر للزوار في مدينتك."
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my
+msgid "أنشئ صفحة لحسينيتك أو موكبك، وتُنشر بعد موافقة الإدارة."
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my
+msgid "أهلاً"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_read
+msgid "أ−"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_join
+msgid "إرسال الطلب"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my
+msgid "إضافة مجلس"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_home
+msgid "إغلاق"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my
+msgid "إلغاء المجلس"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my
+msgid "إنشاء صفحة"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_directory
+msgid "ابحث بالاسم في كل الدليل"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_library
+msgid "ابحث عن دعاء أو زيارة"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_majalis
+msgid "ابحث عن مجلس أو رادود أو حسينية"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_directory_type
+msgid "ابحث في {{0}}"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_qibla
+msgid ""
+"اتجاه القبلة <strong data-qibla-angle=\"1\">--</strong> درجة من الشمال\n"
+"                <small data-qibla-city=\"1\"> </small>"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_join
+msgid "اتركه فارغاً"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_tasbih
+msgid "اضغط للتسبيح"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_prayer
+msgid ""
+"الأوقات محسوبة فلكياً وفق طريقة معهد الجيوفيزياء (ليفا - قم): زاوية الفجر "
+"١٦° وزاوية المغرب ٤°. قد تختلف دقيقة أو دقيقتين عن إمساكية مدينتك، فاحتط "
+"لذلك."
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_more
+msgid "الإصدار"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_prayer
+msgid "الإمساك"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_tasbih
+msgid "الاستغفار"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_majlis
+msgid "البث المباشر"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_occasions
+msgid "التاريخ الهجري محسوب وقد يختلف يوماً عن الرؤية الشرعية للهلال."
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_majlis
+msgid "الجهة المنظِّمة"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_majalis
+msgid "الحضور"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_home
+msgid "الخدمات"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my_entity_form
+msgid "الخدمات المقدَّمة"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_directory_type
+msgid "الخدمة"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_home
+msgid "الدليل"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_favorites_cards
+msgid "الصفحات التي تتابعها"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_offline
+msgid "الصفحات التي فتحتها سابقاً والمكتبة المحفوظة تبقى متاحة."
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_not_found
+msgid "الصفحة غير موجودة"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_tasbih
+msgid "الصلوات"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my_entity_form
+msgid "الصور"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_prayer
+msgid "الظهر"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_join
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_not_found
+msgid "العودة للرئيسية"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_prayer
+msgid "الفجر"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_entity
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_home
+msgid "المجالس القادمة"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_favorites_cards
+msgid "المجالس المحفوظة"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_majlis
+msgid "المجلس جارٍ الآن"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_city_picker
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_directory_type
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_majalis
+msgid "المدينة"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_read
+msgid "المصدر:"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_prayer
+msgid "المغرب"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_home
+msgid "المكتبة"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_occasions
+msgid "المناسبات القادمة"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.res_config_settings_view_form
+msgid "المنبر"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_majlis
+msgid "الموقع على الخريطة"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_majalis
+msgid "الوقت"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_prayer
+msgid "اليوم التالي"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_prayer
+msgid "اليوم السابق"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_majlis
+msgid "انتهى هذا المجلس."
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_majlis_card
+msgid "بث مباشر"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_qibla
+msgid ""
+"بدون البوصلة: وجّه أعلى الهاتف نحو الشمال، فيشير السهم إلى القبلة. عند تشغيل"
+" البوصلة أدر الهاتف حتى يتجه السهم إلى الأعلى."
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_join
+msgid "بيانات المسؤول"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_directory
+msgid "تأكد من الاسم أو جرّب كلمة أقصر."
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_entity
+msgid "تابع الصفحة لتجدها بسهولة في المفضلة."
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_favorites
+msgid ""
+"تابع حسينية أو موكباً أو احفظ مجلساً ليظهر هنا. المفضلة تُحفظ على هذا الهاتف"
+" فقط."
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_home
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_more
+msgid "تثبيت"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_city_picker
+msgid "تحديد موقعي"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_tasbih
+msgid "تسبيح الزهراء (ع)"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_qibla
+msgid "تشغيل البوصلة"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_read
+msgid "تصغير الخط"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_tasbih
+msgid "تصفير"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_favorites
+msgid "تصفّح الدليل"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_entity
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my
+msgid "تعديل"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_read
+msgid "تكبير الخط"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my
+msgid "تم إلغاء المجلس."
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_majlis
+msgid "تم إلغاء هذا المجلس."
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my
+msgid "تم حفظ الصفحة."
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my
+msgid "تم حفظ المجلس."
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my_entity_form
+msgid "تُراجع الإدارة الصفحة الجديدة قبل نشرها."
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_majlis_card
+msgid "جارٍ الآن"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_favorites
+msgid "جارٍ التحميل…"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_library
+msgid "جرّب كلمة أخرى من العنوان."
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_majalis
+msgid "جرّب مدينة أخرى أو وقتاً آخر."
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_library
+msgid "حفظ"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my_entity_form
+msgid "حفظ الصفحة"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my_majlis_form
+msgid "حفظ المجلس"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_majlis
+msgid "ذكّرني"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_not_found
+msgid "ربما حُذفت أو لم تُنشر بعد."
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my
+msgid "سبب الرفض:"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_join
+msgid "ستراجع الإدارة الطلب وتتواصل معك لتسليمك حساب الدخول إلى صفحتك."
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_library_category
+msgid "ستُضاف النصوص قريباً."
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_join
+msgid ""
+"سجّل حسينيتك أو موكبك أو صفحتك كرادود أو خطيب. التسجيل مجاني، وبعد الموافقة "
+"تستلم حساباً لتعديل الصفحة ونشر مواعيد المجالس."
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_directory_type
+msgid "سجّل صفحتك"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_prayer
+msgid "شروق الشمس"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my
+msgid "صفحاتي"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_directory
+msgid "صفحة"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my
+msgid "صفحة جديدة"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_tasbih
+msgid "عدّاد حر"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_home
+msgid "عرض الكل"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_directory_type
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_majalis
+msgid "عرض المزيد"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_majalis
+msgid "عرض كل المجالس"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_home
+msgid "عند إضافة مجلس جديد سيظهر هنا."
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_prayer
+msgid "غروب الشمس"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_offline
+msgid "فتح المكتبة"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_directory_type
+msgid "كن أول من يسجّل صفحته في هذا القسم."
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_more
+msgid "لأصحاب الحسينيات والمواكب والرواديد"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_directory_type
+msgid "لا توجد صفحات هنا بعد"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my
+msgid "لا توجد صفحة مرتبطة بحسابك"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_majalis
+msgid "لا توجد مجالس بهذه المواصفات"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my
+msgid "لا توجد مجالس قادمة"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_entity
+msgid "لا توجد مجالس معلنة"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_home
+msgid "لا توجد مجالس معلنة حالياً"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_favorites
+msgid "لا توجد مفضلة بعد"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_directory
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_library
+msgid "لا توجد نتائج"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_library_category
+msgid "لا توجد نصوص في هذا القسم بعد"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_join
+msgid "لا تُنشر هذه البيانات، وتستخدمها الإدارة للتواصل معك فقط."
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_offline
+msgid "لا يوجد اتصال بالإنترنت"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my_majlis_form
+msgid "مثال: مجلس الليلة الأولى من محرم"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_join
+msgid "مثال: موكب أنصار الحسين (ع)"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_majalis
+msgid "مجالس الرجال"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_majalis
+msgid "مجالس النساء"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my
+msgid "مجالسي القادمة"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my
+msgid "مجلس جديد"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_library
+msgid "مختارات"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_entity
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_majlis
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_read
+msgid "مشاركة"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my
+msgid "معاينة"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_home
+msgid "من الدليل"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_home
+msgid "من المكتبة"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_prayer
+msgid "منتصف الليل الشرعي"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_entity
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_entity_card
+msgid "موثّق"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_entity
+msgid "نبذة"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_library
+msgid "نص"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_tasbih
+msgid "نوع الذكر"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_entity
+msgid "هذه الصفحة"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_my_entity_form
+msgid "وسائل التواصل"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_join
+msgid "وصل طلبك"
+msgstr ""
+
+#. module: ib4tech_minbar
+#: model_terms:ir.ui.view,arch_db:ib4tech_minbar.app_entity
+msgid "ولا تظهر للزوار بعد."
+msgstr ""

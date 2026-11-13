@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- ============================== Home ============================== -->
+    <template id="app_home" name="Minbar App: Home">
+        <t t-call="ib4tech_minbar.app_layout">
+            <t t-set="page" t-value="'home'"/>
+
+            <section class="mb-hero">
+                <div class="mb-hero__date">
+                    <strong data-hijri="full">&#160;</strong>
+                    <span data-gregorian="full">&#160;</span>
+                </div>
+                <p class="mb-hero__occasion" data-occasion-today="1" hidden="hidden"/>
+                <a class="mb-hero__prayer" href="/app/prayer">
+                    <span>
+                        <small>الصلاة القادمة · <span data-city-name="1">&#160;</span></small>
+                        <strong data-next-prayer="name">&#160;</strong>
+                    </span>
+                    <span class="mb-hero__clock">
+                        <strong data-next-prayer="time">--:--</strong>
+                        <small data-next-prayer="left">&#160;</small>
+                    </span>
+                </a>
+            </section>
+
+            <section class="mb-install" id="mb-install" hidden="hidden">
+                <svg class="ic"><use href="#i-install"/></svg>
+                <span>ثبّت التطبيق على هاتفك للوصول السريع والعمل بدون إنترنت.</span>
+                <button type="button" class="mb-btn mb-btn--small" data-install="1">تثبيت</button>
+                <button type="button" class="mb-install__close" data-install-dismiss="1" aria-label="إغلاق">×</button>
+            </section>
+
+            <section class="mb-section">
+                <h2 class="mb-h2">الخدمات</h2>
+                <div class="mb-tiles">
+                    <a class="mb-tile" href="/app/majalis"><svg class="ic"><use href="#i-calendar"/></svg><span>المجالس</span></a>
+                    <a class="mb-tile" href="/app/directory/husseiniya"><svg class="ic"><use href="#i-dome"/></svg><span>الحسينيات</span></a>
+                    <a class="mb-tile" href="/app/directory/mawkib"><svg class="ic"><use href="#i-flag"/></svg><span>المواكب</span></a>
+                    <a class="mb-tile" href="/app/directory/radood"><svg class="ic"><use href="#i-mic"/></svg><span>الرواديد</span></a>
+                    <a class="mb-tile" href="/app/library"><svg class="ic"><use href="#i-book"/></svg><span>الأدعية والزيارات</span></a>
+                    <a class="mb-tile" href="/app/prayer"><svg class="ic"><use href="#i-clock"/></svg><span>أوقات الصلاة</span></a>
+                    <a class="mb-tile" href="/app/qibla"><svg class="ic"><use href="#i-compass"/></svg><span>القبلة</span></a>
+                    <a class="mb-tile" href="/app/tasbih"><svg class="ic"><use href="#i-beads"/></svg><span>المسبحة</span></a>
+                </div>
+            </section>
+
+            <section class="mb-section">
+                <div class="mb-section__head">
+                    <h2 class="mb-h2">المجالس القادمة</h2>
+                    <a href="/app/majalis">عرض الكل</a>
+                </div>
+                <t t-if="majalis">
+                    <t t-set="show_day" t-value="True"/>
+                    <div class="mb-list">
+                        <t t-foreach="majalis" t-as="card">
+                            <t t-call="ib4tech_minbar.app_majlis_card"/>
+                        </t>
+                    </div>
+                </t>
+                <t t-else="">
+                    <t t-call="ib4tech_minbar.app_empty">
+                        <t t-set="empty_icon" t-value="'i-calendar'"/>
+                        <t t-set="empty_title">لا توجد مجالس معلنة حالياً</t>
+                        <t t-set="empty_text">عند إضافة مجلس جديد سيظهر هنا.</t>
+                    </t>
+                </t>
+            </section>
+
+            <section class="mb-section" t-if="featured">
+                <div class="mb-section__head">
+                    <h2 class="mb-h2">من المكتبة</h2>
+                    <a href="/app/library">المكتبة</a>
+                </div>
+                <div class="mb-scroller">
+                    <a t-foreach="featured" t-as="content" class="mb-pick" t-attf-href="/app/read/#{content.id}">
+                        <small><t t-out="content.category_id.name"/></small>
+                        <strong><t t-out="content.name"/></strong>
+                        <span>اقرأ الآن</span>
+                    </a>
+                </div>
+            </section>
+
+            <section class="mb-section" t-if="entities">
+                <div class="mb-section__head">
+                    <h2 class="mb-h2">من الدليل</h2>
+                    <a href="/app/directory">الدليل</a>
+                </div>
+                <div class="mb-list">
+                    <t t-foreach="entities" t-as="e">
+                        <t t-call="ib4tech_minbar.app_entity_card"/>
+                    </t>
+                </div>
+            </section>
+
+            <section class="mb-section">
+                <a class="mb-cta" href="/app/join">
+                    <span>
+                        <strong>عندك موكب أو حسينية؟</strong>
+                        <small>سجّل صفحتك مجاناً وانشر مواعيد مجالسك.</small>
+                    </span>
+                    <svg class="ic"><use href="#i-chevron"/></svg>
+                </a>
+            </section>
+        </t>
+    </template>
+
+    <!-- ============================== Majalis ============================== -->
+    <template id="app_majalis" name="Minbar App: Majalis">
+        <t t-call="ib4tech_minbar.app_layout">
+            <t t-set="back" t-value="'/app'"/>
+            <form class="mb-filters" method="get" action="/app/majalis" data-autosubmit="1">
+                <label class="mb-search">
+                    <svg class="ic"><use href="#i-search"/></svg>
+                    <input type="search" name="q" t-att-value="filters['q']" placeholder="ابحث عن مجلس أو رادود أو حسينية"/>
+                </label>
+                <div class="mb-chips" role="group" aria-label="الوقت">
+                    <t t-foreach="[('all', 'القادمة'), ('today', 'اليوم'), ('tomorrow', 'غداً'), ('week', 'هذا الأسبوع')]" t-as="opt">
+                        <label t-attf-class="mb-chip #{'is-on' if filters['when'] == opt[0] else ''}">
+                            <input type="radio" name="when" t-att-value="opt[0]" t-att-checked="filters['when'] == opt[0]"/>
+                            <t t-out="opt[1]"/>
+                        </label>
+                    </t>
+                </div>
+                <div class="mb-filters__row">
+                    <select name="city" aria-label="المدينة">
+                        <option value="">كل المدن</option>
+                        <option t-foreach="cities" t-as="c" t-att-value="c.id" t-att-selected="filters['city'] == c.id">
+                            <t t-out="c.name"/>
+                        </option>
+                    </select>
+                    <select name="audience" aria-label="الحضور">
+                        <option value="">الرجال والنساء</option>
+                        <option value="men" t-att-selected="filters['audience'] == 'men'">مجالس الرجال</option>
+                        <option value="women" t-att-selected="filters['audience'] == 'women'">مجالس النساء</option>
+                    </select>
+                </div>
+            </form>
+
+            <t t-if="groups">
+                <section t-foreach="groups" t-as="group" class="mb-section">
+                    <h2 class="mb-day"><t t-out="group['label']"/> <small><t t-out="group['date']"/></small></h2>
+                    <div class="mb-list">
+                        <t t-foreach="group['cards']" t-as="card">
+                            <t t-call="ib4tech_minbar.app_majlis_card"/>
+                        </t>
+                    </div>
+                </section>
+                <a t-if="next_offset" class="mb-btn mb-btn--soft mb-btn--block"
+                   t-attf-href="/app/majalis?#{keep_query('city', 'when', 'q', 'audience', offset=next_offset)}">عرض المزيد</a>
+            </t>
+            <t t-else="">
+                <t t-call="ib4tech_minbar.app_empty">
+                    <t t-set="empty_icon" t-value="'i-calendar'"/>
+                    <t t-set="empty_title">لا توجد مجالس بهذه المواصفات</t>
+                    <t t-set="empty_text">جرّب مدينة أخرى أو وقتاً آخر.</t>
+                    <t t-set="empty_link" t-value="'/app/majalis'"/>
+                    <t t-set="empty_action">عرض كل المجالس</t>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <template id="app_majlis" name="Minbar App: Majlis">
+        <t t-call="ib4tech_minbar.app_layout">
+            <t t-set="back" t-value="'/app/majalis'"/>
+            <t t-set="host" t-value="majlis.entity_id"/>
+            <article class="mb-detail">
+                <p t-if="majlis.state == 'cancelled'" class="mb-alert mb-alert--danger">تم إلغاء هذا المجلس.</p>
+                <p t-elif="card['is_live']" class="mb-alert mb-alert--live">المجلس جارٍ الآن</p>
+                <p t-elif="card['is_past']" class="mb-alert">انتهى هذا المجلس.</p>
+
+                <h2 class="mb-detail__title"><t t-out="majlis.name"/></h2>
+                <p t-if="majlis.occasion_id" class="mb-detail__kicker"><t t-out="majlis.occasion_id.name"/></p>
+
+                <dl class="mb-facts">
+                    <div>
+                        <dt><svg class="ic"><use href="#i-calendar"/></svg></dt>
+                        <dd><strong><t t-out="card['full_date']"/></strong>
+                            <span data-hijri-of="1" t-att-data-date="card['day_key']"/></dd>
+                    </div>
+                    <div>
+                        <dt><svg class="ic"><use href="#i-clock"/></svg></dt>
+                        <dd><strong><t t-out="card['time_label']"/><t t-if="card['end_label']"> – <t t-out="card['end_label']"/></t></strong>
+                            <span><t t-out="audiences[majlis.audience]"/></span></dd>
+                    </div>
+                    <div>
+                        <dt><svg class="ic"><use href="#i-pin"/></svg></dt>
+                        <dd><strong><t t-out="host.name"/></strong>
+                            <span><t t-out="'، '.join(filter(None, [card['place'], majlis.city_id.name]))"/></span></dd>
+                    </div>
+                    <div t-if="card['participants']">
+                        <dt><svg class="ic"><use href="#i-mic"/></svg></dt>
+                        <dd><strong><t t-out="card['participants']"/></strong></dd>
+                    </div>
+                </dl>
+
+                <div class="mb-actions">
+                    <a class="mb-btn" t-attf-href="/app/majlis/#{majlis.id}/calendar.ics">
+                        <svg class="ic"><use href="#i-bell"/></svg>ذكّرني
+                    </a>
+                    <button type="button" class="mb-btn mb-btn--soft" data-fav="majlis" t-att-data-id="majlis.id">
+                        <svg class="ic"><use href="#i-heart"/></svg><span data-fav-label="1">حفظ</span>
+                    </button>
+                    <button type="button" class="mb-btn mb-btn--soft" data-share="1"
+                            t-att-data-url="share_url" t-att-data-title="majlis.name">
+                        <svg class="ic"><use href="#i-share"/></svg>مشاركة
+                    </button>
+                </div>
+                <div class="mb-actions">
+                    <a t-if="majlis.live_url" class="mb-btn mb-btn--soft" t-att-href="majlis.live_url" target="_blank" rel="noopener noreferrer">
+                        <svg class="ic"><use href="#i-play"/></svg>البث المباشر
+                    </a>
+                    <a t-if="host.latitude or host.longitude" class="mb-btn mb-btn--soft" target="_blank" rel="noopener noreferrer"
+                       t-attf-href="https://www.google.com/maps/search/?api=1&amp;query=#{host.latitude},#{host.longitude}">
+                        <svg class="ic"><use href="#i-pin"/></svg>الموقع على الخريطة
+                    </a>
+                </div>
+
+                <p t-if="majlis.description" class="mb-prose"><t t-out="majlis.description"/></p>
+
+                <h3 class="mb-h2">الجهة المنظِّمة</h3>
+                <div class="mb-list">
+                    <t t-set="e" t-value="host"/>
+                    <t t-call="ib4tech_minbar.app_entity_card"/>
+                    <t t-foreach="majlis.participant_ids.filtered(lambda p: p.state == 'published')" t-as="e">
+                        <t t-call="ib4tech_minbar.app_entity_card"/>
+                    </t>
+                </div>
+            </article>
+        </t>
+    </template>
+
+    <!-- ============================== Directory ============================== -->
+    <template id="app_directory" name="Minbar App: Directory">
+        <t t-call="ib4tech_minbar.app_layout">
+            <t t-set="back" t-value="'/app'"/>
+            <form class="mb-filters" method="get" action="/app/directory">
+                <label class="mb-search">
+                    <svg class="ic"><use href="#i-search"/></svg>
+                    <input type="search" name="q" t-att-value="q" placeholder="ابحث بالاسم في كل الدليل"/>
+                </label>
+            </form>
+            <t t-if="q">
+                <div t-if="results" class="mb-list">
+                    <t t-foreach="results" t-as="e">
+                        <t t-call="ib4tech_minbar.app_entity_card"/>
+                    </t>
+                </div>
+                <t t-else="" t-call="ib4tech_minbar.app_empty">
+                    <t t-set="empty_icon" t-value="'i-search'"/>
+                    <t t-set="empty_title">لا توجد نتائج</t>
+                    <t t-set="empty_text">تأكد من الاسم أو جرّب كلمة أقصر.</t>
+                </t>
+            </t>
+            <div t-else="" class="mb-cards">
+                <a t-foreach="entity_types.items()" t-as="item" class="mb-card" t-attf-href="/app/directory/#{item[0]}">
+                    <svg class="ic"><use t-attf-href="##{item[1]['icon']}"/></svg>
+                    <strong><t t-out="item[1]['plural']"/></strong>
+                    <small><t t-out="counts.get(item[0], 0)"/> صفحة</small>
+                </a>
+            </div>
+            <a t-if="not q" class="mb-cta" href="/app/join">
+                <span>
+                    <strong>أضف صفحتك إلى الدليل</strong>
+                    <small>للحسينيات والمواكب والرواديد والخطباء، مجاناً.</small>
+                </span>
+                <svg class="ic"><use href="#i-chevron"/></svg>
+            </a>
+        </t>
+    </template>
+
+    <template id="app_directory_type" name="Minbar App: Directory Listing">
+        <t t-call="ib4tech_minbar.app_layout">
+            <t t-set="back" t-value="'/app/directory'"/>
+            <form class="mb-filters" method="get" t-attf-action="/app/directory/#{etype}" data-autosubmit="1">
+                <label class="mb-search">
+                    <svg class="ic"><use href="#i-search"/></svg>
+                    <input type="search" name="q" t-att-value="filters['q']" t-attf-placeholder="ابحث في #{meta['plural']}"/>
+                </label>
+                <div class="mb-filters__row">
+                    <select name="city" aria-label="المدينة">
+                        <option value="">كل المدن</option>
+                        <option t-foreach="cities" t-as="c" t-att-value="c.id" t-att-selected="filters['city'] == c.id">
+                            <t t-out="c.name"/>
+                        </option>
+                    </select>
+                    <select t-if="services" name="service" aria-label="الخدمة">
+                        <option value="">كل الخدمات</option>
+                        <option t-foreach="services" t-as="s" t-att-value="s.id" t-att-selected="filters['service'] == s.id">
+                            <t t-out="s.name"/>
+                        </option>
+                    </select>
+                </div>
+            </form>
+            <t t-if="entities">
+                <div class="mb-list">
+                    <t t-foreach="entities" t-as="e">
+                        <t t-call="ib4tech_minbar.app_entity_card"/>
+                    </t>
+                </div>
+                <a t-if="next_offset" class="mb-btn mb-btn--soft mb-btn--block"
+                   t-attf-href="/app/directory/#{etype}?#{keep_query('city', 'q', 'service', offset=next_offset)}">عرض المزيد</a>
+            </t>
+            <t t-else="" t-call="ib4tech_minbar.app_empty">
+                <t t-set="empty_icon" t-value="meta['icon']"/>
+                <t t-set="empty_title">لا توجد صفحات هنا بعد</t>
+                <t t-set="empty_text">كن أول من يسجّل صفحته في هذا القسم.</t>
+                <t t-set="empty_link" t-value="'/app/join'"/>
+                <t t-set="empty_action">سجّل صفحتك</t>
+            </t>
+        </t>
+    </template>
+
+    <template id="app_entity" name="Minbar App: Directory Page">
+        <t t-call="ib4tech_minbar.app_layout">
+            <t t-set="back" t-value="'/app/directory/%s' % entity.entity_type"/>
+            <t t-set="e" t-value="entity"/>
+            <article class="mb-profile">
+                <div class="mb-profile__cover">
+                    <img t-if="entity.has_cover" alt=""
+                         t-attf-src="/app/image/entity/#{entity.id}/cover_image?u=#{int(entity.write_date.timestamp())}"/>
+                </div>
+                <div class="mb-profile__head">
+                    <t t-call="ib4tech_minbar.app_avatar">
+                        <t t-set="avatar_class" t-value="'mb-avatar--xl'"/>
+                    </t>
+                    <div>
+                        <h2 class="mb-profile__name">
+                            <t t-out="entity.name"/>
+                            <svg t-if="entity.is_verified" class="ic mb-verified" aria-label="موثّق"><use href="#i-check"/></svg>
+                        </h2>
+                        <p class="mb-profile__meta">
+                            <t t-out="meta['label']"/>
+                            <t t-if="entity.city_id"> · <t t-out="entity.city_id.name"/></t>
+                            <t t-if="entity.founded_year"> · تأسس <t t-out="entity.founded_year"/></t>
+                        </p>
+                    </div>
+                </div>
+                <p t-if="entity.state != 'published'" class="mb-alert">
+                    هذه الصفحة <t t-out="states[entity.state]"/> ولا تظهر للزوار بعد.
+                </p>
+                <p t-if="entity.tagline" class="mb-profile__tagline"><t t-out="entity.tagline"/></p>
+
+                <div class="mb-actions">
+                    <button type="button" class="mb-btn" data-fav="entity" t-att-data-id="entity.id">
+                        <svg class="ic"><use href="#i-heart"/></svg><span data-fav-label="1">متابعة</span>
+                    </button>
+                    <button type="button" class="mb-btn mb-btn--soft" data-share="1"
+                            t-att-data-url="share_url" t-att-data-title="entity.name">
+                        <svg class="ic"><use href="#i-share"/></svg>مشاركة
+                    </button>
+                    <a t-if="is_owner" class="mb-btn mb-btn--soft" t-attf-href="/app/my/entity/#{entity.id}">
+                        <svg class="ic"><use href="#i-edit"/></svg>تعديل
+                    </a>
+                </div>
+
+                <div t-if="links" class="mb-contact">
+                    <a t-foreach="links" t-as="link" t-att-href="link['url']"
+                       t-att-target="'_blank' if link['external'] else None"
+                       t-att-rel="'noopener noreferrer' if link['external'] else None">
+                        <svg class="ic"><use t-attf-href="##{link['icon']}"/></svg><t t-out="link['label']"/>
+                    </a>
+                </div>
+
+                <p t-if="entity.address" class="mb-profile__address">
+                    <svg class="ic"><use href="#i-pin"/></svg><t t-out="entity.address"/>
+                </p>
+
+                <div t-if="entity.service_ids" class="mb-chips mb-chips--static">
+                    <span t-foreach="entity.service_ids" t-as="s" class="mb-chip"><t t-out="s.name"/></span>
+                </div>
+
+                <section t-if="entity.description" class="mb-section">
+                    <h3 class="mb-h2">نبذة</h3>
+                    <p class="mb-prose"><t t-out="entity.description"/></p>
+                </section>
+
+                <section class="mb-section">
+                    <h3 class="mb-h2">المجالس القادمة</h3>
+                    <t t-if="majalis">
+                        <t t-set="show_day" t-value="True"/>
+                        <div class="mb-list">
+                            <t t-foreach="majalis" t-as="card">
+                                <t t-call="ib4tech_minbar.app_majlis_card"/>
+                            </t>
+                        </div>
+                    </t>
+                    <t t-else="" t-call="ib4tech_minbar.app_empty">
+                        <t t-set="empty_icon" t-value="'i-calendar'"/>
+                        <t t-set="empty_title">لا توجد مجالس معلنة</t>
+                        <t t-set="empty_text">تابع الصفحة لتجدها بسهولة في المفضلة.</t>
+                    </t>
+                </section>
+            </article>
+        </t>
+    </template>
+
+    <!-- ============================== Library ============================== -->
+    <template id="app_library" name="Minbar App: Library">
+        <t t-call="ib4tech_minbar.app_layout">
+            <t t-set="back" t-value="'/app'"/>
+            <t t-set="category_icons" t-value="{'dua': 'i-spark', 'ziyarah': 'i-dome', 'taqib': 'i-beads', 'munajat': 'i-moon', 'dhikr': 'i-star', 'book': 'i-book'}"/>
+            <form class="mb-filters" method="get" action="/app/library">
+                <label class="mb-search">
+                    <svg class="ic"><use href="#i-search"/></svg>
+                    <input type="search" name="q" t-att-value="q" placeholder="ابحث عن دعاء أو زيارة"/>
+                </label>
+            </form>
+            <t t-if="q">
+                <div t-if="results" class="mb-list">
+                    <a t-foreach="results" t-as="content" class="mb-row" t-attf-href="/app/read/#{content.id}">
+                        <span class="mb-row__body">
+                            <span class="mb-row__title"><t t-out="content.name"/></span>
+                            <span class="mb-row__meta"><t t-out="content.category_id.name"/></span>
+                        </span>
+                        <svg class="ic mb-row__go"><use href="#i-chevron"/></svg>
+                    </a>
+                </div>
+                <t t-else="" t-call="ib4tech_minbar.app_empty">
+                    <t t-set="empty_icon" t-value="'i-search'"/>
+                    <t t-set="empty_title">لا توجد نتائج</t>
+                    <t t-set="empty_text">جرّب كلمة أخرى من العنوان.</t>
+                </t>
+            </t>
+            <t t-else="">
+                <div class="mb-cards">
+                    <a t-foreach="categories" t-as="category" class="mb-card" t-attf-href="/app/library/#{category.id}">
+                        <svg class="ic"><use t-attf-href="##{category_icons.get(category.icon, 'i-book')}"/></svg>
+                        <strong><t t-out="category.name"/></strong>
+                        <small><t t-out="category.content_count"/> نص</small>
+                    </a>
+                </div>
+                <section class="mb-section" t-if="featured">
+                    <h2 class="mb-h2">مختارات</h2>
+                    <div class="mb-list">
+                        <a t-foreach="featured" t-as="content" class="mb-row" t-attf-href="/app/read/#{content.id}">
+                            <span class="mb-row__body">
+                                <span class="mb-row__title"><t t-out="content.name"/></span>
+                                <span class="mb-row__meta"><t t-out="content.category_id.name"/></span>
+                            </span>
+                            <svg class="ic mb-row__go"><use href="#i-chevron"/></svg>
+                        </a>
+                    </div>
+                </section>
+                <section class="mb-offline" id="mb-offline-box" hidden="hidden">
+                    <svg class="ic"><use href="#i-download"/></svg>
+                    <span>
+                        <strong>القراءة بدون إنترنت</strong>
+                        <small data-offline-status="1">احفظ المكتبة على هاتفك لتقرأها في أي مكان.</small>
+                    </span>
+                    <button type="button" class="mb-btn mb-btn--small" data-offline-save="1">حفظ</button>
+                </section>
+            </t>
+        </t>
+    </template>
+
+    <template id="app_library_category" name="Minbar App: Library Section">
+        <t t-call="ib4tech_minbar.app_layout">
+            <t t-set="back" t-value="'/app/library'"/>
+            <p t-if="category.description" class="mb-lead"><t t-out="category.description"/></p>
+            <div t-if="contents" class="mb-list">
+                <a t-foreach="contents" t-as="content" class="mb-row" t-attf-href="/app/read/#{content.id}">
+                    <span class="mb-row__body">
+                        <span class="mb-row__title"><t t-out="content.name"/></span>
+                        <span t-if="content.intro" class="mb-row__sub"><t t-out="content.intro"/></span>
+                    </span>
+                    <svg class="ic mb-row__go"><use href="#i-chevron"/></svg>
+                </a>
+            </div>
+            <t t-else="" t-call="ib4tech_minbar.app_empty">
+                <t t-set="empty_icon" t-value="'i-book'"/>
+                <t t-set="empty_title">لا توجد نصوص في هذا القسم بعد</t>
+                <t t-set="empty_text">ستُضاف النصوص قريباً.</t>
+            </t>
+        </t>
+    </template>
+
+    <template id="app_read" name="Minbar App: Reader">
+        <t t-call="ib4tech_minbar.app_layout">
+            <t t-set="back" t-value="'/app/library/%d' % content.category_id.id"/>
+            <t t-set="page" t-value="'read'"/>
+            <article class="mb-reader">
+                <div class="mb-reader__tools">
+                    <button type="button" class="mb-btn mb-btn--soft mb-btn--small" data-font="-1" aria-label="تصغير الخط">أ−</button>
+                    <button type="button" class="mb-btn mb-btn--soft mb-btn--small" data-font="1" aria-label="تكبير الخط">أ+</button>
+                    <span class="mb-bar__space"/>
+                    <button type="button" class="mb-btn mb-btn--soft mb-btn--small" data-share="1"
+                            t-att-data-url="share_url" t-att-data-title="content.name">
+                        <svg class="ic"><use href="#i-share"/></svg>مشاركة
+                    </button>
+                </div>
+                <h2 class="mb-reader__title"><t t-out="content.name"/></h2>
+                <p t-if="content.intro" class="mb-reader__intro"><t t-out="content.intro"/></p>
+                <audio t-if="content.audio_url" class="mb-reader__audio" controls="controls" preload="none" t-att-src="content.audio_url"/>
+                <div class="mb-reader__body" id="mb-reader-body"><t t-out="content.body"/></div>
+                <p t-if="content.source" class="mb-reader__source">المصدر: <t t-out="content.source"/></p>
+            </article>
+        </t>
+    </template>
+</odoo>

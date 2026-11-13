@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="app_my" name="Minbar App: Owner Dashboard">
+        <t t-call="ib4tech_minbar.app_layout">
+            <t t-set="back" t-value="'/app/more'"/>
+            <p class="mb-lead">أهلاً <t t-out="user_name"/>. من هنا تعدّل صفحتك وتنشر مواعيد مجالسك.</p>
+            <p t-if="saved == 'entity'" class="mb-alert mb-alert--ok" role="status">تم حفظ الصفحة.</p>
+            <p t-elif="saved == 'majlis'" class="mb-alert mb-alert--ok" role="status">تم حفظ المجلس.</p>
+            <p t-elif="saved == 'cancel'" class="mb-alert mb-alert--ok" role="status">تم إلغاء المجلس.</p>
+
+            <section class="mb-section">
+                <div class="mb-section__head">
+                    <h2 class="mb-h2">صفحاتي</h2>
+                    <a href="/app/my/entity/new">صفحة جديدة</a>
+                </div>
+                <t t-if="entities">
+                    <div class="mb-list">
+                        <div t-foreach="entities" t-as="e" class="mb-row mb-row--static">
+                            <t t-call="ib4tech_minbar.app_avatar"/>
+                            <span class="mb-row__body">
+                                <span class="mb-row__title"><t t-out="e.name"/></span>
+                                <span class="mb-row__meta">
+                                    <t t-out="entity_types[e.entity_type]['label']"/> ·
+                                    <span t-attf-class="mb-state mb-state--#{e.state}"><t t-out="states[e.state]"/></span>
+                                </span>
+                                <span t-if="e.state == 'rejected' and e.reject_reason" class="mb-row__sub">
+                                    سبب الرفض: <t t-out="e.reject_reason"/>
+                                </span>
+                                <span class="mb-row__links">
+                                    <a t-attf-href="/app/my/entity/#{e.id}">تعديل</a>
+                                    <a t-attf-href="/app/e/#{e.id}">معاينة</a>
+                                    <a t-attf-href="/app/my/majlis/new?entity=#{e.id}">إضافة مجلس</a>
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                </t>
+                <t t-else="" t-call="ib4tech_minbar.app_empty">
+                    <t t-set="empty_icon" t-value="'i-dome'"/>
+                    <t t-set="empty_title">لا توجد صفحة مرتبطة بحسابك</t>
+                    <t t-set="empty_text">أنشئ صفحة لحسينيتك أو موكبك، وتُنشر بعد موافقة الإدارة.</t>
+                    <t t-set="empty_link" t-value="'/app/my/entity/new'"/>
+                    <t t-set="empty_action">إنشاء صفحة</t>
+                </t>
+            </section>
+
+            <section class="mb-section" t-if="entities">
+                <div class="mb-section__head">
+                    <h2 class="mb-h2">مجالسي القادمة</h2>
+                    <a href="/app/my/majlis/new">مجلس جديد</a>
+                </div>
+                <t t-if="majalis">
+                    <div class="mb-list">
+                        <div t-foreach="majalis" t-as="card" class="mb-row mb-row--static">
+                            <span class="mb-row__body">
+                                <span class="mb-row__title"><t t-out="card['rec'].name"/></span>
+                                <span class="mb-row__meta">
+                                    <t t-out="card['full_date']"/> · <t t-out="card['time_label']"/> ·
+                                    <span t-attf-class="mb-state mb-state--#{card['rec'].state}"><t t-out="states[card['rec'].state]"/></span>
+                                </span>
+                                <span class="mb-row__sub"><t t-out="card['rec'].entity_id.name"/></span>
+                                <span class="mb-row__links">
+                                    <a t-attf-href="/app/my/majlis/#{card['rec'].id}">تعديل</a>
+                                    <a t-if="card['rec'].state == 'published'" t-attf-href="/app/majlis/#{card['rec'].id}">معاينة</a>
+                                    <form t-if="card['rec'].state in ('published', 'pending')" method="post"
+                                          t-attf-action="/app/my/majlis/#{card['rec'].id}/cancel"
+                                          data-confirm="هل تريد إلغاء هذا المجلس؟">
+                                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                        <button type="submit" class="mb-linkbtn">إلغاء المجلس</button>
+                                    </form>
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                </t>
+                <t t-else="" t-call="ib4tech_minbar.app_empty">
+                    <t t-set="empty_icon" t-value="'i-calendar'"/>
+                    <t t-set="empty_title">لا توجد مجالس قادمة</t>
+                    <t t-set="empty_text">أضف موعد مجلسك ليظهر للزوار في مدينتك.</t>
+                    <t t-set="empty_link" t-value="'/app/my/majlis/new'"/>
+                    <t t-set="empty_action">إضافة مجلس</t>
+                </t>
+            </section>
+        </t>
+    </template>
+
+    <template id="app_my_entity_form" name="Minbar App: Owner Page Form">
+        <t t-call="ib4tech_minbar.app_layout">
+            <t t-set="back" t-value="'/app/my'"/>
+            <t t-set="val" t-value="lambda name: form.get(name) if form else (entity[name] if entity else '')"/>
+            <form class="mb-form" method="post" enctype="multipart/form-data"
+                  t-att-action="'/app/my/entity/%d' % entity.id if entity else '/app/my/entity/new'">
+                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                <p t-if="error" class="mb-alert mb-alert--danger" role="alert"><t t-out="error"/></p>
+                <p t-if="not entity" class="mb-note">تُراجع الإدارة الصفحة الجديدة قبل نشرها.</p>
+
+                <label t-if="not entity" class="mb-field">
+                    <span>نوع الصفحة</span>
+                    <select name="entity_type" required="required">
+                        <option t-foreach="entity_types.items()" t-as="item" t-att-value="item[0]"
+                                t-att-selected="form.get('entity_type') == item[0]"><t t-out="item[1]['label']"/></option>
+                    </select>
+                </label>
+                <label class="mb-field">
+                    <span>الاسم</span>
+                    <input type="text" name="name" required="required" maxlength="120" t-att-value="val('name')"/>
+                </label>
+                <label class="mb-field">
+                    <span>وصف قصير <small>يظهر تحت الاسم</small></span>
+                    <input type="text" name="tagline" maxlength="160" t-att-value="val('tagline')"/>
+                </label>
+                <label class="mb-field">
+                    <span>المدينة</span>
+                    <select name="city_id">
+                        <option value="">اختر المدينة</option>
+                        <t t-set="city_value" t-value="form.get('city_id') if form else str(entity.city_id.id or '')"/>
+                        <option t-foreach="cities" t-as="c" t-att-value="c.id"
+                                t-att-selected="city_value == str(c.id)"><t t-out="c.name"/></option>
+                    </select>
+                </label>
+                <label class="mb-field">
+                    <span>العنوان</span>
+                    <input type="text" name="address" maxlength="200" t-att-value="val('address')"/>
+                </label>
+                <label class="mb-field">
+                    <span>سنة التأسيس <small>اختياري</small></span>
+                    <input type="number" name="founded_year" min="0" max="2100" inputmode="numeric" dir="ltr"
+                           t-att-value="val('founded_year') or ''"/>
+                </label>
+                <label class="mb-field">
+                    <span>نبذة</span>
+                    <textarea name="description" rows="5" maxlength="5000"><t t-out="val('description')"/></textarea>
+                </label>
+
+                <fieldset class="mb-fieldset" t-if="services">
+                    <legend>الخدمات المقدَّمة</legend>
+                    <div class="mb-checks">
+                        <label t-foreach="services" t-as="s">
+                            <input type="checkbox" name="service_ids" t-att-value="s.id"
+                                   t-att-checked="s in entity.service_ids"/>
+                            <t t-out="s.name"/>
+                        </label>
+                    </div>
+                </fieldset>
+
+                <h2 class="mb-h2">الصور</h2>
+                <label class="mb-field">
+                    <span>الصورة الشخصية أو الشعار</span>
+                    <input type="file" name="image" accept="image/*"/>
+                </label>
+                <label class="mb-field">
+                    <span>صورة الغلاف</span>
+                    <input type="file" name="cover" accept="image/*"/>
+                </label>
+
+                <h2 class="mb-h2">وسائل التواصل</h2>
+                <label class="mb-field">
+                    <span>الهاتف</span>
+                    <input type="tel" name="phone" maxlength="40" dir="ltr" t-att-value="val('phone')"/>
+                </label>
+                <label class="mb-field">
+                    <span>واتساب</span>
+                    <input type="tel" name="whatsapp" maxlength="40" dir="ltr" placeholder="07xxxxxxxxx" t-att-value="val('whatsapp')"/>
+                </label>
+                <label class="mb-field">
+                    <span>تلغرام <small>اسم المستخدم</small></span>
+                    <input type="text" name="telegram" maxlength="80" dir="ltr" t-att-value="val('telegram')"/>
+                </label>
+                <label class="mb-field">
+                    <span>إنستغرام <small>اسم المستخدم</small></span>
+                    <input type="text" name="instagram" maxlength="80" dir="ltr" t-att-value="val('instagram')"/>
+                </label>
+                <label class="mb-field">
+                    <span>رابط يوتيوب</span>
+                    <input type="url" name="youtube" maxlength="160" dir="ltr" placeholder="https://" t-att-value="val('youtube')"/>
+                </label>
+                <label class="mb-field">
+                    <span>رابط فيسبوك</span>
+                    <input type="url" name="facebook" maxlength="160" dir="ltr" placeholder="https://" t-att-value="val('facebook')"/>
+                </label>
+                <label class="mb-field">
+                    <span>الموقع الإلكتروني</span>
+                    <input type="url" name="website_url" maxlength="200" dir="ltr" placeholder="https://" t-att-value="val('website_url')"/>
+                </label>
+                <button type="submit" class="mb-btn mb-btn--block">حفظ الصفحة</button>
+            </form>
+        </t>
+    </template>
+
+    <template id="app_my_majlis_form" name="Minbar App: Owner Majlis Form">
+        <t t-call="ib4tech_minbar.app_layout">
+            <t t-set="back" t-value="'/app/my'"/>
+            <t t-set="val" t-value="lambda name: form.get(name) if form else (majlis[name] if majlis else '')"/>
+            <t t-set="entity_value" t-value="int(form.get('entity_id') or 0) if form else (majlis.entity_id.id or default_entity)"/>
+            <form class="mb-form" method="post"
+                  t-att-action="'/app/my/majlis/%d' % majlis.id if majlis else '/app/my/majlis/new'">
+                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                <p t-if="error" class="mb-alert mb-alert--danger" role="alert"><t t-out="error"/></p>
+
+                <label class="mb-field">
+                    <span>عنوان المجلس</span>
+                    <input type="text" name="name" required="required" maxlength="160" t-att-value="val('name')"
+                           placeholder="مثال: مجلس الليلة الأولى من محرم"/>
+                </label>
+                <label class="mb-field">
+                    <span>الصفحة المنظِّمة</span>
+                    <select name="entity_id" required="required">
+                        <option t-foreach="entities" t-as="e" t-att-value="e.id"
+                                t-att-selected="entity_value == e.id"><t t-out="e.name"/></option>
+                    </select>
+                </label>
+                <div class="mb-form__row">
+                    <label class="mb-field">
+                        <span>التاريخ</span>
+                        <input type="date" name="date" required="required"
+                               t-att-value="form.get('date') if form else local.get('date')"/>
+                    </label>
+                    <label class="mb-field">
+                        <span>يبدأ</span>
+                        <input type="time" name="time_start" required="required"
+                               t-att-value="form.get('time_start') if form else local.get('time_start')"/>
+                    </label>
+                    <label class="mb-field">
+                        <span>ينتهي <small>اختياري</small></span>
+                        <input type="time" name="time_end"
+                               t-att-value="form.get('time_end') if form else local.get('time_end')"/>
+                    </label>
+                </div>
+                <label t-if="not majlis" class="mb-field">
+                    <span>يتكرر يومياً لعدد أيام إضافية <small>مثلاً 9 لعشرة محرم</small></span>
+                    <input type="number" name="repeat_days" min="0" max="30" inputmode="numeric" dir="ltr"
+                           t-att-value="form.get('repeat_days') or '0'"/>
+                </label>
+                <label class="mb-field">
+                    <span>الرواديد والخطباء <small>من الدليل</small></span>
+                    <select name="participant_ids" multiple="multiple" size="5">
+                        <option t-foreach="participants" t-as="p" t-att-value="p.id"
+                                t-att-selected="p in majlis.participant_ids">
+                            <t t-out="p.name"/> (<t t-out="entity_types[p.entity_type]['label']"/>)
+                        </option>
+                    </select>
+                </label>
+                <label class="mb-field">
+                    <span>مشاركون آخرون <small>غير موجودين في الدليل</small></span>
+                    <input type="text" name="guest_names" maxlength="200" t-att-value="val('guest_names')"/>
+                </label>
+                <div class="mb-form__row">
+                    <label class="mb-field">
+                        <span>المدينة</span>
+                        <select name="city_id">
+                            <option value="">مدينة الصفحة</option>
+                            <t t-set="city_value" t-value="form.get('city_id') if form else str(majlis.city_id.id or '')"/>
+                            <option t-foreach="cities" t-as="c" t-att-value="c.id"
+                                    t-att-selected="city_value == str(c.id)"><t t-out="c.name"/></option>
+                        </select>
+                    </label>
+                    <label class="mb-field">
+                        <span>الحضور</span>
+                        <select name="audience">
+                            <t t-set="audience_value" t-value="val('audience') or 'all'"/>
+                            <option t-foreach="audiences.items()" t-as="item" t-att-value="item[0]"
+                                    t-att-selected="audience_value == item[0]"><t t-out="item[1]"/></option>
+                        </select>
+                    </label>
+                </div>
+                <label class="mb-field">
+                    <span>المكان <small>إن اختلف عن عنوان الصفحة</small></span>
+                    <input type="text" name="location" maxlength="200" t-att-value="val('location')"/>
+                </label>
+                <label class="mb-field">
+                    <span>المناسبة <small>اختياري</small></span>
+                    <select name="occasion_id">
+                        <option value="">بدون</option>
+                        <t t-set="occasion_value" t-value="form.get('occasion_id') if form else str(majlis.occasion_id.id or '')"/>
+                        <option t-foreach="occasions" t-as="o" t-att-value="o.id"
+                                t-att-selected="occasion_value == str(o.id)"><t t-out="o.name"/></option>
+                    </select>
+                </label>
+                <label class="mb-field">
+                    <span>رابط البث المباشر <small>اختياري</small></span>
+                    <input type="url" name="live_url" maxlength="300" dir="ltr" placeholder="https://" t-att-value="val('live_url')"/>
+                </label>
+                <label class="mb-field">
+                    <span>تفاصيل <small>اختياري</small></span>
+                    <textarea name="description" rows="4" maxlength="3000"><t t-out="val('description')"/></textarea>
+                </label>
+                <button type="submit" class="mb-btn mb-btn--block">حفظ المجلس</button>
+            </form>
+        </t>
+    </template>
+</odoo>

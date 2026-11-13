@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Shell of the public mobile app. It is a standalone document: it does not use
+         the web or website layouts so that anonymous visitors download very little. -->
+    <template id="app_layout" name="Minbar App: Layout">&lt;!DOCTYPE html&gt;
+<html lang="ar" dir="rtl">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+        <title><t t-if="title"><t t-out="title"/> · </t><t t-out="app_name"/></title>
+        <meta name="description" content="مواعيد المجالس، دليل الحسينيات والمواكب والرواديد، الأدعية والزيارات وأوقات الصلاة."/>
+        <meta name="theme-color" content="#0f5a4c" media="(prefers-color-scheme: light)"/>
+        <meta name="theme-color" content="#0e1513" media="(prefers-color-scheme: dark)"/>
+        <meta name="mobile-web-app-capable" content="yes"/>
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+        <meta name="apple-mobile-web-app-title" t-att-content="app_name"/>
+        <link rel="manifest" href="/app/manifest.webmanifest"/>
+        <link rel="icon" type="image/png" sizes="192x192" href="/ib4tech_minbar/static/src/app/icons/icon-192.png"/>
+        <link rel="apple-touch-icon" href="/ib4tech_minbar/static/src/app/icons/icon-192.png"/>
+        <link rel="stylesheet" t-attf-href="/ib4tech_minbar/static/src/app/app.css?v=#{asset_version}"/>
+    </head>
+    <body t-att-data-app="app_data" t-att-data-page="page or ''">
+        <t t-call="ib4tech_minbar.app_icons"/>
+        <div class="mb-app">
+            <header class="mb-bar">
+                <t t-if="back">
+                    <a class="mb-bar__btn" t-att-href="back" aria-label="رجوع" data-back="1">
+                        <svg class="ic"><use href="#i-back"/></svg>
+                    </a>
+                    <h1 class="mb-bar__title"><t t-out="title"/></h1>
+                </t>
+                <t t-else="">
+                    <a class="mb-bar__brand" href="/app">
+                        <span class="mb-logo"><svg class="ic"><use href="#i-minbar"/></svg></span>
+                        <span><t t-out="app_name"/></span>
+                    </a>
+                </t>
+                <span class="mb-bar__space"/>
+                <a class="mb-bar__btn" href="/app/favorites" aria-label="المفضلة">
+                    <svg class="ic"><use href="#i-heart"/></svg>
+                </a>
+            </header>
+
+            <main class="mb-main">
+                <t t-out="0"/>
+            </main>
+
+            <nav class="mb-tabs" aria-label="التنقل الرئيسي">
+                <a href="/app" t-attf-class="mb-tab #{'is-active' if tab == 'home' else ''}">
+                    <svg class="ic"><use href="#i-home"/></svg><span>الرئيسية</span>
+                </a>
+                <a href="/app/majalis" t-attf-class="mb-tab #{'is-active' if tab == 'majalis' else ''}">
+                    <svg class="ic"><use href="#i-calendar"/></svg><span>المجالس</span>
+                </a>
+                <a href="/app/directory" t-attf-class="mb-tab #{'is-active' if tab == 'directory' else ''}">
+                    <svg class="ic"><use href="#i-grid"/></svg><span>الدليل</span>
+                </a>
+                <a href="/app/library" t-attf-class="mb-tab #{'is-active' if tab == 'library' else ''}">
+                    <svg class="ic"><use href="#i-book"/></svg><span>المكتبة</span>
+                </a>
+                <a href="/app/more" t-attf-class="mb-tab #{'is-active' if tab == 'more' else ''}">
+                    <svg class="ic"><use href="#i-more"/></svg><span>المزيد</span>
+                </a>
+            </nav>
+        </div>
+        <div class="mb-toast" id="mb-toast" role="status" aria-live="polite"/>
+        <script t-attf-src="/ib4tech_minbar/static/src/app/app.js?v=#{asset_version}" defer="defer"/>
+    </body>
+</html>
+    </template>
+
+    <!-- Icon sprite: one stroke style for the whole app. -->
+    <template id="app_icons" name="Minbar App: Icons">
+        <svg xmlns="http://www.w3.org/2000/svg" class="mb-sprite" aria-hidden="true">
+            <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7v8a2 2 0 0 1-2 2h-4v-6H9v6H5a2 2 0 0 1-2-2z"/></symbol>
+            <symbol id="i-calendar" viewBox="0 0 24 24"><path d="M4 6h16v14H4zM4 10h16M8 3v4M16 3v4"/></symbol>
+            <symbol id="i-grid" viewBox="0 0 24 24"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/></symbol>
+            <symbol id="i-book" viewBox="0 0 24 24"><path d="M12 6c-2-1.5-5-2-8-2v14c3 0 6 .5 8 2 2-1.5 5-2 8-2V4c-3 0-6 .5-8 2zM12 6v14"/></symbol>
+            <symbol id="i-more" viewBox="0 0 24 24"><path d="M5 12h.01M12 12h.01M19 12h.01" stroke-width="3.2"/></symbol>
+            <symbol id="i-dome" viewBox="0 0 24 24"><path d="M3 21h18M6 21v-7a6 6 0 0 1 12 0v7M12 8V3M12 3l2.5 1.2L12 5.4M10 21v-4a2 2 0 0 1 4 0v4"/></symbol>
+            <symbol id="i-flag" viewBox="0 0 24 24"><path d="M6 21V4M6 4h12l-2.5 4 2.5 4H6"/></symbol>
+            <symbol id="i-mic" viewBox="0 0 24 24"><path d="M12 3a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3zM6 11a6 6 0 0 0 12 0M12 17v4M9 21h6"/></symbol>
+            <symbol id="i-minbar" viewBox="0 0 24 24"><path d="M3 21h18M5 21v-4h4v-4h4V9h5v12M13 9V5h5v4"/></symbol>
+            <symbol id="i-clock" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM12 7v5l3 2"/></symbol>
+            <symbol id="i-compass" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM15.5 8.5l-2 5-5 2 2-5z"/></symbol>
+            <symbol id="i-beads" viewBox="0 0 24 24"><circle cx="12" cy="10" r="6.5" stroke-dasharray="0.1 3.3" stroke-width="3"/><path d="M12 16.5V21M10 21h4"/></symbol>
+            <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 1 1 9.5 4 6.5 6.5 0 0 0 20 14.5z"/></symbol>
+            <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.2a4.3 4.3 0 0 1 7.5 2.6C19.500 15.400 12 20 12 20z"/></symbol>
+            <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6-5.6-6-11a6 6 0 0 1 12 0c0 5.400-6 11-6 11zM12 8a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></symbol>
+            <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.500 1.500a11 11 0 0 0 5 5L15 13l5 2v4a1 1 0 0 1-1 1A15 15 0 0 1 4 5a1 1 0 0 1 1-1z"/></symbol>
+            <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></symbol>
+            <symbol id="i-send" viewBox="0 0 24 24"><path d="M21 4L3 11l6 2.500L11 20l3-5 5 3z"/></symbol>
+            <symbol id="i-camera" viewBox="0 0 24 24"><path d="M5 5h14a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zM12 8.500a3.500 3.500 0 1 0 0 7 3.500 3.500 0 0 0 0-7zM17 8h.01"/></symbol>
+            <symbol id="i-play" viewBox="0 0 24 24"><path d="M4 6h16v12H4zM10 9.500v5l4.500-2.500z"/></symbol>
+            <symbol id="i-globe" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM3 12h18M12 3c2.500 2.500 3.500 5.500 3.500 9s-1 6.500-3.500 9c-2.500-2.500-3.500-5.500-3.500-9S9.500 5.500 12 3z"/></symbol>
+            <symbol id="i-share" viewBox="0 0 24 24"><path d="M12 15V3M8 7l4-4 4 4M5 12v7a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-7"/></symbol>
+            <symbol id="i-search" viewBox="0 0 24 24"><path d="M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14zM16 16l4.500 4.500"/></symbol>
+            <symbol id="i-back" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></symbol>
+            <symbol id="i-chevron" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></symbol>
+            <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.500l4.500 4.500L19 7.500"/></symbol>
+            <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+            <symbol id="i-user" viewBox="0 0 24 24"><path d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8zM4 21a8 8 0 0 1 16 0"/></symbol>
+            <symbol id="i-users" viewBox="0 0 24 24"><path d="M9 5a3.500 3.500 0 1 0 0 7 3.500 3.500 0 0 0 0-7zM2.500 20a6.500 6.500 0 0 1 13 0M16 5.500a3 3 0 0 1 0 6M18 14.500a5.500 5.500 0 0 1 3.500 5.500"/></symbol>
+            <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12M8 11l4 4 4-4M5 20h14"/></symbol>
+            <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 16V11a6 6 0 0 1 12 0v5l2 2H4zM10 20a2 2 0 0 0 4 0"/></symbol>
+            <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3c.500 4.500 4 8 9 9-5 1-8.500 4.500-9 9-.500-4.500-4-8-9-9 5-1 8.500-4.500 9-9z"/></symbol>
+            <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3l2.600 3.400 4.200-.600-.600 4.200L21.600 12l-3.400 2.600.600 4.200-4.200-.600L12 21l-2.600-3.400-4.200.600.600-4.200L2.400 12l3.400-2.600-.600-4.200 4.200.600z"/></symbol>
+            <symbol id="i-edit" viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16zM13 7l4 4"/></symbol>
+            <symbol id="i-text" viewBox="0 0 24 24"><path d="M5 7V5h14v2M12 5v14M9 19h6"/></symbol>
+            <symbol id="i-install" viewBox="0 0 24 24"><path d="M7 3h10a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zM12 8v6M9.500 11.500L12 14l2.500-2.500M10 18h4"/></symbol>
+        </svg>
+    </template>
+
+    <!-- Round picture of a directory page, falling back to the icon of its type. -->
+    <template id="app_avatar" name="Minbar App: Avatar">
+        <span t-attf-class="mb-avatar #{avatar_class or ''}">
+            <img t-if="e.has_image" loading="lazy" alt=""
+                 t-attf-src="/app/image/entity/#{e.id}/image_256?u=#{int(e.write_date.timestamp())}"/>
+            <svg t-else="" class="ic"><use t-attf-href="##{entity_types[e.entity_type]['icon']}"/></svg>
+        </span>
+    </template>
+
+    <template id="app_entity_card" name="Minbar App: Directory Card">
+        <a class="mb-row" t-attf-href="/app/e/#{e.id}">
+            <t t-call="ib4tech_minbar.app_avatar"/>
+            <span class="mb-row__body">
+                <span class="mb-row__title">
+                    <t t-out="e.name"/>
+                    <svg t-if="e.is_verified" class="ic mb-verified" aria-label="موثّق"><use href="#i-check"/></svg>
+                </span>
+                <span class="mb-row__meta">
+                    <t t-out="entity_types[e.entity_type]['label']"/>
+                    <t t-if="e.city_id"> · <t t-out="e.city_id.name"/></t>
+                </span>
+                <span t-if="e.tagline" class="mb-row__sub"><t t-out="e.tagline"/></span>
+            </span>
+            <svg class="ic mb-row__go"><use href="#i-chevron"/></svg>
+        </a>
+    </template>
+
+    <template id="app_majlis_card" name="Minbar App: Majlis Card">
+        <a t-attf-class="mb-majlis #{'is-live' if card['is_live'] else ''}"
+           t-attf-href="/app/majlis/#{card['rec'].id}">
+            <span class="mb-majlis__time">
+                <strong><t t-out="card['time_label']"/></strong>
+                <small t-if="show_day"><t t-out="card['day_label']"/></small>
+                <small t-if="show_day"><t t-out="card['date_label']"/></small>
+            </span>
+            <span class="mb-majlis__body">
+                <span class="mb-majlis__title"><t t-out="card['rec'].name"/></span>
+                <span class="mb-majlis__meta">
+                    <svg class="ic"><use t-attf-href="##{entity_types[card['rec'].entity_id.entity_type]['icon']}"/></svg>
+                    <t t-out="card['rec'].entity_id.name"/>
+                </span>
+                <span t-if="card['participants']" class="mb-majlis__meta">
+                    <svg class="ic"><use href="#i-mic"/></svg><t t-out="card['participants']"/>
+                </span>
+                <span class="mb-majlis__tags">
+                    <span t-if="card['is_live']" class="mb-tag mb-tag--live">جارٍ الآن</span>
+                    <span t-if="card['rec'].city_id" class="mb-tag"><t t-out="card['rec'].city_id.name"/></span>
+                    <span t-if="card['rec'].audience != 'all'" class="mb-tag"><t t-out="audiences[card['rec'].audience]"/></span>
+                    <span t-if="card['rec'].live_url" class="mb-tag">بث مباشر</span>
+                </span>
+            </span>
+        </a>
+    </template>
+
+    <template id="app_empty" name="Minbar App: Empty State">
+        <div class="mb-empty">
+            <svg class="ic"><use t-attf-href="##{empty_icon or 'i-moon'}"/></svg>
+            <p class="mb-empty__title"><t t-out="empty_title"/></p>
+            <p t-if="empty_text"><t t-out="empty_text"/></p>
+            <a t-if="empty_link" class="mb-btn mb-btn--soft" t-att-href="empty_link"><t t-out="empty_action"/></a>
+        </div>
+    </template>
+
+    <template id="app_not_found" name="Minbar App: Not Found">
+        <t t-call="ib4tech_minbar.app_layout">
+            <t t-set="back" t-value="'/app'"/>
+            <t t-call="ib4tech_minbar.app_empty">
+                <t t-set="empty_icon" t-value="'i-search'"/>
+                <t t-set="empty_title">الصفحة غير موجودة</t>
+                <t t-set="empty_text">ربما حُذفت أو لم تُنشر بعد.</t>
+                <t t-set="empty_link" t-value="'/app'"/>
+                <t t-set="empty_action">العودة للرئيسية</t>
+            </t>
+        </t>
+    </template>
+
+    <template id="app_offline" name="Minbar App: Offline">
+        <t t-call="ib4tech_minbar.app_layout">
+            <t t-set="back" t-value="'/app'"/>
+            <t t-call="ib4tech_minbar.app_empty">
+                <t t-set="empty_icon" t-value="'i-globe'"/>
+                <t t-set="empty_title">لا يوجد اتصال بالإنترنت</t>
+                <t t-set="empty_text">الصفحات التي فتحتها سابقاً والمكتبة المحفوظة تبقى متاحة.</t>
+                <t t-set="empty_link" t-value="'/app/library'"/>
+                <t t-set="empty_action">فتح المكتبة</t>
+            </t>
+        </t>
+    </template>
+</odoo>

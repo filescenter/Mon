@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_minbar_majlis_search" model="ir.ui.view">
+        <field name="name">ib4tech.minbar.majlis.search</field>
+        <field name="model">ib4tech.minbar.majlis</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="entity_id"/>
+                <field name="participant_ids"/>
+                <field name="city_id"/>
+                <filter name="filter_upcoming" string="Upcoming" domain="[('date_start', '&gt;=', 'today')]"/>
+                <filter name="filter_pending" string="Waiting Review" domain="[('state', '=', 'pending')]"/>
+                <filter name="filter_published" string="Published" domain="[('state', '=', 'published')]"/>
+                <separator/>
+                <filter name="filter_date" string="Date" date="date_start"/>
+                <group>
+                    <filter name="group_entity" string="Organizer" context="{'group_by': 'entity_id'}"/>
+                    <filter name="group_city" string="City" context="{'group_by': 'city_id'}"/>
+                    <filter name="group_date" string="Day" context="{'group_by': 'date_start:day'}"/>
+                    <filter name="group_state" string="Status" context="{'group_by': 'state'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="view_minbar_majlis_list" model="ir.ui.view">
+        <field name="name">ib4tech.minbar.majlis.list</field>
+        <field name="model">ib4tech.minbar.majlis</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="date_start"/>
+                <field name="name"/>
+                <field name="entity_id"/>
+                <field name="participant_ids" widget="many2many_tags" optional="show"/>
+                <field name="city_id"/>
+                <field name="audience" optional="hide"/>
+                <field name="state" widget="badge"
+                       decoration-info="state == 'pending'"
+                       decoration-success="state == 'published'"
+                       decoration-danger="state in ('rejected', 'cancelled')"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_minbar_majlis_calendar" model="ir.ui.view">
+        <field name="name">ib4tech.minbar.majlis.calendar</field>
+        <field name="model">ib4tech.minbar.majlis</field>
+        <field name="arch" type="xml">
+            <calendar date_start="date_start" date_stop="date_end" color="entity_id" mode="month">
+                <field name="entity_id" filters="1"/>
+                <field name="city_id"/>
+                <field name="state"/>
+            </calendar>
+        </field>
+    </record>
+
+    <record id="view_minbar_majlis_form" model="ir.ui.view">
+        <field name="name">ib4tech.minbar.majlis.form</field>
+        <field name="model">ib4tech.minbar.majlis</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_publish" type="object" string="Approve &amp; Publish"
+                            class="btn-primary" invisible="state not in ('draft', 'pending', 'rejected')"/>
+                    <button name="action_reject" type="object" string="Reject" invisible="state != 'pending'"/>
+                    <button name="action_cancel" type="object" string="Cancel Majlis"
+                            invisible="state != 'published'"
+                            confirm="The majlis will be shown as cancelled in the app. Continue?"/>
+                    <button name="action_reset_draft" type="object" string="Back to Draft"
+                            invisible="state not in ('cancelled', 'rejected')"/>
+                    <button name="%(action_minbar_majlis_repeat)d" type="action" string="Repeat Daily"
+                            invisible="not id"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,pending,published"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1><field name="name" placeholder="e.g. Majlis of the first night of Muharram"/></h1>
+                    </div>
+                    <group>
+                        <group string="Who">
+                            <field name="entity_id"/>
+                            <field name="participant_ids" widget="many2many_tags"/>
+                            <field name="guest_names"/>
+                            <field name="audience"/>
+                        </group>
+                        <group string="When &amp; Where">
+                            <field name="date_start"/>
+                            <field name="date_end"/>
+                            <field name="city_id"/>
+                            <field name="location"/>
+                            <field name="occasion_id"/>
+                            <field name="live_url" widget="url"/>
+                        </group>
+                    </group>
+                    <group string="Details">
+                        <field name="description" nolabel="1" colspan="2"/>
+                    </group>
+                    <group string="Rejection Reason" invisible="state not in ('pending', 'rejected')">
+                        <field name="reject_reason" nolabel="1" colspan="2"/>
+                    </group>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_minbar_majlis" model="ir.actions.act_window">
+        <field name="name">Majalis</field>
+        <field name="res_model">ib4tech.minbar.majlis</field>
+        <field name="view_mode">list,calendar,form</field>
+        <field name="context">{'search_default_filter_upcoming': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Schedule the first majlis</p>
+        </field>
+    </record>
+
+    <record id="action_minbar_majlis_review" model="ir.actions.act_window">
+        <field name="name">Majalis to Review</field>
+        <field name="res_model">ib4tech.minbar.majlis</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('state', '=', 'pending')]</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Nothing is waiting for a review</p>
+        </field>
+    </record>
+</odoo>
