@@ -197,10 +197,9 @@
             <field name="longitude">47.7835</field>
             <field name="sequence">280</field>
         </record>
-        <!-- The app opens on this city until the visitor picks another one. -->
-        <record id="ir_config_default_city" model="ir.config_parameter">
-            <field name="key">ib4tech_minbar.default_city_id</field>
-            <field name="value" eval="str(ref('city_sadr_city'))"/>
-        </record>
+        <!-- The app opens on this city until the visitor picks another one. Set through a
+             call, on installation only, so that a value saved from the settings is kept. -->
+        <function model="ir.config_parameter" name="set_param"
+                  eval="('ib4tech_minbar.default_city_id', str(ref('city_sadr_city')))"/>
     </data>
 </odoo>
